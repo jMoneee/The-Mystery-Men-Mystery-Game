@@ -36,8 +36,7 @@ public class GrabItem : MonoBehaviour
         Ray ray = head.ScreenPointToRay(Input.mousePosition);
 
 		bool rayhit = Physics.Raycast(ray, out hit, grabDistanceLimit, -1, QueryTriggerInteraction.Ignore);
-		bool pickup = false;
-		Debug.Log(Input.GetKeyDown(pickupKey));
+
 		if (Input.GetKeyDown(pickupKey))
 		{
 			if (grabbedItem == null)
@@ -45,7 +44,6 @@ public class GrabItem : MonoBehaviour
 				if (rayhit && hit.collider.TryGetComponent(out Interactable inter) && inter.pickUp)
 				{
 					grab = true;
-					pickup = true;
 					StartCoroutine(HoldItem());
 				}
 			}
