@@ -10,11 +10,11 @@ public class DisplayInstructions : MonoBehaviour
 	[SerializeField] RectTransform origin;
 	[SerializeField] Font font;
 	[SerializeField] int fontSize = 50;
-	[SerializeField] Color fontColor;
+	[SerializeField] Color fontColor = Color.white;
 	[SerializeField] FontStyle fontStyle = FontStyle.Normal;
 	[SerializeField] HorizontalWrapMode horizontalWrapMode = HorizontalWrapMode.Overflow;
-	[SerializeField] Color emphasisColor;
-	[SerializeField] int outlineWeight;
+	[SerializeField] Color emphasisColor = Color.red;
+	[SerializeField] int outlineWeight = 1;
 
     void Start()
     {

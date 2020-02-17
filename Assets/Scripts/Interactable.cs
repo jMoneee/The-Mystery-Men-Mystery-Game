@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Interactable : MonoBehaviour
@@ -11,6 +12,7 @@ public class Interactable : MonoBehaviour
 	private Material material;
 	private Color ogColor;
 	private ParticleSystem interactableSparkle;
+	public UnityEvent interactAction;
 
 	private void Start()
 	{

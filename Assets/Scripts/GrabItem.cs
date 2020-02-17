@@ -13,25 +13,32 @@ public class GrabItem : MonoBehaviour
 	[Tooltip("The max raycast distance to pick up an item.")]
 	[SerializeField] float grabDistanceLimit = 2.5f;
 	[Tooltip("The distance the item is held in front of the player.")]
-	[SerializeField] float holdDistance = 1.5f;
-	private Transform grabPoint;
+	[SerializeField] protected float holdDistance = 1.5f;
+	[SerializeField] protected Transform grabPoint;
 	public Transform grabbedItem;
 	//private GameObject underWeight;
-	[SerializeField] bool grab = false;
-	private RaycastHit hit;
-	private Camera head;
-	private DisplayInstructions display;
+	[SerializeField] protected bool grab = false;
+	protected RaycastHit hit;
+	protected Camera head;
+	protected DisplayInstructions display;
+	private Coroutine cor;
 
-    void Start()
+	protected virtual void Awake()
     {
-		head = Camera.main;
+		head = GetComponentInChildren<Camera>();
 		grabPoint = new GameObject("Grab Point").transform;
 		grabPoint.parent = head.transform;
 		grabPoint.localPosition = new Vector3(0, 0, holdDistance);
 		display = GetComponentInChildren<DisplayInstructions>();
 	}
 
-    void Update()
+	private void OnDisable()
+	{
+		if (cor != null)
+			StopCoroutine(cor);
+	}
+
+	protected virtual void Update()
     {
         Ray ray = head.ScreenPointToRay(Input.mousePosition);
 
@@ -44,7 +51,8 @@ public class GrabItem : MonoBehaviour
 				if (rayhit && hit.collider.TryGetComponent(out Interactable inter) && inter.pickUp)
 				{
 					grab = true;
-					StartCoroutine(HoldItem());
+					inter.interactAction?.Invoke();
+					cor = StartCoroutine(HoldItem());
 				}
 			}
 			else
@@ -58,7 +66,7 @@ public class GrabItem : MonoBehaviour
 			//show pickup text
 			display.SetPrompt(pickupKey, "pick up", hit.collider.gameObject.name);
 		}
-		else if (grab)
+		else if (grab && grabbedItem != null)
 		{
 			//hide pickup text
 			//show drop text
@@ -86,7 +94,7 @@ public class GrabItem : MonoBehaviour
 	/// preventing collision with the player so that we don't end up with weird unwanted physics interactions.
 	/// </summary>
 	/// <returns>Coroutine</returns>
-	private IEnumerator HoldItem()
+	protected virtual IEnumerator HoldItem()
 	{
 		grabbedItem = hit.collider.gameObject.transform;
 		Transform ogParent = grabbedItem.transform.parent;
@@ -123,6 +131,7 @@ public class GrabItem : MonoBehaviour
 			Physics.IgnoreCollision(transform.GetComponent<Collider>(), coll, false);
 		}
 		grabbedItem = null;
+		cor = null;
 	}
 
 	private void OnValidate()
