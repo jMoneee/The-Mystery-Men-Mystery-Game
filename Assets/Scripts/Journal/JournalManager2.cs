@@ -16,10 +16,14 @@ public class JournalManager2 : MonoBehaviour
     private float beginningHeight;
     private float beginningSizeDeltaY;
 
+    private ScrollRect scrollRect;
+
+
     public static JournalManager2 instance;
     private void Awake()
     {
         instance = this;
+        scrollRect = GetComponentInChildren<ScrollRect>();
     }
 
     // Start is called before the first frame update
@@ -64,8 +68,7 @@ public class JournalManager2 : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        ScrollRect d = GetComponentInChildren<ScrollRect>();
-        d.verticalNormalizedPosition = 0;
+        scrollRect.verticalNormalizedPosition = 0;
     }
 
     public void SetScrollRectPosition (Vector2 vec)

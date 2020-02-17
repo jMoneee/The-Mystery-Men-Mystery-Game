@@ -20,10 +20,19 @@ public static class CommandHandler
             case "Load":
                 Command_Load(parameters);
                 break;
+            case "AddToJournal":
+                Command_AddJournal(parameters);
+                break;
             default:
                 Debug.LogWarning("COMMAND " + actionName + " NOT FOUND. YOU ARE USING A COMMAND THAT DOES NOT EXIST (YET) OR HAVE A SPELLING ERROR");
                 break;
         }
+    }
+
+    private static void Command_AddJournal(string[] parameters)
+    {
+        string text = parameters[0].Trim();
+        JournalManager2.AddTextToJournal(text);
     }
 
     private static void Command_Load(string[] parameters)
