@@ -11,16 +11,15 @@ public class GrabItem : MonoBehaviour
 {
 	[SerializeField] KeyCode pickupKey = KeyCode.E;
 	[Tooltip("The max raycast distance to pick up an item.")]
-	[SerializeField] float grabDistanceLimit = 2.5f;
+	[SerializeField] protected float grabDistanceLimit = 2.5f;
 	[Tooltip("The distance the item is held in front of the player.")]
 	[SerializeField] protected float holdDistance = 1.5f;
 	[SerializeField] protected Transform grabPoint;
-	public Transform grabbedItem;
+	public Interactable grabbedItem;
 	//private GameObject underWeight;
 	[SerializeField] protected bool grab = false;
 	protected RaycastHit hit;
 	protected Camera head;
-	protected DisplayInstructions display;
 	private Coroutine cor;
 
 	protected virtual void Awake()
@@ -28,8 +27,7 @@ public class GrabItem : MonoBehaviour
 		head = GetComponentInChildren<Camera>();
 		grabPoint = new GameObject("Grab Point").transform;
 		grabPoint.parent = head.transform;
-		grabPoint.localPosition = new Vector3(0, 0, holdDistance);
-		display = GetComponentInChildren<DisplayInstructions>();
+		grabPoint.localPosition = (-head.transform.forward * holdDistance);
 	}
 
 	private void OnDisable()
@@ -43,16 +41,25 @@ public class GrabItem : MonoBehaviour
         Ray ray = head.ScreenPointToRay(Input.mousePosition);
 
 		bool rayhit = Physics.Raycast(ray, out hit, grabDistanceLimit, -1, QueryTriggerInteraction.Ignore);
+		Interactable pickup = null;
+		if (rayhit)
+			pickup = hit.collider.GetComponent<Interactable>();
 
 		if (Input.GetKeyDown(pickupKey))
 		{
 			if (grabbedItem == null)
 			{
-				if (rayhit && hit.collider.TryGetComponent(out Interactable inter) && inter.pickUp)
+				if (rayhit && pickup != null)
 				{
-					grab = true;
-					inter.interactAction?.Invoke();
-					cor = StartCoroutine(HoldItem());
+					if (pickup.enabled)
+					{
+						grab = true;
+						if (pickup.interactAction.GetPersistentEventCount() != 0)
+							pickup.interactAction?.Invoke();
+						else
+							cor = StartCoroutine(HoldItem());
+						pickup.EndHover(pickupKey);
+					}
 				}
 			}
 			else
@@ -61,32 +68,22 @@ public class GrabItem : MonoBehaviour
 			}
 		}
 
-		if (!grab && rayhit && hit.collider.TryGetComponent(out Interactable interact) && interact.pickUp)
+		if (!grab && rayhit && pickup != null)
 		{
 			//show pickup text
-			display.SetPrompt(pickupKey, "pick up", hit.collider.gameObject.name);
+			pickup.StartHover(pickupKey, pickup.gameObject);
 		}
 		else if (grab && grabbedItem != null)
 		{
 			//hide pickup text
 			//show drop text
-			display.SetPrompt(pickupKey, "drop ", grabbedItem.name);
+			grabbedItem.ActiveHover(pickupKey, grabbedItem.gameObject);
 		}
 		else
 		{
 			//hide pickup and drop text
-			display.RemovePrompt(pickupKey);
+			//display.RemovePrompt(pickupKey);
 		}
-		//if (rayhit)
-		//{
-		//	Interactable interact = hit.collider.GetComponent<Interactable>();
-		//	if (interact != null && interact.pickUp)
-		//	{
-		//		//show text for press key to pick up
-		//		grab = true;
-		//		StartCoroutine(HoldItem());
-		//	}
-		//}
 	}
 
 	/// <summary>
@@ -96,14 +93,14 @@ public class GrabItem : MonoBehaviour
 	/// <returns>Coroutine</returns>
 	protected virtual IEnumerator HoldItem()
 	{
-		grabbedItem = hit.collider.gameObject.transform;
+		grabbedItem = hit.collider.gameObject.GetComponent<Pickupable>();
 		Transform ogParent = grabbedItem.transform.parent;
 		Rigidbody grabbedrb = grabbedItem.GetComponent<Rigidbody>();
 
 		grabbedrb.useGravity = false;
 		grabbedItem.transform.parent = grabPoint.transform;
 
-		Quaternion ogRotation = grabbedItem.rotation;
+		Quaternion ogRotation = grabbedItem.transform.rotation;
 		float time = 0f;
 		foreach (Collider coll in grabbedItem.GetComponents<Collider>())
 		{
@@ -120,7 +117,7 @@ public class GrabItem : MonoBehaviour
 			time += Time.fixedDeltaTime;
 			grabbedrb.velocity = (grabPoint.position - grabbedCenter) * Time.fixedDeltaTime * 1000;
 			//grabbedItem.position = Vector3.MoveTowards(grabbedItem.position, grabPoint.position, Time.fixedDeltaTime * 10);
-			grabbedItem.rotation = Quaternion.Lerp(ogRotation, Quaternion.identity, time * 2);
+			grabbedItem.transform.rotation = Quaternion.Lerp(ogRotation, Quaternion.identity, time * 2);
 			yield return new WaitForFixedUpdate();
 		}
 		grabbedItem.transform.parent = ogParent;
@@ -132,14 +129,5 @@ public class GrabItem : MonoBehaviour
 		}
 		grabbedItem = null;
 		cor = null;
-	}
-
-	private void OnValidate()
-	{
-#if UNITY_EDITOR
-		//allows us to update hold distance during playtesting if we want to
-		if (EditorApplication.isPlaying && grabPoint != null)
-			grabPoint.localPosition = new Vector3(0, 0, holdDistance);
-#endif
 	}
 }

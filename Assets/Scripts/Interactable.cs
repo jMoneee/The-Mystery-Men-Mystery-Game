@@ -6,18 +6,22 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody))]
 public class Interactable : MonoBehaviour
 {
-	[SerializeField] bool _pickUp = false;
 	[SerializeField] float highlightStrength = 2.5f;
-	public bool pickUp { get { return _pickUp; } }
 	private Material material;
 	private Color ogColor;
 	private ParticleSystem interactableSparkle;
 	public UnityEvent interactAction;
+	protected DisplayInstructions instructions;
 
 	private void Start()
 	{
+		instructions = FindObjectOfType<DisplayInstructions>();
 		material = GetComponent<Renderer>().material;
 		ogColor = material.color;
+
+		if (TryGetComponent(out ParticleSystem ps))
+			return;
+
 		interactableSparkle = Instantiate(Resources.Load("Prefabs/Interactable Sparkle") as GameObject, transform.position, Quaternion.identity, transform).GetComponent<ParticleSystem>();
 		//why the fuck does this allow me to assign to .mesh with var but not 
 		ParticleSystem.ShapeModule s = interactableSparkle.shape;
@@ -37,13 +41,28 @@ public class Interactable : MonoBehaviour
 	private void OnMouseEnter()
 	{
 		material.color = ogColor * highlightStrength;
-		interactableSparkle.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+		interactableSparkle?.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
 	}
 
 	private void OnMouseExit()
 	{
 		material.color = ogColor;
-		interactableSparkle.Play(false);
+		interactableSparkle?.Play(false);
+	}
+
+	public virtual void StartHover(KeyCode key, GameObject obj)
+	{
+
+	}
+
+	public virtual void ActiveHover(KeyCode key, GameObject obj)
+	{
+
+	}
+
+	public void EndHover(KeyCode key)
+	{
+		instructions.RemovePrompt(key);
 	}
 }
 

@@ -7,15 +7,17 @@ public class DumpsterMiniGame : MonoBehaviour
 	public Camera playCam;
 	public GameObject fpsPlayer;
 
-	private void Start()
-	{
-		playCam = GetComponent<Camera>();
-	}
 	public void Play()
 	{
 		fpsPlayer.SetActive(false);
 		playCam.gameObject.SetActive(true);
-		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+		GetComponent<Interactable>().enabled = false;
+		GetComponent<Rigidbody>().isKinematic = true;
+		Playable p = GetComponent<Playable>();
+		p.enabled = false;
+		StartCoroutine(lerpToPlay());
 	}
 
 	private IEnumerator lerpToPlay()
@@ -32,7 +34,7 @@ public class DumpsterMiniGame : MonoBehaviour
 		{
 			playCam.transform.rotation = Quaternion.Lerp(fpsRot, playRot, timer);
 			playCam.transform.position = Vector3.Lerp(fpsPos, playPos, timer);
-			timer += Time.deltaTime / 2f;
+			timer += Time.deltaTime;
 			yield return null;
 		}
 	}

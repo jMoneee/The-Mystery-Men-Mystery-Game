@@ -35,9 +35,9 @@ public class DisplayInstructions : MonoBehaviour
 	/// </summary>
 	/// <param name="key">Input key required to interact.</param>
 	/// <param name="text">The display message.</param>
-	public void SetPrompt(KeyCode key, string action, string name)
+	public void SetPrompt(KeyCode key, string action)
 	{
-		string trimmed = action.Trim() + " <color=#" + ColorToHex(emphasisColor) + "><b>" + name.Trim() + "</b></color>.";
+		string trimmed = action.Trim();
 		string display = "Press " + key.ToString() + " to " + trimmed;
 
 		if (!prompts.ContainsKey(key))

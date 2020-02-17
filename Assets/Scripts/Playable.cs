@@ -5,9 +5,15 @@ using UnityEngine.Events;
 
 public class Playable : Interactable
 {
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public string playableName;
+
+	public override void StartHover(KeyCode key, GameObject obj)
+	{
+		instructions.SetPrompt(key, "play " + playableName);
+	}
+
+	public override void ActiveHover(KeyCode key, GameObject obj)
+	{
+		instructions.RemovePrompt(key);
+	}
 }
