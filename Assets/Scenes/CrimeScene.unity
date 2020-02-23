@@ -247,9 +247,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &101512312
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -459,13 +463,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 109141973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &110363197
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,9 +597,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!1 &111120427
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +715,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: play
+  endVerb: quit
+  _key: 114
   interactAction:
     m_PersistentCalls:
       m_Calls:
@@ -717,7 +732,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  playableName: Dumpster Minigame
+  gameName: Dumpster minigame
 --- !u!54 &111120433
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -856,9 +871,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &121176898
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1086,13 +1105,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 256905499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &261444153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,13 +1235,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 261444153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &267190005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,9 +1498,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &381010623
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1781,9 +1812,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &525165317
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2402,9 +2437,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &1092558683
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2614,13 +2653,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1105770554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &1141437849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,9 +2733,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &1195255724
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2817,9 +2864,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &1217305036
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3030,13 +3081,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1218761077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &1284684531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,13 +3211,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1284684531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &1377718886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,13 +3341,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377718886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &1430893779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,9 +3386,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &1430893781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3723,9 +3790,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!1 &1563820525
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,13 +3916,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1563820525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &1590475257
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,9 +3961,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &1590475259
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4098,13 +4177,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602427251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &1625647892
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,16 +4383,16 @@ GameObject:
   - component: {fileID: 1733809889}
   - component: {fileID: 1733809888}
   - component: {fileID: 1733809887}
-  - component: {fileID: 1733809886}
   - component: {fileID: 1733809890}
+  - component: {fileID: 1733809885}
   m_Layer: 0
   m_Name: MiniGameCamera
-  m_TagString: Untagged
+  m_TagString: GameCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1733809886
+--- !u!114 &1733809885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4318,15 +4401,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733809884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
+  m_Script: {fileID: 11500000, guid: c7a32402e7b650d4bb1d26f014440173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupKey: 323
-  grabDistanceLimit: 10
-  holdDistance: 1.5
-  grabPoint: {fileID: 0}
-  grabbedItem: {fileID: 0}
-  grab: 0
+  interactDistanceLimit: 8
 --- !u!81 &1733809887
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4439,9 +4517,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &1871676342
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4745,13 +4827,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1930039333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5c04ebd62a28843a4376c7d84599ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   highlightStrength: 2.5
+  startVerb: pick up
+  endVerb: drop
+  _key: 323
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  holdDistance: 3
 --- !u!1 &1956751151
 GameObject:
   m_ObjectHideFlags: 0
@@ -5111,12 +5197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a32402e7b650d4bb1d26f014440173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupKey: 101
-  grabDistanceLimit: 2.5
-  holdDistance: 1.5
-  grabPoint: {fileID: 0}
-  grabbedItem: {fileID: 0}
-  grab: 0
+  interactDistanceLimit: 2.5
 --- !u!114 &1051085776098536036
 MonoBehaviour:
   m_ObjectHideFlags: 0

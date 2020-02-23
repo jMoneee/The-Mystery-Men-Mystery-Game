@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Linq;
 
-[RequireComponent(typeof(Rigidbody))]
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
 	[SerializeField] float highlightStrength = 2.5f;
 	private Material material;
 	private Color ogColor;
 	private ParticleSystem interactableSparkle;
-	public UnityEvent interactAction;
 	protected DisplayInstructions instructions;
+	[SerializeField] protected string startVerb = "interact with";
+	[SerializeField] protected string endVerb = "stop interacting with";
+	[SerializeField] protected KeyCode _key;
+	public KeyCode key { get { return _key; } }
+	protected bool _interacting = false;
+	public bool interacting { get { return _interacting; } }
+	public UnityEvent interactAction;
 
-	private void Start()
+	protected virtual void Start()
 	{
 		instructions = FindObjectOfType<DisplayInstructions>();
 		material = GetComponent<Renderer>().material;
@@ -32,50 +38,44 @@ public class Interactable : MonoBehaviour
 		s.mesh = new Mesh();
 		Mesh m = GetComponent<MeshFilter>().sharedMesh;
 		//TODO: make this scale by the same amount in world space
-		s.mesh.vertices = m.vertices.times(1.1f);
+		s.mesh.vertices = m.vertices.times(1.1f).Select(x => x = Vector3.Scale(x, transform.localScale)).ToArray();
 		s.mesh.triangles = m.triangles;
 		s.mesh.uv = m.uv;
 		s.mesh.RecalculateNormals();
 	}
 
+	/// <summary>
+	/// Activates on cursor hover regardless of distance. Called by Unity Events.
+	/// </summary>
 	private void OnMouseEnter()
 	{
 		material.color = ogColor * highlightStrength;
 		interactableSparkle?.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
 	}
 
+	/// <summary>
+	/// Activates on cursor exit regardless of distance. Called by Unity Events.
+	/// </summary>
 	private void OnMouseExit()
 	{
 		material.color = ogColor;
 		interactableSparkle?.Play(false);
 	}
 
-	public virtual void StartHover(KeyCode key, GameObject obj)
-	{
+	/// <summary>
+	/// Called by Interactor.cs on the first frame that it hovers over the object <b>while in range of it</b>.
+	/// </summary>
+	/// <param name="key"></param>
+	/// <param name="obj"></param>
+	public abstract void StartHover();
 
-	}
+	public abstract void DuringHover();
 
-	public virtual void ActiveHover(KeyCode key, GameObject obj)
-	{
+	public abstract void EndHover();
 
-	}
+	public abstract void StartInteract();
 
-	public void EndHover(KeyCode key)
-	{
-		instructions.RemovePrompt(key);
-	}
-}
+	public abstract void DuringInteract();
 
-public static class extension
-{
-	public static Vector3[] times(this Vector3[] v, float f)
-	{
-		Vector3[] v2 = new Vector3[v.Length];
-		for (int i = 0; i < v.Length; i++)
-		{
-			v2[i] = v[i] * f;
-		}
-
-		return v2;
-	}
+	public abstract void EndInteract();
 }

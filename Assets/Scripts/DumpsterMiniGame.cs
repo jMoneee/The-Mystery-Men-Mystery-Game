@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,15 +10,21 @@ public class DumpsterMiniGame : MonoBehaviour
 
 	public void Play()
 	{
+		//instead of disable, turn off controls/camera
+		//that'll keep calling the "during interact" of the player so the game can end
 		fpsPlayer.SetActive(false);
 		playCam.gameObject.SetActive(true);
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
-		GetComponent<Interactable>().enabled = false;
 		GetComponent<Rigidbody>().isKinematic = true;
-		Playable p = GetComponent<Playable>();
-		p.enabled = false;
 		StartCoroutine(lerpToPlay());
+		StartCoroutine(endGame());
+	}
+
+	private IEnumerator endGame()
+	{
+		Playable p = GetComponent<Playable>();
+		yield return new WaitUntil(() => !p.interacting);
 	}
 
 	private IEnumerator lerpToPlay()
