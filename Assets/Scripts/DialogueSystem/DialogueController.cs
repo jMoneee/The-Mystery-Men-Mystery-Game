@@ -71,7 +71,7 @@ public class DialogueController : MonoBehaviour
 
     public void HandleDialogueText(TextAsset text)
     {
-        DetachCamera.Detach();
+        //DetachCamera.Detach();
         LoadFile(text);
         handlingText = StartCoroutine(_HandleDialogueText(text));
         Next();

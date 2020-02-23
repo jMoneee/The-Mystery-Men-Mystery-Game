@@ -3,7 +3,22 @@ guid: a5bab72eeab921646819888e5318a7e2
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrashCan
+    second: {fileID: 2100000, guid: bf07a5183082aa64a9de6e6ae4ffe151, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrashCan_Handle
+    second: {fileID: 2100000, guid: e7fb14a72922f8948b1785195cc77490, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TrashCan_Lid
+    second: {fileID: 2100000, guid: 44cf08acafd22d94ea51ef0552bf6852, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +46,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

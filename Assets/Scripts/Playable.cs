@@ -7,21 +7,21 @@ public class Playable : Interactable
 {
 	public string gameName;
 
-	public override void StartHover()
+	public override void HoverBegin()
 	{
 		instructions.SetPrompt(key, startVerb + " " + TextEffects.EmphasizeWord(gameName, Color.red));
 	}
 
-	public override void DuringHover()
+	public override void HoverContinue()
 	{
 
 	}
-	public override void EndHover()
+	public override void HoverEnd()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override void StartInteract()
+	public override void InteractBegin()
 	{
 		instructions.SetPrompt(key, endVerb + " " + TextEffects.EmphasizeWord(gameName, Color.red));
 		_interacting = true;
@@ -29,12 +29,12 @@ public class Playable : Interactable
 	}
 
 
-	public override void DuringInteract()
+	public override void InteractContinue()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public override void EndInteract()
+	public override void InteractEnd()
 	{
 		_interacting = false;
 	}

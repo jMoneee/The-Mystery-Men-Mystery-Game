@@ -67,15 +67,15 @@ public abstract class Interactable : MonoBehaviour
 	/// </summary>
 	/// <param name="key"></param>
 	/// <param name="obj"></param>
-	public abstract void StartHover();
+	public abstract void HoverBegin();
 
-	public abstract void DuringHover();
+	public abstract void HoverContinue();
 
-	public abstract void EndHover();
+	public abstract void HoverEnd();
 
-	public abstract void StartInteract();
+	public abstract void InteractBegin();
 
-	public abstract void DuringInteract();
+	public abstract void InteractContinue();
 
-	public abstract void EndInteract();
+	public abstract void InteractEnd();
 }

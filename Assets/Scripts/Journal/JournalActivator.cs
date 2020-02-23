@@ -11,23 +11,23 @@ public class JournalActivator : MonoBehaviour
     }
     public static bool IsPaused { get { return instance.journalActive == true; } }
 
-    public GameObject JournalCanvas;
+    public CanvasGroup JournalCanvas;
     private bool journalActive = false;
     // Start is called before the first frame update
     void Start()
     {
-        JournalCanvas.SetActive(false);
-    }
+		ChangeJournalVisibility(false);
+	}
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (journalActive)
             {
                 DetachCamera.Reattach();
-                JournalCanvas.SetActive(false);
+				ChangeJournalVisibility(false);
                 journalActive = false;
 
                 Cursor.lockState = CursorLockMode.Locked;
@@ -36,8 +36,8 @@ public class JournalActivator : MonoBehaviour
             else
             {
                 DetachCamera.Detach();
-                JournalCanvas.SetActive(true);
-                journalActive = true;
+				ChangeJournalVisibility(true);
+				journalActive = true;
 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -55,4 +55,11 @@ public class JournalActivator : MonoBehaviour
         //    Cursor.visible = false;
         //}
     }
+
+	void ChangeJournalVisibility(bool visible)
+	{
+		JournalCanvas.alpha = visible ? 1 : 0;
+		JournalCanvas.interactable = visible;
+		JournalCanvas.blocksRaycasts = visible;
+	}
 }

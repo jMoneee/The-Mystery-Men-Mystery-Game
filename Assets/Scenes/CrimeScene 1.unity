@@ -323,11 +323,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 104456024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eff931b6ab1276438dfb341c94e8428, type: 3}
+  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickUp: 1
   highlightStrength: 2.5
+  startVerb: interact with
+  endVerb: stop interacting with
+  _key: 101
+  interactAction:
+    m_PersistentCalls:
+      m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &104456026
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1017,11 +1023,15 @@ PrefabInstance:
     - target: {fileID: 17849109, guid: ca84e4215d5189f4296821f009bc4582, type: 3}
       propertyPath: StartDialogueText
       value: 
-      objectReference: {fileID: 482531988}
+      objectReference: {fileID: 0}
+    - target: {fileID: 17849109, guid: ca84e4215d5189f4296821f009bc4582, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 17849110, guid: ca84e4215d5189f4296821f009bc4582, type: 3}
       propertyPath: JournalCanvas
       value: 
-      objectReference: {fileID: 1564214197}
+      objectReference: {fileID: 1564214202}
     - target: {fileID: 1051085774956212211, guid: ca84e4215d5189f4296821f009bc4582,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1290,6 +1300,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 420380142775191382, guid: 1689874d01a02f740b26c3022777648e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 420380142848662567, guid: 1689874d01a02f740b26c3022777648e,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1344,6 +1359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DialogueCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 420380143452642497, guid: 1689874d01a02f740b26c3022777648e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 420380143452642501, guid: 1689874d01a02f740b26c3022777648e,
         type: 3}
@@ -1477,18 +1497,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1689874d01a02f740b26c3022777648e, type: 3}
---- !u!114 &482531988 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 420380142914499114, guid: 1689874d01a02f740b26c3022777648e,
-    type: 3}
-  m_PrefabInstance: {fileID: 482531987}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &482531989 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 420380142775190696, guid: 1689874d01a02f740b26c3022777648e,
@@ -1703,11 +1711,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 573913934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eff931b6ab1276438dfb341c94e8428, type: 3}
+  m_Script: {fileID: 11500000, guid: 0edaf923070648e4b89317bf960c092a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pickUp: 1
   highlightStrength: 2.5
+  startVerb: interact with
+  endVerb: stop interacting with
+  _key: 101
+  interactAction:
+    m_PersistentCalls:
+      m_Calls: []
+  holdDistance: 1.5
 --- !u!54 &573913936
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1852,6 +1866,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogueable
       objectReference: {fileID: 0}
+    - target: {fileID: 6235220924700077091, guid: 27f80242f2b9e144ca2d39a45f3a6f44,
+        type: 3}
+      propertyPath: startVerb
+      value: read
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235220924700077091, guid: 27f80242f2b9e144ca2d39a45f3a6f44,
+        type: 3}
+      propertyPath: endVerb
+      value: stop reading
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235220924700077091, guid: 27f80242f2b9e144ca2d39a45f3a6f44,
+        type: 3}
+      propertyPath: _key
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235220924700077091, guid: 27f80242f2b9e144ca2d39a45f3a6f44,
+        type: 3}
+      propertyPath: DialogueController
+      value: 
+      objectReference: {fileID: 482531989}
     - target: {fileID: 6235220924700077095, guid: 27f80242f2b9e144ca2d39a45f3a6f44,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3248,6 +3282,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1564214196}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1564214202
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564214197}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1568225983
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,7 +4831,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

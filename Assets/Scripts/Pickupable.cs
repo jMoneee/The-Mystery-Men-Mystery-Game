@@ -18,32 +18,32 @@ public class Pickupable : Interactable
 		base.Start();
 	}
 
-	public override void StartHover()
+	public override void HoverBegin()
 	{
 		instructions.SetPrompt(key, startVerb + " " + TextEffects.EmphasizeWord(name, Color.red));
 	}
 
-	public override void DuringHover()
+	public override void HoverContinue()
 	{
 	}
 
-	public override void EndHover()
+	public override void HoverEnd()
 	{
-		
+		instructions.RemovePrompt(key);
 	}
 
-	public override void StartInteract()
+	public override void InteractBegin()
 	{
 		_interacting = true;
 		StartCoroutine(Hold());
 		instructions.SetPrompt(key, endVerb + " " + TextEffects.EmphasizeWord(name, Color.red));
 	}
 
-	public override void DuringInteract()
+	public override void InteractContinue()
 	{
 	}
 
-	public override void EndInteract()
+	public override void InteractEnd()
 	{
 		_interacting = false;
 	}

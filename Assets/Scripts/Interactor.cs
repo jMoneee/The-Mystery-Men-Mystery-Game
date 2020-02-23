@@ -46,21 +46,24 @@ public class Interactor : MonoBehaviour
 			if (Input.GetKeyDown(intable.key))
 			{
 				if (!intable.interacting)
-					intable.StartInteract();
+					intable.InteractBegin();
 				else
-					intable.EndInteract();
+				{
+					Debug.Log("begin interact -- interactor");
+					intable.InteractEnd();
+				}
 			}
 			else if (intable.interacting)
-				intable.DuringInteract();
+				intable.InteractContinue();
 
 			if (prevIntable == null)
-				intable.StartHover();
+				intable.HoverBegin();
 			if (prevIntable == intable)
-				intable.DuringHover();
+				intable.HoverContinue();
 		}
 		else if (prevIntable != null)
 		{
-			prevIntable.EndHover();
+			prevIntable.HoverEnd();
 		}
 		prevIntable = intable;
 

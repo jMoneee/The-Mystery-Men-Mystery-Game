@@ -3,7 +3,52 @@ guid: 8ed04bdfc023fde4e832c2d8379cc51a
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Bars
+    second: {fileID: 2100000, guid: 845b27072bf5c4345a757510b6d8e85d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Bars.001
+    second: {fileID: 2100000, guid: 47f73132b935f1146b068ba5cb9f8445, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Box_Outline
+    second: {fileID: 2100000, guid: d5acacbbd177f4c4d979a070a7457378, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Cable
+    second: {fileID: 2100000, guid: f60297328c64f2a4b9d9e9fb39ff1ce5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Cable_Housing
+    second: {fileID: 2100000, guid: 543b446ebde993040bce48a44cd66102, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Fan
+    second: {fileID: 2100000, guid: dd822ef6788023a45ac85b2fa4006834, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Fan_Hub
+    second: {fileID: 2100000, guid: bb93754f2d9371f4f8cabb1b60287d1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Undercarriage
+    second: {fileID: 2100000, guid: d7e5928bcfc252b47b561e35e9d6cd03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AC_Unit
+    second: {fileID: 2100000, guid: 3650b783a6ea54247b968717f420cd3e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +76,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
