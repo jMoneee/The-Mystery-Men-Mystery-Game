@@ -474,6 +474,9 @@ GameObject:
   - component: {fileID: 2454811286080453489}
   - component: {fileID: 2454811286074264885}
   - component: {fileID: 1051085776247196762}
+  - component: {fileID: 17849109}
+  - component: {fileID: 17849110}
+  - component: {fileID: 17849115}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -614,3 +617,42 @@ MonoBehaviour:
   grabPoint: {fileID: 0}
   grabbedItem: {fileID: 0}
   grab: 0
+--- !u!114 &17849109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2454811286085564631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c133320b0f810b49a8881e2f9a228de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueController: {fileID: 0}
+  StartDialogueText: {fileID: 0}
+--- !u!114 &17849110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2454811286085564631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36275b744ea11a94ea352d453182110a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JournalCanvas: {fileID: 0}
+--- !u!114 &17849115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2454811286085564631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01395c09b7100ab4da792e363c1f3268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,0 +1,68 @@
+Commands for building a visual novel story / chapter
+Every click event is a separate line, events on the same line will be executed at the same time
+Each line may have multiple actions delimmited by a space. Because of this, no value, should contain spaces
+
+NOTE: For this to work, if dialogue occurs on a line, the dialogue must be first!
+      This is what gives us the ability to not specify a character every time there is dialogue
+
+      The standard format for a command is
+          (optional)CharacterName "Dialogue in quotes" EVENTLIST
+
+      The keyword null can be used to set things like backgrounds / music to nothing
+          ex-> setBackground(null)
+
+      Optional parameters should work the same way they do in C#
+          they must be supplied in the same order
+          you only have to supply up to the parameters you want to change (its not all or nothing)
+
+#Make a character speak
+  characterName "dialogue"                                                ex: Raelin "Hi, how are you?"
+
+  NOTE: More functionality has been added to the dialogue so that writing large portions of dialogue is easier to do
+
+    {} symbols identify an expectation for user input, different cues do different things
+
+      {c} cue input and clear the dialogue container. Begin new segment
+      {a} cue input and append new dialogue to existing (additive)
+      {w number} wait for designated time and clear dialogue container.
+      {wa number} wait for designated time and append new dialogue to existing. (additive)
+
+      EXAMPLES: "I can write {c}multiple lines of dialogue. {a} on one line now! {wa 0.1}YAAY!"
+
+    [] symbols are used for two things: variables and dialogue events - Keep all Variables, events, and functions separate
+      VARIABLES - these are just placed in dialogue in [] brackets
+          [mainCharName]
+          [curHolyRelic]
+      EVENTS - these must have a start and end tag - all examples will be posted here - unlike tags, these can't be nested
+          [txtSpd delayBetweenCharacters,charactersPerFrame] Example text.[/txtSpd]
+      FUNCTIONS
+          Any function can be called with [playMusic(PeacefulForest) ANOTHERMETHOD(params) METHOD3(params)]
+
+      EX:
+        "Hello [showScene(true, blur)]everyone"
+
+#not in yet
+#Choice Screen Commands
+  NOTE: Must be on new line
+    choice "text of choice"
+    {
+      "Choice 1"
+      [
+        COMMANDS DESIRED AS NORMAL
+      ]
+      "Choice 2"
+      [
+        COMMANDS DESIRED AS NORMAL
+      ]
+      "Choice etc"
+      [
+        COMMANDS DESIRED AS NORMAL
+      ]
+    }
+
+  #Load chapter file
+    Load(chapterFileName)
+
+  #input screen commands
+    NOTE: Must be on new line
+      input "text of choice" variableNameToSaveTo
