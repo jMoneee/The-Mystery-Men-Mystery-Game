@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Pickupable : Interactable
 {
-	private Interactor interactor;
+	public Interactor interactor;
 	[Space]
 	[Header("Pickupable variables")]
 	[Tooltip("The distance the item is held in front of the player.")]
 	[SerializeField] protected float holdDistance = 1.5f;
+	protected bool setColliderToTrigger = false;
 
 	protected override void Start()
 	{
-		interactor = FindObjectOfType<Interactor>();
+		//interactor = FindObjectOfType<Interactor>();
 		base.Start();
 	}
 
@@ -61,10 +63,15 @@ public class Pickupable : Interactable
 
 		Quaternion ogRotation = transform.rotation;
 		float time = 0f;
-		foreach (Collider coll in GetComponents<Collider>())
-		{
-			Physics.IgnoreCollision(interactor.GetComponent<Collider>(), coll, true);
-		}
+		Collider[] colliders = GetComponents<Collider>();
+		Bounds[] bounds = colliders.Select(x => x.bounds).ToArray();
+		if (interactor.TryGetComponent(out Collider interactorCollider))
+			foreach (Collider coll in colliders)
+				{
+					//coll.bounds = new Bounds(Vector3.one * 1000, Vector3.one * 0.1f);
+					Physics.IgnoreCollision(interactorCollider, coll, true);
+					coll.isTrigger = setColliderToTrigger;
+				}
 
 		//hold at the center of the object itself by referencing the renderer, NOT transform.
 		Renderer r = GetComponent<Renderer>();
@@ -83,10 +90,12 @@ public class Pickupable : Interactable
 		transform.parent = ogParent;
 		grabbedrb.useGravity = true;
 
-		foreach (Collider coll in GetComponents<Collider>())
-		{
-			Physics.IgnoreCollision(transform.GetComponent<Collider>(), coll, false);
-		}
+		if (interactorCollider)
+			foreach (Collider coll in GetComponents<Collider>())
+			{
+				Physics.IgnoreCollision(transform.GetComponent<Collider>(), coll, false);
+				coll.isTrigger = false;
+			}
 	}
 
 	protected virtual void SetGrabPointPosition(Transform grabPoint)

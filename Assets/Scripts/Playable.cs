@@ -18,7 +18,7 @@ public class Playable : Interactable
 	}
 	public override void HoverEnd()
 	{
-		throw new System.NotImplementedException();
+		instructions.RemovePrompt(key);
 	}
 
 	public override void InteractBegin()
@@ -31,11 +31,12 @@ public class Playable : Interactable
 
 	public override void InteractContinue()
 	{
-		throw new System.NotImplementedException();
+		
 	}
 
 	public override void InteractEnd()
 	{
 		_interacting = false;
+		instructions.RemovePrompt(key);
 	}
 }

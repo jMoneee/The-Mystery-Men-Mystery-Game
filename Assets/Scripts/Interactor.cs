@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Linq;
 
 /// <summary>
 /// The script through which the player can interact with objects in the environment.
@@ -34,38 +35,54 @@ public class Interactor : MonoBehaviour
 		//	StopCoroutine(cor);
 	}
 
-	private Interactable prevIntable = null;
+	private List<Interactable> prevIntable = null;
 	protected virtual void Update()
     {
         Ray ray = head.ScreenPointToRay(Input.mousePosition);
 
-		bool rayhit = Physics.Raycast(ray, out hit, interactDistanceLimit, -1, QueryTriggerInteraction.Ignore);
-		Interactable intable = null;
-		if (rayhit && hit.collider.TryGetComponent(out intable))
+		//ignore layer 2, which is the Ignore Raycast layer.
+		bool rayhit = Physics.Raycast(ray, out hit, interactDistanceLimit, ~(1 << 2), QueryTriggerInteraction.Collide);
+		Interactable[] intable = null;
+		if (rayhit && hit.collider.TryGetComponents(out intable))
 		{
-			if (Input.GetKeyDown(intable.key))
+			foreach (Interactable item in intable)
 			{
-				if (!intable.interacting)
-					intable.InteractBegin();
-				else
+				if (Input.GetKeyDown(item.key))
 				{
-					Debug.Log("begin interact -- interactor");
-					intable.InteractEnd();
+					if (!item.interacting)
+					{
+						item.InteractBegin();
+					}
+					else
+					{
+						item.InteractEnd();
+						prevIntable = null;
+					}
+				}
+				else if (item.interacting)
+					item.InteractContinue();
+
+				if (!item.interacting)
+				{
+					if (prevIntable == null || !prevIntable.Contains(item))
+						item.HoverBegin();
+					else if (prevIntable != null && prevIntable.Contains(item))
+						item.HoverContinue();
 				}
 			}
-			else if (intable.interacting)
-				intable.InteractContinue();
+			
 
-			if (prevIntable == null)
-				intable.HoverBegin();
-			if (prevIntable == intable)
-				intable.HoverContinue();
 		}
 		else if (prevIntable != null)
 		{
-			prevIntable.HoverEnd();
+			foreach (Interactable item in prevIntable)
+			{
+				if (!item.interacting)
+					item.HoverEnd();
+
+			}
 		}
-		prevIntable = intable;
+		prevIntable = intable?.ToList();
 
 
 		//if (Input.GetKeyDown(pickupKey))

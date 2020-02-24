@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DumpsterMiniGame : MonoBehaviour
@@ -16,19 +17,26 @@ public class DumpsterMiniGame : MonoBehaviour
 		playCam.gameObject.SetActive(true);
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
-		GetComponent<Rigidbody>().isKinematic = true;
 		StartCoroutine(lerpToPlay());
 		StartCoroutine(endGame());
+
+		foreach (var item in FindObjectsOfType<DumpsterPickupable>())
+		{
+			item.cam = FindObjectsOfType<Camera>().Where(x => x.enabled).First();
+		}
 	}
 
 	private IEnumerator endGame()
 	{
 		Playable p = GetComponent<Playable>();
-		yield return new WaitUntil(() => !p.interacting);
-        playCam.gameObject.SetActive(false);
-    }
+		yield return new WaitForSeconds(1f);
+		yield return new WaitUntil(() => Input.GetKeyDown(p.key));
+		fpsPlayer.SetActive(true);
+		playCam.gameObject.SetActive(false);
+		GetComponent<Playable>().InteractEnd();
+	}
 
-    private IEnumerator lerpToPlay()
+	private IEnumerator lerpToPlay()
 	{
 		Quaternion fpsRot = fpsPlayer.transform.rotation;
 		Quaternion playRot = playCam.transform.rotation;

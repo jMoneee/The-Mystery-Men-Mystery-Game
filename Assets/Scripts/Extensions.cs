@@ -13,17 +13,17 @@ public static class Extensions
 		return v2;
 	}
 
-	public static string ToString(this KeyCode key)
-	{
-		if (key == KeyCode.Mouse0)
-			return "left mouse";
-		else if (key == KeyCode.Mouse1)
-			return "right mouse";
-		else if (key == KeyCode.Mouse2)
-			return "middle mouse";
-		else
-			return key.ToString();
-	}
+	//public static string ToString(this KeyCode key)
+	//{
+	//	if (key == KeyCode.Mouse0)
+	//		return "left mouse";
+	//	else if (key == KeyCode.Mouse1)
+	//		return "right mouse";
+	//	else if (key == KeyCode.Mouse2)
+	//		return "middle mouse";
+	//	else
+	//		return key.ToString();
+	//}
 
     public static void ChangeCanvasGroupVisibility(this CanvasGroup canvasGroup, bool visible)
     {
@@ -59,4 +59,21 @@ public static class Extensions
         T component = comp.gameObject.EnsureComponent<T>();
         return component;
     }
+
+	/// <summary>
+	/// Functions identically to TryGetComponent but instead returns an array of all components attached to the object.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="comp"></param>
+	/// <param name="components">True if at least one component was found. False otherwise.</param>
+	/// <returns></returns>
+	public static bool TryGetComponents<T>(this Component comp, out T[] components) where T : Component
+	{
+		components = comp.GetComponents<T>();
+
+		if (components.Length == 0)
+			return false;
+
+		return true;
+	}
 }
