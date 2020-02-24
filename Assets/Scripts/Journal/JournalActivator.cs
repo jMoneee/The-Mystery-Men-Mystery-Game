@@ -16,7 +16,7 @@ public class JournalActivator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		ChangeJournalVisibility(false);
+		JournalCanvas.ChangeCanvasGroupVisibility(false);
 	}
 
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class JournalActivator : MonoBehaviour
             if (journalActive)
             {
                 DetachCamera.Reattach();
-				ChangeJournalVisibility(false);
+                JournalCanvas.ChangeCanvasGroupVisibility(false);
                 journalActive = false;
 
                 Cursor.lockState = CursorLockMode.Locked;
@@ -36,7 +36,7 @@ public class JournalActivator : MonoBehaviour
             else
             {
                 DetachCamera.Detach();
-				ChangeJournalVisibility(true);
+                JournalCanvas.ChangeCanvasGroupVisibility(true);
 				journalActive = true;
 
                 Cursor.lockState = CursorLockMode.None;
@@ -55,11 +55,4 @@ public class JournalActivator : MonoBehaviour
         //    Cursor.visible = false;
         //}
     }
-
-	void ChangeJournalVisibility(bool visible)
-	{
-		JournalCanvas.alpha = visible ? 1 : 0;
-		JournalCanvas.interactable = visible;
-		JournalCanvas.blocksRaycasts = visible;
-	}
 }

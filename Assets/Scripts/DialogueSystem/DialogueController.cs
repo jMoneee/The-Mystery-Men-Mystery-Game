@@ -18,6 +18,7 @@ public class DialogueController : MonoBehaviour
     {
         LineHandlers = new Dictionary<LineType, IHandleLine>();
         LineHandlers.Add(LineType.Normal, new StandardLineHandler());
+        GetComponent<CanvasGroup>().ChangeCanvasGroupVisibility(false);
         //LineHandlers.Add(LineType.Choice, new HandleChoiceLine());
         //LineHandlers.Add(LineType.Input, new HandleInputLine());
     }
@@ -71,7 +72,8 @@ public class DialogueController : MonoBehaviour
 
     public void HandleDialogueText(TextAsset text)
     {
-        //DetachCamera.Detach();
+        DetachCamera.Detach();
+        GetComponent<CanvasGroup>().ChangeCanvasGroupVisibility(true);
         LoadFile(text);
         handlingText = StartCoroutine(_HandleDialogueText(text));
         Next();
@@ -108,6 +110,7 @@ public class DialogueController : MonoBehaviour
         }
 
         DetachCamera.Reattach();
+        GetComponent<CanvasGroup>().ChangeCanvasGroupVisibility(false);
         chapterProgress = 0;
         data = null;
         handlingText = null;

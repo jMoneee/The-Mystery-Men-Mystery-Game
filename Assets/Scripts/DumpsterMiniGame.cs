@@ -25,9 +25,10 @@ public class DumpsterMiniGame : MonoBehaviour
 	{
 		Playable p = GetComponent<Playable>();
 		yield return new WaitUntil(() => !p.interacting);
-	}
+        playCam.gameObject.SetActive(false);
+    }
 
-	private IEnumerator lerpToPlay()
+    private IEnumerator lerpToPlay()
 	{
 		Quaternion fpsRot = fpsPlayer.transform.rotation;
 		Quaternion playRot = playCam.transform.rotation;

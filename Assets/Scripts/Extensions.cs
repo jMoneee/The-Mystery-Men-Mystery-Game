@@ -24,4 +24,39 @@ public static class Extensions
 		else
 			return key.ToString();
 	}
+
+    public static void ChangeCanvasGroupVisibility(this CanvasGroup canvasGroup, bool visible)
+    {
+        canvasGroup.alpha = visible ? 1 : 0;
+        canvasGroup.interactable = visible;
+        canvasGroup.blocksRaycasts = visible;
+    }
+
+    /// <summary>
+    /// This returns the component on the given object, and creates the component if it does not exist
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="gameObject"></param>
+    /// <returns></returns>
+    public static T EnsureComponent<T>(this GameObject gameObject) where T : Component
+    {
+        T component = gameObject.GetComponent<T>();
+        if (component == null)
+        {
+            component = gameObject.AddComponent<T>();
+        }
+        return component;
+    }
+
+    /// <summary>
+    /// This returns the component on the given component, and creates the component if it does not exist
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="comp"></param>
+    /// <returns></returns>
+    public static T EnsureComponent<T>(this Component comp) where T : Component
+    {
+        T component = comp.gameObject.EnsureComponent<T>();
+        return component;
+    }
 }

@@ -159,13 +159,14 @@ GameObject:
   - component: {fileID: 420380142775191383}
   - component: {fileID: 420380142775190696}
   - component: {fileID: 420380142775190697}
+  - component: {fileID: 2809932016761959023}
   m_Layer: 5
   m_Name: DialogueSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &420380142775191383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -222,6 +223,18 @@ MonoBehaviour:
   speed: 1
   useEncapsulation: 1
   isWaitingForUserInput: 0
+--- !u!225 &2809932016761959023
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420380142775191382}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &420380142848662565
 GameObject:
   m_ObjectHideFlags: 0

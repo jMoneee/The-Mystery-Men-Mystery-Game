@@ -24,8 +24,6 @@ public class Dialogueable : Interactable
 
 	public override void InteractBegin()
 	{
-		DetachCamera.Detach();
-		Debug.Log("interact begi");
 		DialogueController.gameObject.SetActive(true);
 		DialogueController.HandleDialogueText(textChapter);
 	}
