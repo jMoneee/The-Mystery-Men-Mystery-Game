@@ -35,7 +35,7 @@ public class DialogueHandler : MonoBehaviour
                         if (StartDialogueText.gameObject.activeSelf == false)
                         {
                             StartDialogueText.gameObject.SetActive(true);
-                            StartDialogueText.text = "Press <color=red>E</color> to <color=yellow>" + dialogueable.interactionText + "</color>";
+                            //StartDialogueText.text = "Press <color=red>E</color> to <color=yellow>" + dialogueable.interactionText + "</color>";
                         }
 
                         if (Input.GetKeyDown(KeyCode.E))

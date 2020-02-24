@@ -1,60 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using System.Linq;
+using System.Threading.Tasks;
 
-[RequireComponent(typeof(Rigidbody))]
-public class Interactable : MonoBehaviour
+[RequireComponent(typeof(InteractableDisplay))]
+public abstract class Interactable : MonoBehaviour
 {
-	[SerializeField] bool _pickUp = false;
-	[SerializeField] float highlightStrength = 2.5f;
-	public bool pickUp { get { return _pickUp; } }
-	private Material material;
-	private Color ogColor;
-	private ParticleSystem interactableSparkle;
+	protected DisplayInstructions instructions;
+	[SerializeField] protected string startVerb = "interact with";
+	[SerializeField] protected string endVerb = "stop interacting with";
+	[SerializeField] protected KeyCode _key;
+	public KeyCode key { get { return _key; } }
+	protected bool _interacting = false;
+	public bool interacting { get { return _interacting; } }
+	public UnityEvent interactAction;
 
-	private void Start()
+	protected virtual void Start()
 	{
-		material = GetComponent<Renderer>().material;
-		ogColor = material.color;
-		interactableSparkle = Instantiate(Resources.Load("Prefabs/Interactable Sparkle") as GameObject, transform.position, Quaternion.identity, transform).GetComponent<ParticleSystem>();
-		//why the fuck does this allow me to assign to .mesh with var but not 
-		ParticleSystem.ShapeModule s = interactableSparkle.shape;
-		//s.shapeType = ParticleSystemShapeType.MeshRenderer;
-		//s.meshRenderer = GetComponent<MeshRenderer>();
-		//interactableSparkle.transform.localScale *= 1.1f;
-		s.shapeType = ParticleSystemShapeType.Mesh;
-		s.mesh = new Mesh();
-		Mesh m = GetComponent<MeshFilter>().sharedMesh;
-		//TODO: make this scale by the same amount in world space
-		s.mesh.vertices = m.vertices.times(1.1f);
-		s.mesh.triangles = m.triangles;
-		s.mesh.uv = m.uv;
-		s.mesh.RecalculateNormals();
+		instructions = FindObjectOfType<DisplayInstructions>();
 	}
 
-	private void OnMouseEnter()
-	{
-		material.color = ogColor * highlightStrength;
-		interactableSparkle.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
-	}
+	public abstract void HoverBegin();
 
-	private void OnMouseExit()
-	{
-		material.color = ogColor;
-		interactableSparkle.Play(false);
-	}
-}
+	public abstract void HoverContinue();
 
-public static class extension
-{
-	public static Vector3[] times(this Vector3[] v, float f)
-	{
-		Vector3[] v2 = new Vector3[v.Length];
-		for (int i = 0; i < v.Length; i++)
-		{
-			v2[i] = v[i] * f;
-		}
+	public abstract void HoverEnd();
 
-		return v2;
-	}
+	public abstract void InteractBegin();
+
+	public abstract void InteractContinue();
+
+	public abstract void InteractEnd();
 }

@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class DisplayInstructions : MonoBehaviour
 {
@@ -10,21 +10,25 @@ public class DisplayInstructions : MonoBehaviour
 	[SerializeField] RectTransform origin;
 	[SerializeField] Font font;
 	[SerializeField] int fontSize = 50;
-	[SerializeField] Color fontColor;
+	[SerializeField] Color fontColor = Color.white;
 	[SerializeField] FontStyle fontStyle = FontStyle.Normal;
 	[SerializeField] HorizontalWrapMode horizontalWrapMode = HorizontalWrapMode.Overflow;
-	[SerializeField] Color emphasisColor;
-	[SerializeField] int outlineWeight;
+	[SerializeField] Color emphasisColor = Color.red;
+	[SerializeField] int outlineWeight = 1;
+	private Dictionary<KeyCode, string> keyNames = new Dictionary<KeyCode, string>();
 
     void Start()
     {
 		prompts = new Dictionary<KeyCode, Text>();
-    }
 
-    void Update()
-    {
-        
-    }
+		foreach (KeyCode k in Enum.GetValues(typeof(KeyCode)))
+			if (!keyNames.ContainsKey(k))
+				keyNames.Add(k, k.ToString());
+		keyNames[KeyCode.Mouse0] = "Left Mouse";
+		keyNames[KeyCode.Mouse1] = "Right Mouse";
+		keyNames[KeyCode.Mouse2] = "Middle Mouse";
+
+	}
 
 	/// <summary>
 	/// Display a message to the player about what to do with an interactable.
@@ -35,10 +39,10 @@ public class DisplayInstructions : MonoBehaviour
 	/// </summary>
 	/// <param name="key">Input key required to interact.</param>
 	/// <param name="text">The display message.</param>
-	public void SetPrompt(KeyCode key, string action, string name)
+	public void SetPrompt(KeyCode key, string action)
 	{
-		string trimmed = action.Trim() + " <color=#" + ColorToHex(emphasisColor) + "><b>" + name.Trim() + "</b></color>.";
-		string display = "Press " + key.ToString() + " to " + trimmed;
+		string trimmed = action.Trim();
+		string display = "Press " + keyNames[key] + " to " + trimmed + ".";
 
 		if (!prompts.ContainsKey(key))
 		{
@@ -61,6 +65,8 @@ public class DisplayInstructions : MonoBehaviour
 		{
 			prompts[key].text = display;
 		}
+
+		origin.sizeDelta = new Vector2(origin.sizeDelta.x, prompts.Count * (fontSize + 10));
 	}
 
 	/// <summary>
@@ -79,20 +85,5 @@ public class DisplayInstructions : MonoBehaviour
 	private void UpdatePositions()
 	{
 
-	}
-
-	// Note that Color32 and Color implictly convert to each other. You may pass a Color object to this method without first casting it.
-	string ColorToHex(Color32 color)
-	{
-		string hex = color.r.ToString("X2") + color.g.ToString("X2") + color.b.ToString("X2");
-		return hex;
-	}
-
-	Color HexToColor(string hex)
-	{
-		byte r = byte.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-		byte g = byte.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-		byte b = byte.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-		return new Color32(r, g, b, 255);
 	}
 }

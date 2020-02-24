@@ -3,7 +3,37 @@ guid: a7c2f2c0ca4748647bdbd7b59c0c4747
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bar
+    second: {fileID: 2100000, guid: f58a3d6ea48590049a49279b9f9bba8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bar_Joint
+    second: {fileID: 2100000, guid: 361de323b1ca071498d74ed2d367eeab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dumpster
+    second: {fileID: 2100000, guid: 46d0f64b87f5840409ee5c33795a638c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dumpster_Legs
+    second: {fileID: 2100000, guid: f2ef8c7de06a5f148804f87eee48a62a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dumpster_Lid
+    second: {fileID: 2100000, guid: c2572ec1122665747803fb1b1563f8ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hinge
+    second: {fileID: 2100000, guid: 2ca4ae9ab47eacc489c17b2ea94dee93, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +61,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
