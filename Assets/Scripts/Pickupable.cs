@@ -14,12 +14,6 @@ public class Pickupable : Interactable
 	[SerializeField] protected float holdDistance = 1.5f;
 	protected bool setColliderToTrigger = false;
 
-	protected override void Start()
-	{
-		//interactor = FindObjectOfType<Interactor>();
-		base.Start();
-	}
-
 	public override void HoverBegin()
 	{
 		instructions.SetPrompt(key, startVerb + " " + TextEffects.EmphasizeWord(name, Color.red));
@@ -38,11 +32,11 @@ public class Pickupable : Interactable
 	{
 		_interacting = true;
 		StartCoroutine(Hold());
-		instructions.SetPrompt(key, endVerb + " " + TextEffects.EmphasizeWord(name, Color.red));
 	}
 
 	public override void InteractContinue()
 	{
+		instructions.SetPrompt(key, endVerb + " " + TextEffects.EmphasizeWord(name, Color.red));
 	}
 
 	public override void InteractEnd()
@@ -96,6 +90,8 @@ public class Pickupable : Interactable
 				Physics.IgnoreCollision(transform.GetComponent<Collider>(), coll, false);
 				coll.isTrigger = false;
 			}
+
+		Destroy(grabPoint.gameObject);
 	}
 
 	protected virtual void SetGrabPointPosition(Transform grabPoint)

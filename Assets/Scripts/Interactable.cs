@@ -17,7 +17,7 @@ public abstract class Interactable : MonoBehaviour
 	public bool interacting { get { return _interacting; } }
 	public UnityEvent interactAction;
 
-	protected virtual void Start()
+	protected virtual void Awake()
 	{
 		instructions = FindObjectOfType<DisplayInstructions>();
 	}
@@ -33,4 +33,19 @@ public abstract class Interactable : MonoBehaviour
 	public abstract void InteractContinue();
 
 	public abstract void InteractEnd();
+
+	private void OnDisable()
+	{
+		if (_interacting)
+			InteractEnd();
+		else
+			HoverEnd();
+
+		GetComponent<InteractableDisplay>().enabled = false;
+	}
+
+	private void OnEnable()
+	{
+		GetComponent<InteractableDisplay>().enabled = true;
+	}
 }

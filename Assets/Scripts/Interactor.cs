@@ -31,8 +31,16 @@ public class Interactor : MonoBehaviour
 
 	private void OnDisable()
 	{
-		//if (cor != null)
-		//	StopCoroutine(cor);
+		if (prevIntable != null)
+			foreach (Interactable item in prevIntable)
+			{
+				if (item.interacting)
+					item.InteractEnd();
+				else
+					item.HoverEnd();
+			}
+
+		prevIntable = null;
 	}
 
 	private List<Interactable> prevIntable = null;
@@ -45,6 +53,8 @@ public class Interactor : MonoBehaviour
 		Interactable[] intable = null;
 		if (rayhit && hit.collider.TryGetComponents(out intable))
 		{
+			intable = intable.Where(x => x.enabled).ToArray();
+
 			foreach (Interactable item in intable)
 			{
 				if (Input.GetKeyDown(item.key))

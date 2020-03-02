@@ -14,7 +14,6 @@ public class Dialogueable : Interactable
 
 	public override void HoverContinue()
 	{
-
 	}
 
 	public override void HoverEnd()
@@ -24,8 +23,11 @@ public class Dialogueable : Interactable
 
 	public override void InteractBegin()
 	{
+		instructions.RemovePrompt(key);
+		_interacting = true;
 		DialogueController.gameObject.SetActive(true);
 		DialogueController.HandleDialogueText(textChapter);
+		interactAction?.Invoke();
 	}
 
 	public override void InteractContinue()

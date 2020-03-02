@@ -9,9 +9,9 @@ public class DumpsterPickupable : Pickupable
 	[SerializeField] List<Collider> validPlacements;
 	private DisplayWarning warning;
 
-	protected override void Start()
+	protected override void Awake()
 	{
-		base.Start();
+		base.Awake();
 		if (!cam)
 			Debug.LogError("dumpster pickup items need their camera assigned");
 		foreach (Collider validPlacement in validPlacements)

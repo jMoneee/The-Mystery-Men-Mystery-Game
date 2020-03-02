@@ -9,6 +9,7 @@ public class InteractableDisplay : MonoBehaviour
 	private Color[] ogColors;
 	private ParticleSystem interactableSparkle;
 	private float highlightStrength = 1.5f;
+	public bool sparkle = true;
 
 	// Start is called before the first frame update
 	void Start()
@@ -20,7 +21,7 @@ public class InteractableDisplay : MonoBehaviour
 			ogColors[i] = materials[i].color;
 		}
 
-		if (GetComponentInChildren<ParticleSystem>())
+		if (GetComponentInChildren<ParticleSystem>() || !sparkle)
 			return;
 
 		interactableSparkle = Instantiate(Resources.Load("Prefabs/Interactable Sparkle") as GameObject, transform.position, Quaternion.identity, transform).GetComponent<ParticleSystem>();

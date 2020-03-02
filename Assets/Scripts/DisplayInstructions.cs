@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DisplayInstructions : MonoBehaviour
 {
-	private Dictionary<KeyCode, Text> prompts;
+	private Dictionary<KeyCode, Text> prompts = new Dictionary<KeyCode, Text>();
 	[SerializeField] RectTransform origin;
 	[SerializeField] Font font;
 	[SerializeField] int fontSize = 50;
@@ -19,8 +19,6 @@ public class DisplayInstructions : MonoBehaviour
 
     void Start()
     {
-		prompts = new Dictionary<KeyCode, Text>();
-
 		foreach (KeyCode k in Enum.GetValues(typeof(KeyCode)))
 			if (!keyNames.ContainsKey(k))
 				keyNames.Add(k, k.ToString());

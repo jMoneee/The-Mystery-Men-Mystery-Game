@@ -3,11 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System.Reflection;
 
 public class DumpsterMiniGame : MonoBehaviour
 {
 	public Camera playCam;
 	public GameObject fpsPlayer;
+	private bool quit = false;
+	public bool _win;
+
+	public bool win
+	{
+		get
+		{
+			return _win;
+		}
+		set
+		{
+			_win = value;
+			if (_win)
+				Quit();
+		}
+	}
+
+	private void Start()
+	{
+		win = false;
+		SetInteractables(typeof(DumpsterPickupable), false);
+		SetInteractables(typeof(Dialogueable), false);
+	}
 
 	public void Play()
 	{
@@ -17,8 +41,11 @@ public class DumpsterMiniGame : MonoBehaviour
 		playCam.gameObject.SetActive(true);
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
+		SetInteractables(typeof(DumpsterPickupable), true);
+		SetInteractables(typeof(Dialogueable), true);
 		StartCoroutine(lerpToPlay());
 		StartCoroutine(endGame());
+
 
 		foreach (var item in FindObjectsOfType<DumpsterPickupable>())
 		{
@@ -26,14 +53,31 @@ public class DumpsterMiniGame : MonoBehaviour
 		}
 	}
 
+	public void Quit()
+	{
+		quit = true;
+	}
+
 	private IEnumerator endGame()
 	{
-		Playable p = GetComponent<Playable>();
+		Playable p = GetComponentInChildren<Playable>();
 		yield return new WaitForSeconds(1f);
-		yield return new WaitUntil(() => Input.GetKeyDown(p.key));
+		yield return new WaitUntil(() => quit || Input.GetKeyDown(p.key));
 		fpsPlayer.SetActive(true);
 		playCam.gameObject.SetActive(false);
-		GetComponent<Playable>().InteractEnd();
+		GetComponentInChildren<Playable>().InteractEnd();
+		SetInteractables(typeof(DumpsterPickupable), false);
+		SetInteractables(typeof(Dialogueable), false);
+		if (win)
+			SetInteractables(typeof(Playable), false);
+	}
+
+	private void SetInteractables(Type intType, bool toState)
+	{
+		foreach (MonoBehaviour item in GetComponentsInChildren(intType, true))
+		{
+			item.enabled = toState;
+		}
 	}
 
 	private IEnumerator lerpToPlay()

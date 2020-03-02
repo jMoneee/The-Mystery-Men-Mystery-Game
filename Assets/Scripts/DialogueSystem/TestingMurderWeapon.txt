@@ -1,0 +1,3 @@
+Mr. Gruff "I guess I should look into this"
+"It seems like a murder weapon."
+"<i>Added a murder weapon to the journal</i>"AddToJournal(Found a murder weapon)
