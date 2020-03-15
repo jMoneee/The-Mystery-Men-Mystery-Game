@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Dialogueable : Interactable
 {
-	public DialogueController DialogueController;
     public TextAsset textChapter;
 
 	public override void HoverBegin()
@@ -23,10 +22,18 @@ public class Dialogueable : Interactable
 
 	public override void InteractBegin()
 	{
-		instructions.RemovePrompt(key);
-		_interacting = true;
-		DialogueController.gameObject.SetActive(true);
-		DialogueController.HandleDialogueText(textChapter);
+
+        _interacting = true;
+
+        instructions.RemovePrompt(key);
+
+        DialogueController.instance.currentDialogueable = this;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        DialogueController.instance.gameObject.SetActive(true);
+		DialogueController.instance.HandleDialogueText(textChapter);
 		interactAction?.Invoke();
 	}
 
@@ -37,6 +44,7 @@ public class Dialogueable : Interactable
 
 	public override void InteractEnd()
 	{
-
-	}
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }

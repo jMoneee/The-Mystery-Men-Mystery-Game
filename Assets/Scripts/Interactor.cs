@@ -12,7 +12,7 @@ using System.Linq;
 public class Interactor : MonoBehaviour
 {
 	[Tooltip("The max raycast distance to pick up an item.")]
-	[SerializeField] protected float interactDistanceLimit = 2.5f;
+	[SerializeField] protected float maxInteractDistanceLimit = 1000f;
 	//[SerializeField] protected Transform grabPoint;
 	//public Interactable grabbedItem;
 	//private GameObject underWeight;
@@ -49,12 +49,11 @@ public class Interactor : MonoBehaviour
         Ray ray = head.ScreenPointToRay(Input.mousePosition);
 
 		//ignore layer 2, which is the Ignore Raycast layer.
-		bool rayhit = Physics.Raycast(ray, out hit, interactDistanceLimit, ~(1 << 2), QueryTriggerInteraction.Collide);
+		bool rayhit = Physics.Raycast(ray, out hit, maxInteractDistanceLimit, ~(1 << 2), QueryTriggerInteraction.Collide);
 		Interactable[] intable = null;
 		if (rayhit && hit.collider.TryGetComponents(out intable))
 		{
-			intable = intable.Where(x => x.enabled).ToArray();
-
+      intable = intable.Where(i => hit.distance < i.maxInteractDistance && i.enabled).ToArray();
 			foreach (Interactable item in intable)
 			{
 				if (Input.GetKeyDown(item.key))
@@ -80,7 +79,7 @@ public class Interactor : MonoBehaviour
 						item.HoverContinue();
 				}
 			}
-			
+
 
 		}
 		else if (prevIntable != null)

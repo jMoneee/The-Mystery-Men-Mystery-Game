@@ -14,6 +14,9 @@ public class InteractableDisplay : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+        if (GetComponent<Renderer>() == null)
+            return;
+
 		materials = GetComponent<Renderer>().materials;
 		ogColors = new Color[materials.Length];
 		for (int i = 0; i < materials.Length; i++)
