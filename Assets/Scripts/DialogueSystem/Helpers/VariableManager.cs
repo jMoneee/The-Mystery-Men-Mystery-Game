@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class VariableManager
 {
-    public static Dictionary<string, string> variables = new Dictionary<string, string>();
+    public static Dictionary<string, string> variables { get { return DialogueController.instance.savedVariables; } }
 
     public static void Inject(ref string s)
     {

@@ -7,14 +7,15 @@ using System.Linq;
 
 public class LookMinigameHandler : MonoBehaviour
 {
-    public GameObject startGameText;
+    //public GameObject startGameText;
     public GameObject selectThisItem;
     public GameObject PathParent;
     private List<Transform> pathObjects;
-    private bool closeEnoughToStart = false;
     private bool started;
     private bool movingLeft = false;
     private bool movingRight = false;
+
+    public Camera cam;
 
     private List<LookObject> lookObjects;
     private List<Transform> lookObjectCameraPositions;
@@ -22,6 +23,8 @@ public class LookMinigameHandler : MonoBehaviour
     public int selectedObject = -1;
     public int lookedAtObject = -1;
     public int pathIndex;
+
+    public bool lookAtTarget = true;
 
     // Start is called before the first frame update
     void Start()
@@ -39,121 +42,173 @@ public class LookMinigameHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (JournalActivator.IsPaused == false)
+        selectThisItem.SetActive(started);
+
+        if (started)
         {
-            startGameText.SetActive(closeEnoughToStart && !started);
+            //if (Input.GetKeyDown(KeyCode.Return))
+            //{
+            //    SelectCurrentObject();
+            //}
 
-            if (closeEnoughToStart && Input.GetKeyDown(KeyCode.E))
+            if (movingLeft || movingRight)
             {
-                started = true;
+                float stepAmt = 5 * Time.deltaTime;
+                if (Vector3.Distance(cam.transform.position, pathObjects[pathIndex].transform.position) < stepAmt)
+                {
+                    if (lookObjectCameraPositions.Contains(pathObjects[pathIndex]))
+                    {
+                        cam.transform.position = pathObjects[pathIndex].transform.position;
+                        movingLeft = false;
+                        movingRight = false;
+                    }
+                    else
+                    {
+                        if (movingLeft)
+                        {
+                            pathIndex = pathIndex > 0 ? pathIndex - 1 : pathObjects.Count - 1;
+                        }
+                        else if (movingRight)
+                        {
+                            pathIndex = pathIndex + 1 < pathObjects.Count ? pathIndex + 1 : 0;
+                        }
+                    }
+                }
 
-                DetachCamera.Detach();
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                LookObject closestObject = lookObjects.OrderBy(o => Vector3.Distance(o.transform.position, Camera.main.transform.position)).First();
-                lookedAtObject = lookObjects.IndexOf(closestObject);
-                pathIndex = pathObjects.IndexOf(closestObject.CameraPosition.transform);
+                Vector3 newPos = Vector3.MoveTowards(cam.transform.position, pathObjects[pathIndex].transform.position, stepAmt);
+                cam.transform.position = newPos;
+                //cam.transform.LookAt(lookObjects[lookedAtObject].transform);
+
+                //Vector3 perp = Vector3.Cross(travelDir, Vector3.up).normalized;
+                //cam.transform.LookAt(cam.transform.position + perp, Vector3.up);
+
             }
 
-            selectThisItem.SetActive(started);
-
-            if (started)
+            Vector3 lookDir = (lookObjects[lookedAtObject].transform.position - cam.transform.position);
+            Quaternion toRotation = Quaternion.LookRotation(lookDir);
+            if (lookAtTarget)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
+                cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, toRotation, 5 * Time.deltaTime);
+            }
+
+            //cam.transform.LookAt(lookObjects[lookedAtObject].transform.position);
+            if (!movingLeft && !movingRight)
+            {
+                bool rightPressed = false;
+                bool leftPressed = false;
+                bool upPressed = false;
+                bool downPressed = false;
+
+                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
                 {
-                    SelectCurrentObject();
+                    rightPressed = true;
+                }
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+                {
+                    leftPressed = true;
+                }
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    upPressed = true;
+                }
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+                {
+                    downPressed = true;
                 }
 
-                if (movingLeft || movingRight)
+                int tempIndexRight = pathIndex + 1 < pathObjects.Count ? pathIndex + 1 : 0;
+                int tempIndexLeft = pathIndex > 0 ? pathIndex - 1 : pathObjects.Count - 1;
+
+                if (rightPressed)
                 {
-                    float stepAmt = 5 * Time.deltaTime;
-                    if (Vector3.Distance(Camera.main.transform.position, pathObjects[pathIndex].transform.position) < stepAmt)
+                    if (pathObjects[tempIndexRight].localPosition.x - pathObjects[pathIndex].localPosition.x != 0 &&
+                        Mathf.Sign(pathObjects[tempIndexRight].localPosition.x - pathObjects[tempIndexLeft].localPosition.x) == Mathf.Sign(cam.transform.right.x))
                     {
-                        if (lookObjectCameraPositions.Contains(pathObjects[pathIndex]))
-                        {
-                            Camera.main.transform.position = pathObjects[pathIndex].transform.position;
-                            movingLeft = false;
-                            movingRight = false;
-                        }
-                        else
-                        {
-                            if (movingLeft)
-                            {
-                                pathIndex = pathIndex > 0 ? pathIndex - 1 : pathObjects.Count - 1;
-                            }
-                            else if (movingRight)
-                            {
-                                pathIndex = pathIndex + 1 < pathObjects.Count ? pathIndex + 1 : 0;
-                            }
-                        }
+                        pathIndex = tempIndexRight;
+                        lookedAtObject = lookedAtObject + 1 < lookObjects.Count ? lookedAtObject + 1 : 0;
+
+                        movingRight = true;
                     }
+                    else if (pathObjects[tempIndexLeft].localPosition.x - pathObjects[pathIndex].localPosition.x != 0)
+                    {
+                        pathIndex = tempIndexLeft;
+                        lookedAtObject = lookedAtObject > 0 ? lookedAtObject - 1 : lookObjects.Count - 1;
 
-                    Vector3 newPos = Vector3.MoveTowards(Camera.main.transform.position, pathObjects[pathIndex].transform.position, stepAmt);
-                    Camera.main.transform.position = newPos;
-                    //Camera.main.transform.LookAt(lookObjects[lookedAtObject].transform);
-
-                    //Vector3 perp = Vector3.Cross(travelDir, Vector3.up).normalized;
-                    //Camera.main.transform.LookAt(Camera.main.transform.position + perp, Vector3.up);
-
+                        movingLeft = true;
+                    }
                 }
-
-                Vector3 lookDir = (lookObjects[lookedAtObject].transform.position - Camera.main.transform.position);
-                Quaternion toRotation = Quaternion.LookRotation(lookDir);
-                Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, toRotation, 5 * Time.deltaTime);
-
-                //Camera.main.transform.LookAt(lookObjects[lookedAtObject].transform.position);
-                if (!movingLeft && !movingRight)
+                if (leftPressed)
                 {
-                    bool rightPressed = false;
-                    bool leftPressed = false;
-
-                    if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+                    if (pathObjects[tempIndexRight].localPosition.x - pathObjects[pathIndex].localPosition.x != 0 &&
+                        Mathf.Sign(pathObjects[tempIndexRight].localPosition.x - pathObjects[tempIndexLeft].localPosition.x) != Mathf.Sign(cam.transform.right.x))
                     {
-                        rightPressed = true;
+                        pathIndex = tempIndexRight;
+                        lookedAtObject = lookedAtObject + 1 < lookObjects.Count ? lookedAtObject + 1 : 0;
+
+                        movingRight = true;
                     }
-                    if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+                    else if (pathObjects[tempIndexLeft].localPosition.x - pathObjects[pathIndex].localPosition.x != 0)
                     {
-                        leftPressed = true;
+                        pathIndex = tempIndexLeft;
+                        lookedAtObject = lookedAtObject > 0 ? lookedAtObject - 1 : lookObjects.Count - 1;
+
+                        movingLeft = true;
                     }
-
-                    int tempIndexRight = pathIndex + 1 < pathObjects.Count ? pathIndex + 1 : 0;
-                    int tempIndexLeft = pathIndex > 0 ? pathIndex - 1 : pathObjects.Count - 1;
-                    if (rightPressed)
+                }
+                if (upPressed || downPressed)
+                    Debug.Log(pathObjects[tempIndexRight].localPosition.z - pathObjects[tempIndexLeft].localPosition.z + " " + pathObjects[tempIndexRight].localPosition + " " + pathObjects[tempIndexLeft].localPosition);
+                if (upPressed)
+                {
+                    if (pathObjects[tempIndexRight].localPosition.z - pathObjects[pathIndex].localPosition.z != 0 &&
+                        Mathf.Sign(pathObjects[tempIndexRight].localPosition.z - pathObjects[tempIndexLeft].localPosition.z) == Mathf.Sign(cam.transform.forward.z))
                     {
-                        if (Mathf.Sign(pathObjects[tempIndexRight].localPosition.x - pathObjects[tempIndexLeft].localPosition.x) == Mathf.Sign(Camera.main.transform.right.x))
-                        {
-                            pathIndex = tempIndexRight;
-                            lookedAtObject = lookedAtObject + 1 < lookObjects.Count ? lookedAtObject + 1 : 0;
+                        pathIndex = tempIndexRight;
+                        lookedAtObject = lookedAtObject + 1 < lookObjects.Count ? lookedAtObject + 1 : 0;
 
-                            movingRight = true;
-                        }
-                        else
-                        {
-                            pathIndex = tempIndexLeft;
-                            lookedAtObject = lookedAtObject > 0 ? lookedAtObject - 1 : lookObjects.Count - 1;
-
-                            movingLeft = true;
-                        }
+                        movingRight = true;
                     }
-                    else if (leftPressed)
+                    else if (pathObjects[tempIndexLeft].localPosition.z - pathObjects[pathIndex].localPosition.z != 0)
                     {
-                        if (Mathf.Sign(pathObjects[tempIndexRight].localPosition.x - pathObjects[tempIndexLeft].localPosition.x) != Mathf.Sign(Camera.main.transform.right.x))
-                        {
-                            pathIndex = tempIndexRight;
-                            lookedAtObject = lookedAtObject + 1 < lookObjects.Count ? lookedAtObject + 1 : 0;
+                        pathIndex = tempIndexLeft;
+                        lookedAtObject = lookedAtObject > 0 ? lookedAtObject - 1 : lookObjects.Count - 1;
 
-                            movingRight = true;
-                        }
-                        else
-                        {
-                            pathIndex = tempIndexLeft;
-                            lookedAtObject = lookedAtObject > 0 ? lookedAtObject - 1 : lookObjects.Count - 1;
+                        movingLeft = true;
+                    }
+                }
+                if (downPressed)
+                {
+                    if (pathObjects[tempIndexRight].localPosition.z - pathObjects[pathIndex].localPosition.z != 0 &&
+                        Mathf.Sign(pathObjects[tempIndexRight].localPosition.z - pathObjects[tempIndexLeft].localPosition.z) != Mathf.Sign(cam.transform.forward.z))
+                    {
+                        pathIndex = tempIndexRight;
+                        lookedAtObject = lookedAtObject + 1 < lookObjects.Count ? lookedAtObject + 1 : 0;
 
-                            movingLeft = true;
-                        }
+                        movingRight = true;
+                    }
+                    else if (pathObjects[tempIndexLeft].localPosition.z - pathObjects[pathIndex].localPosition.z != 0)
+                    {
+                        pathIndex = tempIndexLeft;
+                        lookedAtObject = lookedAtObject > 0 ? lookedAtObject - 1 : lookObjects.Count - 1;
+
+                        movingLeft = true;
                     }
                 }
             }
+        }
+    }
+
+    public void StartMatchingGame()
+    {
+        started = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (selectedObject == -1)
+        {
+            LookObject closestObject = lookObjects.OrderBy(o => Vector3.Distance(o.transform.position, cam.transform.position)).First();
+            lookedAtObject = lookObjects.IndexOf(closestObject);
+            pathIndex = pathObjects.IndexOf(closestObject.CameraPosition.transform);
         }
     }
     
@@ -161,17 +216,8 @@ public class LookMinigameHandler : MonoBehaviour
     {
         selectedObject = lookedAtObject;
         selectThisItem.SetActive(false);
-        DetachCamera.Reattach();
-        Camera.main.transform.localPosition = Vector3.up * 0.6f;
         started = false;
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        closeEnoughToStart = true;
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        closeEnoughToStart = false;
+        GetComponent<Playable>()._interacting = false;
     }
 }

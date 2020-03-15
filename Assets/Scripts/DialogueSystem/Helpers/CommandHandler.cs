@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
@@ -23,15 +24,33 @@ public static class CommandHandler
             case "AddToJournal":
                 Command_AddJournal(parameters);
                 break;
+            case "SetVariable":
+                Command_SetVariable(parameters);
+                break;
             default:
                 Debug.LogWarning("COMMAND " + actionName + " NOT FOUND. YOU ARE USING A COMMAND THAT DOES NOT EXIST (YET) OR HAVE A SPELLING ERROR");
                 break;
         }
     }
 
+    private static void Command_SetVariable(string[] parameters)
+    {
+        string var = parameters[0].Trim();
+        string text = parameters[1].Trim();
+        if (DialogueController.instance.savedVariables.ContainsKey(var) == false)
+        {
+            DialogueController.instance.savedVariables.Add(var, text);
+        }
+        else
+        {
+            DialogueController.instance.savedVariables[var] = text;
+        }
+    }
+
     private static void Command_AddJournal(string[] parameters)
     {
         string text = parameters[0].Trim();
+        VariableManager.Inject(ref text);
         JournalManager2.AddTextToJournal(text);
     }
 

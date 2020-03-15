@@ -12,8 +12,9 @@ public abstract class Interactable : MonoBehaviour
 	[SerializeField] protected string startVerb = "interact with";
 	[SerializeField] protected string endVerb = "stop interacting with";
 	[SerializeField] protected KeyCode _key;
-	public KeyCode key { get { return _key; } }
-	protected bool _interacting = false;
+    public float maxInteractDistance = 2.5f;
+    public KeyCode key { get { return _key; } }
+	[HideInInspector]public bool _interacting = false;
 	public bool interacting { get { return _interacting; } }
 	public UnityEvent interactAction;
 

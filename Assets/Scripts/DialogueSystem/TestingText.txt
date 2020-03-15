@@ -1,4 +1,26 @@
 Mr. Gruff "I guess I should look into this"
 "I don't want to because I am a gruff man who has have given up on the system"
-"But.... this is a weird box."
-"<i>This experience has been added to the journal</i>"AddToJournal(Found a weird purple box)
+"But.... this is a weird box. It's calling out to me."
+choice "Do you want to take the box?"
+{
+  "Yes"
+  [
+    "Sounds good man" SetVariable(JournalTest, I picked up the AMAZING box)
+  ]
+  "No"
+  [
+    "But I really want too!" SetVariable(JournalTest, I sadly left the box)
+  ]
+}
+switch |JournalTest|
+{
+  == I picked up the AMAZING box
+  [
+    "You picked up the box"
+  ]
+  else
+  [
+    "You didn't pick up the box"
+  ]
+}
+"<i>This experience has been added to the journal</i>" AddToJournal(|JournalTest|)

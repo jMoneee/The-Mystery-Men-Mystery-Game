@@ -11,6 +11,8 @@ public class DialogueController : MonoBehaviour
         instance = this;
     }
 
+    public Dialogueable currentDialogueable;
+
     //This is used to keep all of are IHandleLine classes
     private Dictionary<LineType, IHandleLine> LineHandlers;
     // Start is called before the first frame update
@@ -18,9 +20,10 @@ public class DialogueController : MonoBehaviour
     {
         LineHandlers = new Dictionary<LineType, IHandleLine>();
         LineHandlers.Add(LineType.Normal, new StandardLineHandler());
-        GetComponent<CanvasGroup>().ChangeCanvasGroupVisibility(false);
-        //LineHandlers.Add(LineType.Choice, new HandleChoiceLine());
+        LineHandlers.Add(LineType.Choice, new ChoiceLineHandler());
+        LineHandlers.Add(LineType.Switch, new SwitchLineHandler());
         //LineHandlers.Add(LineType.Input, new HandleInputLine());
+        GetComponent<CanvasGroup>().ChangeCanvasGroupVisibility(false);
     }
 
     //Variables For Handling The Reading Of Different Lines
@@ -55,10 +58,12 @@ public class DialogueController : MonoBehaviour
         }
     }
 
+    public Dictionary<string, string> savedVariables = new Dictionary<string, string>();
+
     private Coroutine handlingText;
     public bool HandlingText { get { return handlingText != null; } }
 
-    private List<string> data;
+    public List<string> data;
 
     public void LoadFile(string textAsset)
     {
@@ -92,7 +97,7 @@ public class DialogueController : MonoBehaviour
             {
                 string line = data[chapterProgress];
                 LineType lineType = GetLineType(line);
-
+                Debug.Log(lineType.ToString());
                 HandlingLineCoroutine = StartCoroutine(LineHandlers[lineType].HandleLine(line));
                 while (isHandlingLine)
                 {
@@ -114,6 +119,9 @@ public class DialogueController : MonoBehaviour
         chapterProgress = 0;
         data = null;
         handlingText = null;
+        if (currentDialogueable != null)
+            currentDialogueable._interacting = false;
+        currentDialogueable = null;
     }
 
     public LineType GetLineType(string line)
@@ -128,6 +136,11 @@ public class DialogueController : MonoBehaviour
             return LineType.Input;
         }
 
+        if (line.ToLower().StartsWith("switch"))
+        {
+            return LineType.Switch;
+        }
+
         return LineType.Normal;
     }
 }
@@ -135,6 +148,7 @@ public enum LineType
 {
     Normal,
     Choice,
-    Input
+    Input,
+    Switch
 }
 
