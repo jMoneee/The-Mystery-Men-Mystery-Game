@@ -3,7 +3,22 @@ guid: 73c9abcd23cff374ca825c250d7d4f18
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book_Cover
+    second: {fileID: 2100000, guid: 0c9017b02ef191c42bd540b7345f6c1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book_Pages
+    second: {fileID: 2100000, guid: fc079f086bc7c504495849bbcedc758e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Book_Pages_Inline
+    second: {fileID: 2100000, guid: 79e1cd03a6314a14c8145487af8fba1f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +46,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

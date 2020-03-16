@@ -89,7 +89,7 @@ public class DialogueController : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
 
-        while (chapterProgress < data.Count)
+        while (data != null && chapterProgress < data.Count)
         {
             //Debug.Log("waiting for next in chapter file");
 
@@ -97,7 +97,7 @@ public class DialogueController : MonoBehaviour
             {
                 string line = data[chapterProgress];
                 LineType lineType = GetLineType(line);
-                Debug.Log(lineType.ToString());
+                //Debug.Log(lineType.ToString());
                 HandlingLineCoroutine = StartCoroutine(LineHandlers[lineType].HandleLine(line));
                 while (isHandlingLine)
                 {

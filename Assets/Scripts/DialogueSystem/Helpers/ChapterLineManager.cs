@@ -126,7 +126,7 @@ public class ChaperLineManager : MonoBehaviour
                     VariableManager.Inject(ref targDialogue);
 
 
-                    Debug.Log("SAY THIS-" + targDialogue);
+                    //Debug.Log("SAY THIS-" + targDialogue);
                     DialogueSystem.instance.Say(targDialogue, line.speaker, i > 0 ? true : pretext != "");
                     
 

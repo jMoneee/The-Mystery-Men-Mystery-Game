@@ -15,10 +15,11 @@ public class PictureMinigame : MonoBehaviour
     public GameObject Step1Objects;
     public TextMeshProUGUI Step1PicturesTakenText;
     public TextMeshProUGUI Step1EvidenceMarkedText;
-    private int Step1PicturesTaken { get { return Step1Objects.GetComponentsInChildren<Playable_StartOnly>(true).Where(p => p.interacting).Count(); } }
-    private int Step1PicturesTotal { get { return Step1Objects.GetComponentsInChildren<Playable_StartOnly>(true).Length; } }
-    private int Step1EvidenceMarked { get { return EvidenceParent.GetComponentsInChildren<Playable_StartOnly>(true).Where(p => p.interacting).Count(); } }
-    private int Step1EvidenceTotal { get { return EvidenceParent.GetComponentsInChildren<Playable_StartOnly>(true).Length; } }
+    private int Step1PicturesTaken { get { return Step1Objects.GetComponentsInChildren<PlayableTarget>(true).Where(p => p.interacting).Count(); } }
+    private int Step1PicturesTotal { get { return Step1Objects.GetComponentsInChildren<PlayableTarget>(true).Length; } }
+    private int Step1EvidenceMarked { get { return EvidenceParent.GetComponentsInChildren<Taggable>(true).Where(p => p.interacting).Count(); } }
+    private int Step1EvidenceTotal { get { return EvidenceParent.GetComponentsInChildren<Taggable>(true).Length; } }
+	public bool win { get { return step == 2; } }
 
     public void StartStep1 ()
     {

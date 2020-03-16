@@ -3,7 +3,17 @@ guid: 7a36d7763a635b44bab0ceb7ef827f6e
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Can_Cover
+    second: {fileID: 2100000, guid: 185d94ea0d1e6164188b752bcd1c7e9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Can_Metal
+    second: {fileID: 2100000, guid: 44fddbdf5c2b86843adc2a6121769598, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +41,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

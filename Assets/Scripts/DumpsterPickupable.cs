@@ -44,12 +44,10 @@ public class DumpsterPickupable : Pickupable
 		}
 		if (valid)
 		{
-			Debug.Log("detected valid placement for " + name);
 			base.InteractEnd();
 		}
 		else
 		{
-			Debug.Log("detected not valid placement for " + name);
 			warning.Warning("Can not place " + name + " there.");
 		}
 	}

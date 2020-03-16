@@ -62,7 +62,7 @@ public class DumpsterMiniGame : MonoBehaviour
 	{
 		Playable p = GetComponentInChildren<Playable>();
 		yield return new WaitForSeconds(1f);
-		yield return new WaitUntil(() => quit || Input.GetKeyDown(p.key));
+		yield return new WaitUntil(() => quit);
 		fpsPlayer.SetActive(true);
 		playCam.gameObject.SetActive(false);
 		GetComponentInChildren<Playable>().InteractEnd();

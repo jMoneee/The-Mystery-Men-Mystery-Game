@@ -64,7 +64,7 @@ public class JournalManager2 : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         instance.Content.GetComponent<RectTransform>().sizeDelta = new Vector2(instance.Content.GetComponent<RectTransform>().sizeDelta.x, Mathf.Max(instance.textHolder.GetComponent<RectTransform>().sizeDelta.y, instance.beginningSizeDeltaY));
-        Debug.Log("SIZE DELTA CONTENT: " + Content.GetComponent<RectTransform>().sizeDelta + " SIZE DELTA TEXTHOLDER: " + textHolder.GetComponent<RectTransform>().sizeDelta);
+        //Debug.Log("SIZE DELTA CONTENT: " + Content.GetComponent<RectTransform>().sizeDelta + " SIZE DELTA TEXTHOLDER: " + textHolder.GetComponent<RectTransform>().sizeDelta);
 
         yield return new WaitForEndOfFrame();
 

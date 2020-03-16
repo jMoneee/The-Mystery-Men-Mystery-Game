@@ -53,7 +53,7 @@ public class Interactor : MonoBehaviour
 		Interactable[] intable = null;
 		if (rayhit && hit.collider.TryGetComponents(out intable))
 		{
-      intable = intable.Where(i => hit.distance < i.maxInteractDistance && i.enabled).ToArray();
+      intable = intable.Where(i => hit.distance < i.maxInteractDistance && i.enabled).Where(x => x.enabled).ToArray();
 			foreach (Interactable item in intable)
 			{
 				if (Input.GetKeyDown(item.key))

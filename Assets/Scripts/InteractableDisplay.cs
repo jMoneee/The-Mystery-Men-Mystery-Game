@@ -10,6 +10,7 @@ public class InteractableDisplay : MonoBehaviour
 	private ParticleSystem interactableSparkle;
 	private float highlightStrength = 1.5f;
 	public bool sparkle = true;
+	private bool dostuff = true;
 
 	// Start is called before the first frame update
 	void Start()
@@ -43,17 +44,27 @@ public class InteractableDisplay : MonoBehaviour
 		s.mesh.RecalculateNormals();
 	}
 
+	private void Update()
+	{
+		dostuff = GetComponents<Interactable>().Where(x => x.enabled).Count() != 0;
+		if (!dostuff)
+			interactableSparkle?.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+	}
+
 	/// <summary>
 	/// Activates on cursor hover regardless of distance. Called by Unity Events.
 	/// </summary>
 	private void OnMouseEnter()
 	{
-		for (int i = 0; i < materials.Length; i++)
+		if (dostuff)
 		{
-			materials[i].color = ogColors[i] * highlightStrength;
-		}
+			for (int i = 0; i < materials.Length; i++)
+			{
+				materials[i].color = ogColors[i] * highlightStrength;
+			}
 
-		interactableSparkle?.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+			interactableSparkle?.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+		}
 	}
 
 	/// <summary>
@@ -61,10 +72,13 @@ public class InteractableDisplay : MonoBehaviour
 	/// </summary>
 	private void OnMouseExit()
 	{
-		for (int i = 0; i < materials.Length; i++)
+		if (dostuff)
 		{
-			materials[i].color = ogColors[i];
+			for (int i = 0; i < materials.Length; i++)
+			{
+				materials[i].color = ogColors[i];
+			}
+			interactableSparkle?.Play(false);
 		}
-		interactableSparkle?.Play(false);
 	}
 }

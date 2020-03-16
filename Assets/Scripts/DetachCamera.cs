@@ -9,17 +9,12 @@ public class DetachCamera : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
+		firstPersonController = GetComponent<RigidbodyFirstPersonController>();
+	}
 
-    private RigidbodyFirstPersonController firstPersonController;
+	private RigidbodyFirstPersonController firstPersonController;
 
     private int cachedDetachments = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        firstPersonController = GetComponent<RigidbodyFirstPersonController>();
-    }
 
     public static void Detach()
     {

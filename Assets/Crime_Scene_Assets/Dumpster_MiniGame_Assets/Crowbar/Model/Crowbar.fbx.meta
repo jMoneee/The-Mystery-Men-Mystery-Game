@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 97df2f414970cfc429908a973c0487d9
+guid: 7608cc520fb7f27408c610d33b9dc4c1
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crowbar
+    second: {fileID: 2100000, guid: 01d44fc3df102e145b885ab1a2f471f4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -31,7 +36,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

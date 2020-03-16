@@ -76,7 +76,7 @@ public class StandardLineHandler : IHandleLine
 
         dialogueController.chapterProgress++;
 
-        Debug.Log("INCREMENT CHAPTER PROGRESS AT: " + 430);
+        //Debug.Log("INCREMENT CHAPTER PROGRESS AT: " + 430);
 
         dialogueController.StopHandlingLine();
     }
