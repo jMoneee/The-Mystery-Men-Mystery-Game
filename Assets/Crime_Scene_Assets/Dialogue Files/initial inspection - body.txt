@@ -1,0 +1,3 @@
+Mr. Gruff "Seems pretty clear this is the victim.  I can take a closer look later, but for now there's a few things worth noting."
+"Victim is male, likely in his late 20s to early 30s.  I can already see a couple wounds, one stab wound in the left arm and the blood on his shirt looks like a chest injury."
+"<i>Initial victim details added to the journal</i>"AddToJournal(Initial victim inspection details: Male, late 20s to early 30s.  Two initial injuries spotted: stab wound to left arm and some sort of chest injury.)

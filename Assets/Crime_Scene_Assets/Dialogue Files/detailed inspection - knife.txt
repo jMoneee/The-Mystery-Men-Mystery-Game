@@ -1,0 +1,8 @@
+Mr. Gruff "This knife..."
+"The top 3/4 of the blade are covered in dried blood,"
+"and the blade width seems to match well with the victim's stab wound..."
+"But if that's the case, how did it end up over here, so far away from the victim?"
+"Was the knife brought to the scene by the victim, and it was taken and turned by him?"
+"Did someone throw the knife after it was used?"
+"Speculating won't help.  I'll have to get answers at the lab."
+"<i>Knife inspection added to the journal.</i>"AddToJournal(Knife found at the crime scene on the opposite side of the alleyway as the victim.  Knife's blade is covered in dry blood, and the size of the blade seems to match the victim's stab wound.)

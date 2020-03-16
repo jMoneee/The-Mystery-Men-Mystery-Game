@@ -1,0 +1,8 @@
+Mr. Gruff "Well, I think that's everything I can find on the scene."
+"I've got good documentation and notes of everything, all the evidence is collected, and the body is being sent to my lab."
+"Hey, officer!"
+Police Officer "Yes, Mr. Gruff?"
+Mr. Gruff "Get the bins full of dumpster trash back to the lab, put them through inspection and have one of the interns go through them to make sure nothing was missed."
+"I've got all the evidence I need here, I'll start getting everything through evidence submission."
+"Scene is ready to be released and cleaned up when you're good."
+Police Officer "Alright, Gruff.  Sounds tood to me."

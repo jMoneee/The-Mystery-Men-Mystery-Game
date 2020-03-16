@@ -1,0 +1,9 @@
+Mr. Gruff "This blood trail..."
+"With it being so far away from the victim, and based on it's direction..."
+"It seems likely the victim wasn't the only one wounded during the murder."
+"The victim might have fought back when they were attacked, and injured their killer."
+"If that's the case, based on the position of the blood and the body,"
+"the victim would have wounded their attacker from the other side of the alleyway."
+"But the victim didn't have a gun or other type of long range weapon on them, so how did this injury occur?"
+"Taking a blood sample to analyze back at the lab should tell this trail's story."
+"<i>Blood trail inspection added to the journal.</i>"AddToJournal(A trail of blood lies on the opposite side of the alleyway as the victim's body, running from the center to the southern entrance.  Based on proximity, this blood was likely not the victim's, meaning someone else must have been injured during the crime.)
