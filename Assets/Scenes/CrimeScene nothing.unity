@@ -329,6 +329,8 @@ MonoBehaviour:
   startVerb: interact with
   endVerb: stop interacting with
   _key: 101
+  maxInteractDistance: 2.5
+  _interacting: 0
   interactAction:
     m_PersistentCalls:
       m_Calls: []
@@ -1556,6 +1558,8 @@ MonoBehaviour:
   startVerb: interact with
   endVerb: stop interacting with
   _key: 101
+  maxInteractDistance: 2.5
+  _interacting: 0
   interactAction:
     m_PersistentCalls:
       m_Calls: []
@@ -3304,7 +3308,7 @@ PrefabInstance:
     - target: {fileID: 1183368972136438113, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15.950135
+      value: -0.00018310547
       objectReference: {fileID: 0}
     - target: {fileID: 1183368972136438113, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
@@ -6165,12 +6169,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28fd4273db006a46aeb70e7060f23ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startGameText: {fileID: 3048108311325029255}
   selectThisItem: {fileID: 3048108311603780055}
   PathParent: {fileID: 3048108311619391714}
+  cam: {fileID: 0}
   selectedObject: -1
   lookedAtObject: -1
   pathIndex: 0
+  lookAtTarget: 1
 --- !u!1001 &3556030765868196014
 PrefabInstance:
   m_ObjectHideFlags: 0
