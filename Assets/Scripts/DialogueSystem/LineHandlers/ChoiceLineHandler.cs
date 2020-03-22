@@ -99,7 +99,7 @@ public class ChoiceLineHandler : IHandleLine
 
         dialogueController.chapterProgress = cProgress;
         dialogueController.chapterProgress++;
-        Debug.Log("cProgress at: " + cProgress + " chaoterProgessAt: " + dialogueController.chapterProgress);
+        //Debug.Log("cProgress at: " + cProgress + " chaoterProgessAt: " + dialogueController.chapterProgress);
 
         dialogueController._next = true;
         dialogueController.StopHandlingLine();

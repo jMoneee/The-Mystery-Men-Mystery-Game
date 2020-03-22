@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DialogueController : MonoBehaviour
 {
@@ -65,6 +66,21 @@ public class DialogueController : MonoBehaviour
 
     public List<string> data;
 
+    public void StartNewText(string textAsset)
+    {
+        StartNewText(Resources.Load(textAsset) as TextAsset);
+    }
+
+    public void StartNewText(TextAsset textAsset)
+    {
+        if (handlingText != null)
+            StopCoroutine(handlingText);
+        ResetDialogueVariables();
+        DetachCamera.Reattach();
+        chapterProgress = -1;
+        HandleDialogueText(textAsset);
+    }
+
     public void LoadFile(string textAsset)
     {
         LoadFile(Resources.Load(textAsset) as TextAsset);
@@ -108,6 +124,7 @@ public class DialogueController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        Debug.Log("Progress: " + chapterProgress + " TOTAL: " + data.Count);
 
         while (!_next)
         {
@@ -116,12 +133,17 @@ public class DialogueController : MonoBehaviour
 
         DetachCamera.Reattach();
         GetComponent<CanvasGroup>().ChangeCanvasGroupVisibility(false);
-        chapterProgress = 0;
-        data = null;
-        handlingText = null;
+        ResetDialogueVariables();
         if (currentDialogueable != null)
             currentDialogueable._interacting = false;
         currentDialogueable = null;
+    }
+
+    private void ResetDialogueVariables()
+    {
+        chapterProgress = 0;
+        data = null;
+        handlingText = null;
     }
 
     public LineType GetLineType(string line)

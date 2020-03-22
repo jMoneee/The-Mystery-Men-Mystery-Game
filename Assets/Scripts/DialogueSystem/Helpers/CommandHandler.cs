@@ -58,7 +58,7 @@ public static class CommandHandler
     {
         string chapterName = parameters[0].Trim();
         //NovelController.instance.chapterProgress = 0;
-        DialogueController.instance.LoadFile(chapterName);
+        DialogueController.instance.StartNewText(chapterName);
     }
 
     private static void Command_ShowScene(string[] parameters)

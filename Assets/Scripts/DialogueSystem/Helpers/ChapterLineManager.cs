@@ -26,7 +26,7 @@ public class ChaperLineManager : MonoBehaviour
         {
             this.rawLine = rawLine;
 
-            string[] dialogueAndActions = rawLine.Split('"');
+            string[] dialogueAndActions = rawLine.Split('"', '“', '”');
 
             if (dialogueAndActions.Length == 3)
             {
