@@ -1,0 +1,2 @@
+Mr Gruff “These fingerprints match to the victim, no way it was used in his own murder”
+"<i>Crowbar fingerprint analysis added to the journal.</i>"AddToJournal(The fingerprints on the crowbar match to the Seller, it was most likely not used in the murder.)
