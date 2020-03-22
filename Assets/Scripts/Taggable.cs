@@ -31,7 +31,7 @@ public class Taggable : Interactable
     {
         instructions.RemovePrompt(key);
         _interacting = true;
-		//interactAction?.Invoke();
+		interactAction?.Invoke();
 		if (marker)
 		{
 			marker.SetActive(true);

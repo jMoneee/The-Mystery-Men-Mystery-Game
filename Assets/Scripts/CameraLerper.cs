@@ -7,7 +7,7 @@ public class CameraLerper : MonoBehaviour
 {
     public Camera playCam;
     public GameObject fpsPlayer;
-
+    public float lerpTime = 1;
     public void Play()
     {
         //instead of disable, turn off controls/camera
@@ -35,12 +35,20 @@ public class CameraLerper : MonoBehaviour
         playCam.transform.position = fpsPos;
 
         float timer = 0f;
-        while (timer <= 1f)
+        do
         {
-            playCam.transform.rotation = Quaternion.Lerp(fpsRot, playRot, timer);
-            playCam.transform.position = Vector3.Lerp(fpsPos, playPos, timer);
+            if (lerpTime != 0)
+            {
+                playCam.transform.rotation = Quaternion.Lerp(fpsRot, playRot, timer / lerpTime);
+                playCam.transform.position = Vector3.Lerp(fpsPos, playPos, timer / lerpTime);
+            }
+            else
+            {
+                playCam.transform.rotation = playRot;
+                playCam.transform.position = playPos;
+            }
             timer += Time.deltaTime;
             yield return null;
-        }
+        } while (timer <= lerpTime);
     }
 }
