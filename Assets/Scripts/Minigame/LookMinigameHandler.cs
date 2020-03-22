@@ -197,7 +197,7 @@ public class LookMinigameHandler : MonoBehaviour
         }
     }
 
-    public void StartMatchingGame()
+    public void StartMatchingGame(MinigameListing details)
     {
         started = true;
 

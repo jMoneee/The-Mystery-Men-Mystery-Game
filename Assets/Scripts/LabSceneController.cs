@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
@@ -12,18 +13,32 @@ public class LabSceneController : MonoBehaviour
 	[Space]
 	public TextAsset openingDialog;
 
+	public TextAsset causeOfDeathDialog;
+
 	void Start()
     {
-		StartCoroutine(DoTheEverything());
+		StartCoroutine(DoTheMostThings());
+		StartCoroutine(DoCorpseExamination());
 	}
 
-	private IEnumerator DoTheEverything()
+	private IEnumerator DoCorpseExamination()
+	{
+		InspectDetailedBody[] idb = FindObjectsOfType<InspectDetailedBody>();
+
+		yield return new WaitUntil(() => idb.Where(x => x.gameObject.activeSelf).Count() == 0);
+
+		yield return WaitForDialog(causeOfDeathDialog);
+	}
+
+	private IEnumerator DoTheMostThings()
 	{
 		//opening dialog
 		yield return new WaitForSeconds(0.2f);
 
 		DialogueController = FindObjectOfType<DialogueController>();
 		yield return WaitForDialog(openingDialog);
+
+
 	}
 
 	private IEnumerator WaitForDialog(TextAsset asset)
