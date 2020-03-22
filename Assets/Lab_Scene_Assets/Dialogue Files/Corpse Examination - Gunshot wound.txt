@@ -1,0 +1,2 @@
+Mr Gruff "That’s a nasty gunshot wound. Deep in the chest with the bullet still inside. This is a very serious wound."
+"<i>Gunshot wound analysis added to the journal.</i>"AddToJournal(The gunshot wound on the victim was deep and serious enough to cause death.)

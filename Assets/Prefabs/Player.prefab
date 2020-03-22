@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a32402e7b650d4bb1d26f014440173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistanceLimit: 2.5
+  maxInteractDistanceLimit: 1000
 --- !u!114 &4699922708164083259
 MonoBehaviour:
   m_ObjectHideFlags: 0

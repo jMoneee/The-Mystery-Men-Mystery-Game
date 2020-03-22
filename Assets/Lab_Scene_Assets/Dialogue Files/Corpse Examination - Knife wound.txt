@@ -1,0 +1,2 @@
+Mr Gruff "This is clearly a knife wound to the arm. It’s not very deep and hasn’t cut any major vein or artery."
+"<i>Knife wound analysis added to the journal.</i>"AddToJournal(The knife wound on the victim is shallow and did not hit any major arteries.)
