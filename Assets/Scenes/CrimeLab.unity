@@ -844,7 +844,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
         type: 3}
       propertyPath: m_Name
-      value: Storage_Rack
+      value: Storage Rack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
@@ -1142,7 +1142,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
         type: 3}
       propertyPath: m_Name
-      value: Storage_Rack (4)
+      value: Storage Rack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
@@ -1943,6 +1943,7 @@ GameObject:
   - component: {fileID: 508116816}
   - component: {fileID: 508116817}
   - component: {fileID: 508116818}
+  - component: {fileID: 508116819}
   m_Layer: 0
   m_Name: Blood Typing Trigger
   m_TagString: Untagged
@@ -1989,6 +1990,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031bca5b605024d48b94a2aaed883ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startVerb: compare blood samples
+  endVerb: sdfadffdsa
+  _key: 0
+  maxInteractDistance: 2.5
+  _interacting: 0
+  interactAction:
+    m_PersistentCalls:
+      m_Calls: []
   thisStationMinigame: {fileID: 0}
   minigames:
   - triggerObject: {fileID: 1396660021}
@@ -1997,6 +2006,19 @@ MonoBehaviour:
     objectMatch: {fileID: 0}
     correctIndex: 0
     success: 0
+--- !u!114 &508116819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508116815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a206a2bd28f8bd945a82f53c630f23d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sparkle: 0
 --- !u!1 &510844113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2101,7 @@ MonoBehaviour:
   fpsplayer: {fileID: 1788124315}
   openingDialog: {fileID: 4900000, guid: ebb69c20c6bc0bf4c8996881db9396ba, type: 3}
   causeOfDeathDialog: {fileID: 4900000, guid: cc87b42facbb2e249a115d6dafd00c6d, type: 3}
+  labSceneComplete: {fileID: 4900000, guid: a67865ca380b7f44a9cc57072d74a9af, type: 3}
 --- !u!4 &525223909
 Transform:
   m_ObjectHideFlags: 0
@@ -2195,6 +2218,7 @@ GameObject:
   - component: {fileID: 623884851}
   - component: {fileID: 623884852}
   - component: {fileID: 623884853}
+  - component: {fileID: 623884854}
   m_Layer: 0
   m_Name: Fingerprinting Trigger
   m_TagString: Untagged
@@ -2241,6 +2265,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031bca5b605024d48b94a2aaed883ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startVerb: match fingerprints
+  endVerb: asdfsdafdsa
+  _key: 0
+  maxInteractDistance: 2.5
+  _interacting: 0
+  interactAction:
+    m_PersistentCalls:
+      m_Calls: []
   thisStationMinigame: {fileID: 0}
   minigames:
   - triggerObject: {fileID: 1396660021}
@@ -2249,6 +2281,31 @@ MonoBehaviour:
     objectMatch: {fileID: 0}
     correctIndex: 0
     success: 0
+  - triggerObject: {fileID: 1494980695}
+    correct: {fileID: 4900000, guid: 35d681c742e36f24cbfeb11a054c9956, type: 3}
+    incorrect: {fileID: 4900000, guid: 8d1f8ea0d2b6bd54b963e6fa1ef15c68, type: 3}
+    objectMatch: {fileID: 0}
+    correctIndex: 0
+    success: 0
+  - triggerObject: {fileID: 1373491535}
+    correct: {fileID: 4900000, guid: 1a38440f3832d9d459287c8432fcf0e8, type: 3}
+    incorrect: {fileID: 4900000, guid: f0a792809bd1c564eaf6bc40cb0cdaa7, type: 3}
+    objectMatch: {fileID: 0}
+    correctIndex: 0
+    success: 0
+--- !u!114 &623884854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623884850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a206a2bd28f8bd945a82f53c630f23d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sparkle: 0
 --- !u!1 &630509035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,6 +2762,7 @@ GameObject:
   - component: {fileID: 707647254}
   - component: {fileID: 707647255}
   - component: {fileID: 707647256}
+  - component: {fileID: 707647257}
   m_Layer: 0
   m_Name: Bullet Match Trigger
   m_TagString: Untagged
@@ -2751,6 +2809,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031bca5b605024d48b94a2aaed883ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startVerb: match bullets
+  endVerb: afsdfsadsdfafsda
+  _key: 0
+  maxInteractDistance: 2.5
+  _interacting: 0
+  interactAction:
+    m_PersistentCalls:
+      m_Calls: []
   thisStationMinigame: {fileID: 0}
   minigames:
   - triggerObject: {fileID: 1494980695}
@@ -2759,6 +2825,25 @@ MonoBehaviour:
     objectMatch: {fileID: 0}
     correctIndex: 0
     success: 0
+  - triggerObject: {fileID: 1373491535}
+    correct: {fileID: 4900000, guid: 5aaef99621126ba4ab581f7282abc68a, type: 3}
+    incorrect: {fileID: 4900000, guid: 6f61e8eb373cdfa4891fcd8a3eacedec, type: 3}
+    objectMatch: {fileID: 0}
+    correctIndex: 0
+    success: 0
+--- !u!114 &707647257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707647253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a206a2bd28f8bd945a82f53c630f23d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sparkle: 0
 --- !u!1001 &710132659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3099,7 +3184,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
         type: 3}
       propertyPath: m_Name
-      value: Storage_Rack (3)
+      value: Storage Rack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
@@ -3568,6 +3653,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7065843742700505785, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7065843742859062844, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -3646,6 +3736,11 @@ PrefabInstance:
     - target: {fileID: 7065843743742090151, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065843743742090151, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7065843743754223006, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
@@ -4751,7 +4846,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
         type: 3}
       propertyPath: m_Name
-      value: Storage_Rack (1)
+      value: Storage Rack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
@@ -5340,7 +5435,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 7735ddf7d6ea4e14696e21bc2889c9c3,
         type: 3}
       propertyPath: m_Name
-      value: 1911_R1
+      value: 1911 R1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7735ddf7d6ea4e14696e21bc2889c9c3, type: 3}
@@ -6197,7 +6292,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: d51e4858f58a8a24d811e6465ce89db5,
         type: 3}
       propertyPath: m_Name
-      value: M&P9_Shield
+      value: M&P9 Shield
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d51e4858f58a8a24d811e6465ce89db5, type: 3}
@@ -7305,6 +7400,7 @@ GameObject:
   - component: {fileID: 1815122422}
   - component: {fileID: 1815122424}
   - component: {fileID: 1815122423}
+  - component: {fileID: 1815122425}
   m_Layer: 0
   m_Name: Gun Info Trigger
   m_TagString: Untagged
@@ -7338,11 +7434,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031bca5b605024d48b94a2aaed883ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startVerb: check the gun database
+  endVerb: sdfasdffasdfdsa
+  _key: 0
+  maxInteractDistance: 2.5
+  _interacting: 0
+  interactAction:
+    m_PersistentCalls:
+      m_Calls: []
   thisStationMinigame: {fileID: 0}
   minigames:
   - triggerObject: {fileID: 1494980695}
     correct: {fileID: 4900000, guid: 005777060b122de4293256396b1ccb1b, type: 3}
     incorrect: {fileID: 4900000, guid: a8378f01174d5d44199fb64ad36b0d1a, type: 3}
+    objectMatch: {fileID: 0}
+    correctIndex: 0
+    success: 0
+  - triggerObject: {fileID: 1373491535}
+    correct: {fileID: 4900000, guid: 4f3a387c95e30ec48abd5b98034e2a5d, type: 3}
+    incorrect: {fileID: 4900000, guid: 213fe5610eb4c894a89c0e085b9d485f, type: 3}
     objectMatch: {fileID: 0}
     correctIndex: 0
     success: 0
@@ -7359,6 +7469,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5397981, y: 0.5156512, z: 0.57971686}
   m_Center: {x: -0.31500626, y: -0.1557672, z: 0.2821817}
+--- !u!114 &1815122425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815122421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a206a2bd28f8bd945a82f53c630f23d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sparkle: 0
 --- !u!1001 &1826109584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7434,7 +7557,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 395cbb4dac8e0584dab2bc9294eada29,
         type: 3}
       propertyPath: m_Name
-      value: Storage_Table (1)
+      value: Storage_Table
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 395cbb4dac8e0584dab2bc9294eada29, type: 3}
@@ -7806,7 +7929,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
         type: 3}
       propertyPath: m_Name
-      value: Storage_Rack (2)
+      value: Storage Rack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}

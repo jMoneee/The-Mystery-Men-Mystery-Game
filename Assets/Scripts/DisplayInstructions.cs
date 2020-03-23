@@ -68,6 +68,42 @@ public class DisplayInstructions : MonoBehaviour
 	}
 
 	/// <summary>
+	/// This version of the function does not force the display of the keycode prompt. The keycode is
+	/// just to cheat adding it to the dictionary. It's sloppy do not recommend reuse.
+	/// </summary>
+	/// <param name="key"></param>
+	/// <param name="action"></param>
+	public void SetPromptNoKey(KeyCode key, string action)
+	{
+		string trimmed = action.Trim();
+		string display = trimmed;
+
+		if (!prompts.ContainsKey(key))
+		{
+			GameObject g = new GameObject(key + " prompt");
+			g.transform.parent = origin.transform;
+			Text tex = g.AddComponent<Text>();
+			tex.font = font;
+			tex.fontSize = fontSize;
+			tex.color = fontColor;
+			tex.fontStyle = fontStyle;
+			tex.horizontalOverflow = horizontalWrapMode;
+			tex.rectTransform.localScale = Vector3.one;
+			g.AddComponent<Outline>().effectDistance = new Vector2(outlineWeight, outlineWeight);
+			tex.text = display;
+
+			//tex.GetGenerationSettings()
+			prompts.Add(key, tex);
+		}
+		else
+		{
+			prompts[key].text = display;
+		}
+
+		origin.sizeDelta = new Vector2(origin.sizeDelta.x, prompts.Count * (fontSize + 10));
+	}
+
+	/// <summary>
 	/// Remove the prompt from display.
 	/// </summary>
 	/// <param name="key">Input key prompt to remove.</param>
