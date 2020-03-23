@@ -10,11 +10,17 @@ public class OnTriggerEvents : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        OnTriggerEnterEvent.Invoke();
+        if (other.tag == "Player")
+        {
+            OnTriggerEnterEvent.Invoke();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        OnTriggerExitEvent.Invoke();
+        if (other.tag == "Player")
+        {
+            OnTriggerExitEvent.Invoke();
+        }
     }
 }
