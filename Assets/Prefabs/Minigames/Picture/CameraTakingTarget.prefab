@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6599622131504207330}
   - component: {fileID: 3234329605666880312}
   - component: {fileID: 1098537583512005724}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a206a2bd28f8bd945a82f53c630f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sparkle: 1
 --- !u!114 &8518201537350517985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startVerb: 
   endVerb: 
-  _key: 113
+  _key: 120
   maxInteractDistance: 100
   _interacting: 0
   interactAction:
@@ -284,7 +285,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  gameName: Take Picture
+  marker: {fileID: 0}
+  placementSound: {fileID: 0}
 --- !u!1 &8383661203860215607
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504765752477459303}
   - component: {fileID: 2431235582275081161}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CameraTakingTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 public abstract class Interactable : MonoBehaviour
 {
 	protected DisplayInstructions instructions;
-	[SerializeField] protected string startVerb = "interact with";
-	[SerializeField] protected string endVerb = "stop interacting with";
+	[SerializeField] public string startVerb = "interact with";
+	[SerializeField] public string endVerb = "stop interacting with";
 	[SerializeField] protected KeyCode _key;
     public float maxInteractDistance = 2.5f;
     public KeyCode key { get { return _key; } }

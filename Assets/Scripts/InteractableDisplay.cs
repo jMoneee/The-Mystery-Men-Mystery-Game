@@ -12,8 +12,13 @@ public class InteractableDisplay : MonoBehaviour
 	public bool sparkle = true;
 	private bool dostuff = true;
 
-	// Start is called before the first frame update
-	void Start()
+    private void OnEnable()
+    {
+        Start();
+    }
+
+    // Start is called before the first frame update
+    void Start()
     {
         if (GetComponent<Renderer>() == null)
             return;
@@ -58,10 +63,13 @@ public class InteractableDisplay : MonoBehaviour
 	{
 		if (dostuff)
 		{
-			for (int i = 0; i < materials.Length; i++)
-			{
-				materials[i].color = ogColors[i] * highlightStrength;
-			}
+            if (materials != null)
+            {
+                for (int i = 0; i < materials.Length; i++)
+                {
+                    materials[i].color = ogColors[i] * highlightStrength;
+                }
+            }
 
 			interactableSparkle?.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
 		}
@@ -74,10 +82,13 @@ public class InteractableDisplay : MonoBehaviour
 	{
 		if (dostuff)
 		{
-			for (int i = 0; i < materials.Length; i++)
-			{
-				materials[i].color = ogColors[i];
-			}
+            if (materials != null)
+            {
+                for (int i = 0; i < materials.Length; i++)
+                {
+                    materials[i].color = ogColors[i];
+                }
+            }
 			interactableSparkle?.Play(false);
 		}
 	}
