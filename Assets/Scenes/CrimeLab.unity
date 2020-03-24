@@ -55,15 +55,15 @@ LightmapSettings:
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 12
-    m_Resolution: 2
+    m_Resolution: 3
     m_BakeResolution: 40
-    m_AtlasSize: 1024
-    m_AO: 0
+    m_AtlasSize: 2048
+    m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
     m_ExtractAmbientOcclusion: 0
-    m_Padding: 2
+    m_Padding: 3
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
@@ -846,6 +846,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Storage Rack
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
 --- !u!1 &107352701 stripped
@@ -1143,6 +1148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Storage Rack
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
@@ -3120,6 +3130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Storage_Table
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 395cbb4dac8e0584dab2bc9294eada29,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 395cbb4dac8e0584dab2bc9294eada29, type: 3}
 --- !u!1 &713929074 stripped
@@ -3305,6 +3320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Storage Rack
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
@@ -3791,7 +3811,7 @@ PrefabInstance:
     - target: {fileID: 7065843742859062844, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15.950077
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 7065843742859062844, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
@@ -4972,6 +4992,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Storage Rack
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
@@ -7685,6 +7710,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Storage_Table
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 395cbb4dac8e0584dab2bc9294eada29,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 395cbb4dac8e0584dab2bc9294eada29, type: 3}
 --- !u!4 &1826109585 stripped
@@ -8056,6 +8086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Storage Rack
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 349530c4c65a55148b1c3e5d432c9c34,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349530c4c65a55148b1c3e5d432c9c34, type: 3}
