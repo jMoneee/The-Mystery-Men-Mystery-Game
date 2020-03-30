@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PickupTest.unity
     guid: 036121ef6ec8e6c4a87dadc528704aeb
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4af7359442150ea4abcfef7ec476e04a
+  - enabled: 1
+    path: Assets/Scenes/CrimeSceneFinal.unity
+    guid: 547103dec06944248a336c4396457413
   m_configObjects: {}
