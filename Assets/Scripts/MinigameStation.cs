@@ -19,15 +19,21 @@ public class MinigameStation : Interactable
         }
     }
 
+    Dictionary<string, string> endVerbs = new Dictionary<string, string>();
+
     private void OnTriggerStay(Collider other)
 	{
+        gameObject.layer = 2;
+
+        if (other.GetComponent<Pickupable>() != null && endVerbs.ContainsKey(other.gameObject.name) == false)
+        {
+            endVerbs.Add(other.gameObject.name, other.GetComponent<Pickupable>().endVerb);
+        }
+
         foreach (MinigameListing item in minigames)
         {
             if (item.triggerObject == other.gameObject && minigamesCompleted[item] == false)
             {
-                gameObject.layer = 2;
-
-
                 if (other.GetComponent<Pickupable>().interacting == false)
                 {
                     StartCoroutine(StartGame(item));
@@ -35,7 +41,7 @@ public class MinigameStation : Interactable
                 }
                 else
                 {
-                    other.GetComponent<Pickupable>().endVerb = "start fingerprinting";
+                    other.GetComponent<Pickupable>().endVerb = startVerb;
                 }
             }
         }
@@ -46,16 +52,19 @@ public class MinigameStation : Interactable
         yield return new WaitForSeconds(0.1f);
         thisStationMinigame.StartMatchingGame(item);
         instructions.RemovePrompt(KeyCode.Numlock);
-        item.triggerObject.GetComponent<Pickupable>().endVerb = "drop";
+        item.triggerObject.GetComponent<Pickupable>().endVerb = endVerbs[item.triggerObject.name];
     }
 
     private void OnTriggerExit(Collider other)
     {
+        gameObject.layer = 1;
+
         foreach (MinigameListing item in minigames)
         {
             if (item.triggerObject == other.gameObject)
             {
-                gameObject.layer = 1;
+                item.triggerObject.GetComponent<Pickupable>().endVerb = endVerbs[other.gameObject.name];
+
                 instructions.RemovePrompt(KeyCode.Numlock);
             }
         }
