@@ -3308,7 +3308,7 @@ PrefabInstance:
     - target: {fileID: 1183368972136438113, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00018310547
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183368972136438113, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
@@ -6170,12 +6170,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectThisItem: {fileID: 3048108311603780055}
+  item: {fileID: 0}
   PathParent: {fileID: 3048108311619391714}
   cam: {fileID: 0}
   selectedObject: -1
   lookedAtObject: -1
+  correctAnswer: 0
+  correctText: {fileID: 0}
+  incorrectText: {fileID: 0}
   pathIndex: 0
   lookAtTarget: 1
+  fpsplayer: {fileID: 0}
 --- !u!1001 &3556030765868196014
 PrefabInstance:
   m_ObjectHideFlags: 0
