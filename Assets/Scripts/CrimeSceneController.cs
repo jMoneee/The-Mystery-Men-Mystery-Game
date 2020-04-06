@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class CrimeSceneController : MonoBehaviour
 {
@@ -100,7 +101,7 @@ public class CrimeSceneController : MonoBehaviour
 
 		yield return WaitForDialog(endOfSceneDialog);
 		//exit scene here
-
+		SceneManager.LoadScene(2);
 	}
 
 	private IEnumerator dumpsterWhatever(InspectDetailedOther item)
