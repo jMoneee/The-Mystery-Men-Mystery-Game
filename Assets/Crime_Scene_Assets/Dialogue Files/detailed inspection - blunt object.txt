@@ -3,5 +3,5 @@ Mr. Gruff "This definitely fits the classification of a blunt object."
 "At the base, there's some marks missing in the dust.  Looks like a handprint."
 "It's likely this thing wasn't brought to the crime scene, but someone still used it amidst the chaos."
 "And based on its proximity to the body, that someone is likely..."
-"Sorry sir, but I'm gonna have to take you from your home to inspect you a bit."
+"Sorry Mr. Crowbar, but I'm gonna have to take you from your home to inspect you a bit."
 "<i>Blunt object inspection added to the journal.</i>"AddToJournal(Blunt object found lying next to the victim's body.  It likely was in the crime scene for a long time, and dust marks indicate someone picked it up somewhat recently.)
