@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.9
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -96,7 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 112000000, guid: c9bc8ea1ea6b76f42bd24b8a494aa729,
+  m_LightingDataAsset: {fileID: 112000000, guid: 7a302617024b01a40a83bf2f5273d387,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -846,6 +846,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alleyway_Wall_Left (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9dc46ae522a0f14e8f595f23b4bb6c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc46ae522a0f14e8f595f23b4bb6c4, type: 3}
 --- !u!1001 &148766619
@@ -1302,6 +1307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d51e4858f58a8a24d811e6465ce89db5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d51e4858f58a8a24d811e6465ce89db5, type: 3}
@@ -2066,6 +2076,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alleyway_Wall_Left (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9dc46ae522a0f14e8f595f23b4bb6c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc46ae522a0f14e8f595f23b4bb6c4, type: 3}
 --- !u!4 &379632762 stripped
@@ -2727,6 +2742,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7608cc520fb7f27408c610d33b9dc4c1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7608cc520fb7f27408c610d33b9dc4c1, type: 3}
 --- !u!4 &503081666 stripped
@@ -2851,7 +2871,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &507500916
 Transform:
@@ -4339,6 +4359,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alleyway_Wall_Left (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9dc46ae522a0f14e8f595f23b4bb6c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc46ae522a0f14e8f595f23b4bb6c4, type: 3}
 --- !u!4 &728843959 stripped
@@ -4413,6 +4438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alleyway_Wall_Left
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9dc46ae522a0f14e8f595f23b4bb6c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc46ae522a0f14e8f595f23b4bb6c4, type: 3}
@@ -6334,6 +6364,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: acef83da7a4d9734a94e296d1d7a4ab7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acef83da7a4d9734a94e296d1d7a4ab7, type: 3}
 --- !u!1 &1434913903 stripped
@@ -6920,6 +6955,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alleyway_Wall_Left (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9dc46ae522a0f14e8f595f23b4bb6c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc46ae522a0f14e8f595f23b4bb6c4, type: 3}
 --- !u!4 &1532147854 stripped
@@ -7316,6 +7356,11 @@ PrefabInstance:
     - target: {fileID: 1183368971186302202, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183368971186302202, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1183368971562415107, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
@@ -7745,6 +7790,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alleyway_Wall_Left (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9dc46ae522a0f14e8f595f23b4bb6c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc46ae522a0f14e8f595f23b4bb6c4, type: 3}
@@ -8650,6 +8700,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alleyway_Wall_Left (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9dc46ae522a0f14e8f595f23b4bb6c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc46ae522a0f14e8f595f23b4bb6c4, type: 3}
 --- !u!4 &1794340517 stripped
@@ -8948,7 +9003,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1824622367
 Transform:
@@ -9074,8 +9129,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885790903}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 40, y: 0, z: 0}
-  m_LocalScale: {x: 25, y: 1, z: 25}
+  m_LocalPosition: {x: 40, y: 0, z: 8.2}
+  m_LocalScale: {x: 5, y: 1, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -9146,6 +9201,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alleyway_Wall_Left (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f9dc46ae522a0f14e8f595f23b4bb6c4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dc46ae522a0f14e8f595f23b4bb6c4, type: 3}
@@ -10654,6 +10714,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: baa095957d81fec42b46864439bc970a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baa095957d81fec42b46864439bc970a, type: 3}
