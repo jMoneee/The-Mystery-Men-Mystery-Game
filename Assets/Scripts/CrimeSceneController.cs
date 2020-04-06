@@ -76,9 +76,12 @@ public class CrimeSceneController : MonoBehaviour
 		{
 			item.gameObject.SetActive(true);
 		}
-		print("waiting for detailed inspection of body");
+		//print("waiting for detailed inspection of body");
 		yield return new WaitUntil(() => detailedBodyInspection.Where(x => x.gameObject.activeSelf).Count() == 0);
-		print("detailed inspection of body end");
+		yield return new WaitForSeconds(0.1f);
+		yield return new WaitUntil(() => fpsplayer.enabled);
+
+		//print("detailed inspection of body end");
 
 		//finished inspecting body
 		yield return WaitForDialog(endOfBodyInspection);
