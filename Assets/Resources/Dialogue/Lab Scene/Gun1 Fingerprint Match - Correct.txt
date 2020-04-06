@@ -1,2 +1,2 @@
-Mr Gruff "Some fine analysis if I do say so myself. The fingerprint looks like it matches to [Buyer 1]."
+Detective Gruff "Some fine analysis if I do say so myself. The fingerprint looks like it matches to [Buyer 1]."
 "<i>Fingerprint analysis added to the journal.</i>"AddToJournal(The fingerprints on the M&P9 Shield match to [Buyer 1].)

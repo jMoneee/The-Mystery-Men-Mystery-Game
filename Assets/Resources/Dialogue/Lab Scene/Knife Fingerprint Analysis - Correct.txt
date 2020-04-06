@@ -1,2 +1,2 @@
-Mr Gruff "I’m pretty confident in this match. Looks like [Buyer 2] was holding the weapon."
+Detective Gruff "I’m pretty confident in this match. Looks like [Buyer 2] was holding the weapon."
 "<i>Fingerprint analysis added to the journal.</i>"AddToJournal(The fingerprints on the knife match to [Buyer 2].)

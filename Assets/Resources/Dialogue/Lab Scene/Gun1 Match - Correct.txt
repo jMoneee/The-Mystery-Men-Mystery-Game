@@ -1,2 +1,2 @@
-Mr Gruff "That gun is definitely an M&P9 Shield. It’s a pretty common firearm. It fires a 9mm bullet."
+Detective Gruff "That gun is definitely an M&P9 Shield. It’s a pretty common firearm. It fires a 9mm bullet."
 "<i>Gun information added to the journal.</i>"AddToJournal(One of the guns found at the scene is an M&P9 Shield it fires a 9mm round.)

@@ -1,2 +1,2 @@
-Mr Gruff "I’ve never seen loops that match so perfectly before. The bodyguard was definitely holding this weapon and probably fired it too."
+Detective Gruff "I’ve never seen loops that match so perfectly before. The bodyguard was definitely holding this weapon and probably fired it too."
 "<i>Fingerprint analysis added to the journal.</i>"AddToJournal(The fingerprints on the 1911 r1 match to [Bodyguard].)

@@ -1,2 +1,2 @@
-Mr Gruff "Analysis matched. Looks like this knife was used on our victim."
+Detective Gruff "Analysis matched. Looks like this knife was used on our victim."
 "<i>Knife blood analysis added to the journal.</i>"AddToJournal(The blood on the knife matched to the victim.)

@@ -1,3 +1,3 @@
-Mr. Gruff "There's a stab wound in the left arm."
+Detective Gruff "There's a stab wound in the left arm."
 "This one seems pretty self-explanatory, there was something found on the crime scene that seems like it would match this wound."
 "<i>Stab wound added to the journal.</i>"AddToJournal(Victim posseses a stab wound on his left arm.  Wound is likely produced by the knife on the scene.)

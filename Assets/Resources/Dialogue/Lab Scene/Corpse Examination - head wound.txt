@@ -1,3 +1,3 @@
-Mr Gruff "That’s a pretty nasty hit to the back of the head. 
+Detective Gruff "That’s a pretty nasty hit to the back of the head. 
 "Definitely enough to rattle the brain, but none of the scans done have shown any major brain damage."
 "<i>Head wound analysis added to the journal.</i>"AddToJournal(The head wound on the victim was serious, but no major brain damage was found.)
