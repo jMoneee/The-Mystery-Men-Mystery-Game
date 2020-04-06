@@ -211,14 +211,31 @@ public class LookMinigameHandler : MonoBehaviour
 
     public void StartMatchingGame(MinigameListing details)
     {
+        DialogueController = FindObjectOfType<DialogueController>();
+
         selectThisItem.gameObject.SetActive(true);
         gameObject.SetActive(true);
 
-        started = true;
-        GetComponent<CameraLerper>().Play();
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        StartCoroutine(StartGame(details));
+    }
+
+    private IEnumerator StartGame(MinigameListing details)
+    {
+        if (PlayerStateTracker.startedMatchingMinigame == false)
+        {
+            yield return WaitForDialog(FindObjectOfType<PlayerStateTracker>().MatchingMinigameTutorialText);
+            PlayerStateTracker.startedMatchingMinigame = true;
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        started = true;
+
 
         if (selectedObject == -1)
         {
@@ -226,6 +243,8 @@ public class LookMinigameHandler : MonoBehaviour
             lookedAtObject = lookObjects.IndexOf(closestObject);
             pathIndex = pathObjects.IndexOf(closestObject.CameraPosition.transform);
         }
+
+        GetComponent<CameraLerper>().Play(pathObjects[pathIndex].transform.position);
 
         correctAnswer = details.correctIndex;
         correctText = details.correct;
@@ -238,8 +257,6 @@ public class LookMinigameHandler : MonoBehaviour
     public RigidbodyFirstPersonController fpsplayer;
     public void SelectCurrentObject()
     {
-        DialogueController = FindObjectOfType<DialogueController>();
-
         if (lookedAtObject == correctAnswer)
         {
             action = StartCoroutine(CorrectAnswer());

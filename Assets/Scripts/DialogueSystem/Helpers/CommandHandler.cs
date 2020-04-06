@@ -49,7 +49,7 @@ public static class CommandHandler
 
     private static void Command_AddJournal(string[] parameters)
     {
-        string text = parameters[0].Trim();
+        string text = String.Join(",", parameters);
         VariableManager.Inject(ref text);
         JournalManager2.AddTextToJournal(text);
     }

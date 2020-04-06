@@ -93,6 +93,13 @@ public class Interactor : MonoBehaviour
 		}
 		prevIntable = intable?.ToList();
 
+        if (rayhit)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                Debug.Log(hit.collider.gameObject.name);
+            }
+        }
 
 		//if (Input.GetKeyDown(pickupKey))
 		//{

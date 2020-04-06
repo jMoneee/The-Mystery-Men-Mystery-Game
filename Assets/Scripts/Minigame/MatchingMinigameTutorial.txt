@@ -1,0 +1,17 @@
+Mr. Gruff "Man.... It's been a while since I've gotten my hands dirty with this stuff."
+"I think I need a refresher on how use these machines"
+choice "Do you want a refresher?"
+{
+  "Yes"
+  [
+    "Alright I remember that the general process is the same for all the lab equipment."
+    "Essentially I am matching the object on the right side to one of the objects in front of me."
+    "I can change the object I am looking at by using the Right or Left arrow keys"
+    "Once I think I have found a match, I can click the 'Select this Object' button on the left."
+  ]
+  "No"
+  [
+  ]
+}
+
+"Alright then let's get to it then."

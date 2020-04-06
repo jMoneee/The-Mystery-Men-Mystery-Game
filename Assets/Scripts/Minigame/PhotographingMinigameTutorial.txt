@@ -1,0 +1,20 @@
+Mr.Gruff "I haven't been in the field for a long time."
+"I think I may need a refresher on the proper steps to take on a crime scene."
+choice "Do you want a refresher?"
+{
+  "Yes"
+  [
+    "Alright my first step is to properly tag all of the evidence I've found."
+    "That is done by walking up to the different pieces of evidence, and pressing 'X'"
+    "Once I've done that, I need to take photographs of the scene."
+    "This can be done by walking to the proper positions and pressing the 'Q' button to take the picture."
+    "I will know that I am in a proper camera position if I see a red block appear over the object."
+    "HINT: if you are having trouble, the camera positions will show after 2 minutes of trying."
+    "Or you can press 'L' to show the camera positions whenever you want."
+  ]
+  "No"
+  [
+  ]
+}
+
+"Alright then let's get to it then."
