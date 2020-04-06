@@ -1,7 +1,7 @@
-Detective Gruff "Let's see what you were carrying on you when you died."
+Det. Gruff "Let's see what you were carrying on you when you died."
 "Hmm... alright here's a wallet.  And inside we have... ah, perfect.  Driver's license."
 "Lukas Hrim, age 29.  Never heard of him.  Must not be that bad of a guy."
 "There's something else in this pocket though... ah."
 "Drugs, huh?  Explains why Mr. Hrim was out this late."
 "The bag looks unopened, so it's safe to assume that he was the dealer, not the buyer."
-"<i>Victim's ID and pocket contents were added to the journal.</i>"AddToJournal(Victim ID: Lukas Hrim, age 29.  The victim also had a bag of unopened drugs in his pocket, implying he was planning on selling them.)
+"<i>Victim's ID and pocket contents were added to the journal.</i>"AddToJournal(Victim ID: Lukas Hrim age 29.  The victim also had a bag of unopened drugs in his pocket implying he was planning on selling them.)
