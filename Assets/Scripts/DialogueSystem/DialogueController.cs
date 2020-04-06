@@ -124,7 +124,7 @@ public class DialogueController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        Debug.Log("Progress: " + chapterProgress + " TOTAL: " + data.Count);
+        //Debug.Log("Progress: " + chapterProgress + " TOTAL: " + data.Count);
 
         while (!_next)
         {

@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Prototype Scenes/PickupTest.unity
-    guid: 036121ef6ec8e6c4a87dadc528704aeb
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4af7359442150ea4abcfef7ec476e04a
+  - enabled: 1
+    path: Assets/Scenes/CrimeSceneFinal.unity
+    guid: 547103dec06944248a336c4396457413
+  - enabled: 1
+    path: Assets/Scenes/CrimeLab.unity
+    guid: c7b2c718126ac5840a3d9af46b028c30
   m_configObjects: {}

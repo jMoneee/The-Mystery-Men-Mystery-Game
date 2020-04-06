@@ -6,6 +6,8 @@ public class Taggable : Interactable
 {
 	public GameObject marker;
 	public AudioClip placementSound;
+	public static int markerCount = 0;
+	public Material[] markerMaterials;
 
 	private void Start()
 	{
@@ -37,6 +39,8 @@ public class Taggable : Interactable
 			marker.SetActive(true);
 			gameObject.AddComponent<AudioSource>().clip = placementSound;
 			GetComponent<AudioSource>().Play();
+			marker.GetComponent<Renderer>().material = markerMaterials[markerCount];
+			markerCount++;
 		}
     }
 

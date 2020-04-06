@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using System.Reflection;
+using UnityEngine.Events;
 
 public class DumpsterMiniGame : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DumpsterMiniGame : MonoBehaviour
 	public GameObject fpsPlayer;
 	private bool quit = false;
 	public bool _win;
+	public UnityEvent startActions;
 
 	public bool win
 	{
@@ -45,7 +47,8 @@ public class DumpsterMiniGame : MonoBehaviour
 		SetInteractables(typeof(Dialogueable), true);
 		StartCoroutine(lerpToPlay());
 		StartCoroutine(endGame());
-
+		startActions?.Invoke();
+		SetInteractables(typeof(Playable), false);
 
 		foreach (var item in FindObjectsOfType<DumpsterPickupable>())
 		{
@@ -68,8 +71,8 @@ public class DumpsterMiniGame : MonoBehaviour
 		GetComponentInChildren<Playable>().InteractEnd();
 		SetInteractables(typeof(DumpsterPickupable), false);
 		SetInteractables(typeof(Dialogueable), false);
-		if (win)
-			SetInteractables(typeof(Playable), false);
+		if (!win)
+			SetInteractables(typeof(Playable), true);
 	}
 
 	private void SetInteractables(Type intType, bool toState)

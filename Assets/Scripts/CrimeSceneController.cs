@@ -112,6 +112,7 @@ public class CrimeSceneController : MonoBehaviour
 	private IEnumerator WaitForDialog(TextAsset endOfBodyInspection)
 	{
 		DialogueController.HandleDialogueText(endOfBodyInspection);
+		yield return new WaitForSeconds(0.1f);
 		yield return new WaitUntil(() => fpsplayer.enabled);
 	}
 }

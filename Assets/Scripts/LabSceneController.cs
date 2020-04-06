@@ -65,6 +65,7 @@ public class LabSceneController : MonoBehaviour
 	private IEnumerator WaitForDialog(TextAsset asset)
 	{
 		DialogueController.HandleDialogueText(asset);
+		yield return new WaitForSeconds(0.1f);
 		yield return new WaitUntil(() => fpsplayer.enabled);
 	}
 }

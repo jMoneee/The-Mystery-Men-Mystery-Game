@@ -56,13 +56,14 @@ GameObject:
   - component: {fileID: 3556030765743510291}
   - component: {fileID: 3556030765743510290}
   - component: {fileID: 3556030765743510293}
+  - component: {fileID: 205790231}
   m_Layer: 2
   m_Name: distraction trigger zone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3556030765743510292
 Transform:
   m_ObjectHideFlags: 0
@@ -136,6 +137,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &205790231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556030765743510295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481cbd091fb1ad84ca0e942b48c9ba6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 60
 --- !u!1 &3556030766167500700
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +200,31 @@ MonoBehaviour:
   playCam: {fileID: 3556030766873163777}
   fpsPlayer: {fileID: 0}
   _win: 0
+  startActions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3556030765743510295}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3556030767570014591}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3556030766873163780
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3556030767570014587
 Transform:
   m_ObjectHideFlags: 0
@@ -1606,7 +1645,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 7a36d7763a635b44bab0ceb7ef827f6e,
         type: 3}
       propertyPath: m_Name
-      value: Soda Can (1)
+      value: Soda Can
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a36d7763a635b44bab0ceb7ef827f6e, type: 3}
@@ -1789,6 +1828,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 54.999985
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: a7c2f2c0ca4748647bdbd7b59c0c4747,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e3237a2d4f20a494bac0588038aa4ee8, type: 2}
     - target: {fileID: -927199367670048503, guid: a7c2f2c0ca4748647bdbd7b59c0c4747,
         type: 3}
       propertyPath: m_Name
@@ -1797,7 +1841,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: a7c2f2c0ca4748647bdbd7b59c0c4747,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7c2f2c0ca4748647bdbd7b59c0c4747, type: 3}

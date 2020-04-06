@@ -9,13 +9,13 @@ public class Playable : Interactable
 
 	public override void HoverBegin()
 	{
-		instructions.SetPrompt(key, startVerb + " " + TextEffects.EmphasizeWord(gameName, Color.red));
 	}
 
 	public override void HoverContinue()
 	{
-
+		instructions.SetPrompt(key, startVerb + " " + TextEffects.EmphasizeWord(gameName, Color.red));
 	}
+
 	public override void HoverEnd()
 	{
 		instructions.RemovePrompt(key);
@@ -38,5 +38,11 @@ public class Playable : Interactable
 	{
 		_interacting = false;
 		instructions.RemovePrompt(key);
+	}
+
+	private void OnDisable()
+	{
+		HoverEnd();
+		InteractEnd();
 	}
 }

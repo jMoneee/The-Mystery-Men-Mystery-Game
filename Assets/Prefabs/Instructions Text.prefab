@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 1038217132879741963}
   font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  fontSize: 50
+  fontSize: 40
   fontColor: {r: 1, g: 1, b: 1, a: 1}
   fontStyle: 0
   horizontalWrapMode: 1
