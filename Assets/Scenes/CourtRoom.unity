@@ -2970,6 +2970,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7145038970985555992, guid: 7f2759000b785364da75f6f795ce536b,
+        type: 3}
+      propertyPath: movementSettings.ForwardSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145038970985555992, guid: 7f2759000b785364da75f6f795ce536b,
+        type: 3}
+      propertyPath: movementSettings.BackwardSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145038970985555992, guid: 7f2759000b785364da75f6f795ce536b,
+        type: 3}
+      propertyPath: movementSettings.StrafeSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145038970985555992, guid: 7f2759000b785364da75f6f795ce536b,
+        type: 3}
+      propertyPath: movementSettings.RunMultiplier
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145038970985555992, guid: 7f2759000b785364da75f6f795ce536b,
+        type: 3}
+      propertyPath: movementSettings.JumpForce
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f2759000b785364da75f6f795ce536b, type: 3}
 --- !u!1001 &1416430264
