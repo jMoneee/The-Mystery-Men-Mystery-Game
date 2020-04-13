@@ -5,6 +5,7 @@ using UnityEngine;
 public class LookObject : MonoBehaviour
 {
     public GameObject CameraPosition;
+    public string Label;
     // Start is called before the first frame update
     void Start()
     {

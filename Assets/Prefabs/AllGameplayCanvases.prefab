@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 277187415641373088, guid: 1689874d01a02f740b26c3022777648e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 141.95
+      objectReference: {fileID: 0}
     - target: {fileID: 420380142848662567, guid: 1689874d01a02f740b26c3022777648e,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -291,6 +296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 541053162837830733, guid: 1689874d01a02f740b26c3022777648e,
+        type: 3}
+      propertyPath: displayMethod
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1273663938586592771, guid: 1689874d01a02f740b26c3022777648e,
         type: 3}

@@ -12,15 +12,16 @@ public class LookMinigameHandler : MonoBehaviour
     public GameObject selectThisItem;
     public Image item;
     public GameObject PathParent;
-    private List<Transform> pathObjects;
-    private bool started;
-    private bool movingLeft = false;
-    private bool movingRight = false;
+    public GameObject LabelText;
+    protected List<Transform> pathObjects;
+    protected bool started;
+    protected bool movingLeft = false;
+    protected bool movingRight = false;
 
     public Camera cam;
 
-    private List<LookObject> lookObjects;
-    private List<Transform> lookObjectCameraPositions;
+    protected List<LookObject> lookObjects;
+    protected List<Transform> lookObjectCameraPositions;
 
     public int selectedObject = 0;
     public int lookedAtObject = 0;
@@ -32,8 +33,10 @@ public class LookMinigameHandler : MonoBehaviour
     public bool lookAtTarget = true;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
+        Debug.Log("FUCK YOU");
+
         fpsplayer = FindObjectOfType<RigidbodyFirstPersonController>();
 
         lookObjects = GetComponentsInChildren<LookObject>().ToList();
@@ -48,6 +51,13 @@ public class LookMinigameHandler : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        HandleMovement();
+
+        DisplayLabelIfNecessary();
+    }
+
+    public virtual void HandleMovement()
     {
         if (action == null)
         {
@@ -209,6 +219,19 @@ public class LookMinigameHandler : MonoBehaviour
         }
     }
 
+    public void DisplayLabelIfNecessary()
+    {
+        if (started && string.IsNullOrEmpty(lookObjects[lookedAtObject].Label) == false)
+        {
+            LabelText.SetActive(true);
+            LabelText.GetComponentInChildren<TextMeshProUGUI>().text = lookObjects[lookedAtObject].Label;
+        }
+        else
+        {
+            LabelText.SetActive(false);
+        }
+    }
+
     public void StartMatchingGame(MinigameListing details)
     {
         DialogueController = FindObjectOfType<DialogueController>();
@@ -222,7 +245,7 @@ public class LookMinigameHandler : MonoBehaviour
         StartCoroutine(StartGame(details));
     }
 
-    private IEnumerator StartGame(MinigameListing details)
+    protected IEnumerator StartGame(MinigameListing details)
     {
         if (PlayerStateTracker.startedMatchingMinigame == false)
         {
@@ -244,16 +267,23 @@ public class LookMinigameHandler : MonoBehaviour
             pathIndex = pathObjects.IndexOf(closestObject.CameraPosition.transform);
         }
 
-        GetComponent<CameraLerper>().Play(pathObjects[pathIndex].transform.position);
+        Debug.Log("OBJECTS: " + pathObjects.Count);
+        Debug.Log("index: " + pathIndex);
 
+        GetComponent<CameraLerper>().Play(pathObjects[pathIndex].transform.position);
+        HandleMinigameDetails(details);
+    }
+
+    public virtual void HandleMinigameDetails(MinigameListing details)
+    {
         correctAnswer = details.correctIndex;
         correctText = details.correct;
         incorrectText = details.incorrect;
         item.sprite = details.objectMatch;
     }
 
-    private DialogueController DialogueController;
-    private Coroutine action;
+    protected DialogueController DialogueController;
+    protected Coroutine action;
     public RigidbodyFirstPersonController fpsplayer;
     public void SelectCurrentObject()
     {
@@ -267,7 +297,7 @@ public class LookMinigameHandler : MonoBehaviour
         }
     }
 
-    private IEnumerator CorrectAnswer()
+    protected IEnumerator CorrectAnswer()
     {
         selectThisItem.gameObject.SetActive(false);
 
@@ -285,7 +315,7 @@ public class LookMinigameHandler : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private IEnumerator IncorrectAnswer()
+    protected IEnumerator IncorrectAnswer()
     {
         selectThisItem.gameObject.SetActive(false);
 
@@ -295,7 +325,7 @@ public class LookMinigameHandler : MonoBehaviour
         selectThisItem.gameObject.SetActive(true);
     }
 
-    private IEnumerator WaitForDialog(TextAsset asset)
+    protected IEnumerator WaitForDialog(TextAsset asset)
     {
         DialogueController.HandleDialogueText(asset);
         yield return new WaitUntil(() => DialogueController.HandlingText == false);
