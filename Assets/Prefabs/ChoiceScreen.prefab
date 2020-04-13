@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 2172711148888374132}
   - component: {fileID: 6055419581219987953}
   - component: {fileID: 5489987587784840882}
+  - component: {fileID: 6746517553337702349}
   - component: {fileID: 5305211228177493662}
   m_Layer: 5
   m_Name: Button
@@ -326,6 +327,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6746517553337702349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4242702395994040238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a911bf6ec74ee2428e0a4051da97f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PointerEnterSound: {fileID: 8300000, guid: ab55cb65a9c66c045862767b82a4e7bd, type: 3}
+  m_PointerExitSound: {fileID: 8300000, guid: cc3518219e81a0b46af631fc5858ab21, type: 3}
 --- !u!114 &5305211228177493662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +786,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 141.85
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -788,7 +803,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

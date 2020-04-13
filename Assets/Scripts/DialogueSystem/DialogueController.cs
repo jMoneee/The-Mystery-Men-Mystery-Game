@@ -13,6 +13,8 @@ public class DialogueController : MonoBehaviour
     }
 
     public Dialogueable currentDialogueable;
+	public AudioClip[] sounds;
+	private AudioSource sound;
 
     //This is used to keep all of are IHandleLine classes
     private Dictionary<LineType, IHandleLine> LineHandlers;
@@ -25,6 +27,7 @@ public class DialogueController : MonoBehaviour
         LineHandlers.Add(LineType.Switch, new SwitchLineHandler());
         //LineHandlers.Add(LineType.Input, new HandleInputLine());
         GetComponent<CanvasGroup>().ChangeCanvasGroupVisibility(false);
+		sound = GetComponent<AudioSource>();
     }
 
     //Variables For Handling The Reading Of Different Lines
@@ -115,10 +118,13 @@ public class DialogueController : MonoBehaviour
                 LineType lineType = GetLineType(line);
                 //Debug.Log(lineType.ToString());
                 HandlingLineCoroutine = StartCoroutine(LineHandlers[lineType].HandleLine(line));
-                while (isHandlingLine)
-                {
+				sound.clip = sounds[UnityEngine.Random.Range(0, sounds.Length - 1)];
+				sound.Play();
+				while (isHandlingLine)
+                {				
                     yield return new WaitForEndOfFrame();
                 }
+				sound.Stop();
                 yield return new WaitForEndOfFrame();
             }
             yield return new WaitForEndOfFrame();
@@ -136,6 +142,7 @@ public class DialogueController : MonoBehaviour
         ResetDialogueVariables();
         if (currentDialogueable != null)
             currentDialogueable._interacting = false;
+		sound.Stop();
         currentDialogueable = null;
     }
 

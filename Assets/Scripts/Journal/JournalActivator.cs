@@ -12,14 +12,16 @@ public class JournalActivator : MonoBehaviour
     public static bool IsPaused { get { return instance.journalActive == true; } }
 
     public CanvasGroup JournalCanvas;
+	public AudioClip showSound;
+	public AudioClip hideSound;
     private bool journalActive = false;
-    // Start is called before the first frame update
+	public AudioSource sound;
+
     void Start()
     {
 		JournalCanvas.ChangeCanvasGroupVisibility(false);
 	}
 
-	// Update is called once per frame
 	void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -32,6 +34,8 @@ public class JournalActivator : MonoBehaviour
 
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+
+				sound.PlayOneShot(hideSound);
             }
             else
             {
@@ -41,8 +45,9 @@ public class JournalActivator : MonoBehaviour
 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-            }
-        }
+				sound.PlayOneShot(showSound);
+			}
+		}
 
         //if (journalActive)
         //{

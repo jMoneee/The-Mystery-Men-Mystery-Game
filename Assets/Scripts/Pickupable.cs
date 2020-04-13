@@ -14,6 +14,13 @@ public class Pickupable : Interactable
 	[SerializeField] protected float holdDistance = 1.5f;
 	protected bool setColliderToTrigger = false;
 	public bool reorient = true;
+	public AudioClip soundOnPickup;
+	private AudioSource sound;
+
+	private void Start()
+	{
+		sound = GetComponent<AudioSource>();
+	}
 
 	public override void HoverBegin()
 	{
@@ -32,6 +39,8 @@ public class Pickupable : Interactable
 	public override void InteractBegin()
 	{
 		_interacting = true;
+		interactAction?.Invoke();
+		sound.PlayOneShot(soundOnPickup);
 		StartCoroutine(Hold());
 	}
 
