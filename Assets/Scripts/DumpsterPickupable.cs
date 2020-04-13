@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class DumpsterPickupable : Pickupable
 {
 	public Camera cam;
@@ -50,5 +51,10 @@ public class DumpsterPickupable : Pickupable
 		{
 			warning.Warning("Can not place " + name + " there.");
 		}
+	}
+
+	private void Update()
+	{
+		Physics.autoSimulation = true;
 	}
 }

@@ -81,9 +81,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public MovementSettings movementSettings = new MovementSettings();
         public MouseLook mouseLook = new MouseLook();
         public AdvancedSettings advancedSettings = new AdvancedSettings();
+		[SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+		private AudioSource m_AudioSource;
 
-
-        private Rigidbody m_RigidBody;
+		private Rigidbody m_RigidBody;
         private CapsuleCollider m_Capsule;
         private float m_YRotation;
         private Vector3 m_GroundContactNormal;
@@ -122,6 +123,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
+			m_AudioSource = GetComponent<AudioSource>();
             mouseLook.Init (transform, cam.transform);
         }
 
@@ -184,10 +186,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
             m_Jump = false;
-        }
 
+			PlayFootStepAudio();
+		}
 
-        private float SlopeMultiplier()
+		private float m_CycleProgress = 0f;
+		private void PlayFootStepAudio()
+		{
+			m_CycleProgress += Time.fixedDeltaTime * m_RigidBody.velocity.magnitude;
+			if (m_CycleProgress < movementSettings.CurrentTargetSpeed / 3f)
+				return;
+			else
+				m_CycleProgress = 0f;
+
+			// pick & play a random footstep sound from the array,
+			// excluding sound at index 0
+			int n = UnityEngine.Random.Range(1, m_FootstepSounds.Length);
+			m_AudioSource.clip = m_FootstepSounds[n];
+			m_AudioSource.PlayOneShot(m_AudioSource.clip);
+			// move picked sound to index 0 so it's not picked next time
+			m_FootstepSounds[n] = m_FootstepSounds[0];
+			m_FootstepSounds[0] = m_AudioSource.clip;
+		}
+
+		private float SlopeMultiplier()
         {
             float angle = Vector3.Angle(m_GroundContactNormal, Vector3.up);
             return movementSettings.SlopeCurveModifier.Evaluate(angle);

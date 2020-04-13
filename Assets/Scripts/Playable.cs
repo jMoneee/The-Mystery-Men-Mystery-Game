@@ -26,6 +26,7 @@ public class Playable : Interactable
 		//instructions.SetPrompt(key, endVerb + " " + TextEffects.EmphasizeWord(gameName, Color.red));
 		_interacting = true;
 		interactAction?.Invoke();
+		instructions.SetPrompt(key, endVerb + " " + TextEffects.EmphasizeWord(gameName, Color.red));
 	}
 
 

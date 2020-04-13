@@ -8,6 +8,7 @@ public class SoundOnCollision : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		sound.Play();
+		if (!sound.isPlaying)
+			sound.Play();
 	}
 }

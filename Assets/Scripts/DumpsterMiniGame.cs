@@ -79,7 +79,9 @@ public class DumpsterMiniGame : MonoBehaviour
 	{
 		foreach (MonoBehaviour item in GetComponentsInChildren(intType, true))
 		{
-			item.enabled = toState;
+			if (item.GetType() != typeof(InspectDetailedOther) 
+				&& item.GetType() != typeof(InspectInitial))
+				item.enabled = toState;
 		}
 	}
 
