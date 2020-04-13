@@ -1,0 +1,31 @@
+Dan "Mr. Gruff, you are the primary crime scene investigator on the murder case of Mr. Lukas Hrim, correct?"
+Mr. Gruff "Yes I am."
+Dan "Can you explain how you were made aware of the case?"
+Mr. Gruff "Yeah, the officer who first found the crime scene called in the case, and I got shipped off to take care of it."
+Dan "Okay, can you describe the crime scene when you arrived?"
+Mr. Gruff "When I got there, the only things that were there was the victim's dead body, some blood, a few guns, and a crowbar."
+Dan "Can you confirm the body's identity for us?"
+Mr. Gruff "Yeah, it was one Lukas Hrim.  I found his ID in his pocket, and lab tests confirmed he was indeed Mr. Hrim."
+Dan "And was Mr. Hrim the only person there during the crime?"
+choice "How many people were present during the crime?"
+{
+	"2"
+	[
+		Mr. Gruff "<i>No, that doesn't sound right, there were more than that.</i>"
+	]
+	"3"
+	[
+		Mr. Gruff "<i>No, that doesn't sound right, there were more than that.</i>"
+	]
+	"4"
+	[
+		Mr. Gruff "No, there were a total of 4 people at the crime scene."
+		Dan "I see, then can you describe everyone present and their"
+		"relationship to the crime?"
+		Mr. Gruff "Of course, let's see..."
+	]
+	"5"
+	[
+		Mr. Gruff "<i>No, that doesn't sound right, there were less than that.</i>"
+	]
+}

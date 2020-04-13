@@ -1,0 +1,27 @@
+Mr. Gruff "Mr. Horn was kind enough to leave his knife behind at the scene."
+"DNA matching shows his fingerprints on the knife's handle."
+Dan "Interesting. If I recall correctly, the knife was bloody, right?"
+choice "Who was stabbed by the knife?"
+{
+	"Mister Gruff"
+	[
+		Mr. Gruff "<i>...come on now.</i>"
+	]
+	"Viy Petrov"
+	[
+		Mr. Gruff "<i>No, his blood wasn't on the blade.</i>"
+	]
+	"James Brown"
+	[
+		Mr. Gruff "<i>No, his blood wasn't on the blade.</i>"
+	]
+	"Viy Petrov"
+	[
+		Mr. Gruff "Yes. DNA matching on the blood from the knife blade matches the blood of the victim, Lukas Hrim."
+		"The victim's arm also has a stab wound matching the knife's blade shape."
+		"I believe that Mr. Horn thrust his weapon towards the victim while he was already next to him, likely claiming his drugs,"
+		"and the victim raised his arm in self-defense to absorb the blow."
+		Dan "I see. But this knife was not the cause of death, correct?"
+		Mr. Gruff "No, Mr. Horn didn't kill the victim. He simply injured him."
+	]
+}
