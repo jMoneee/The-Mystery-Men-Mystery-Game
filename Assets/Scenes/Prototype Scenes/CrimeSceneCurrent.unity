@@ -336,6 +336,7 @@ MonoBehaviour:
       m_Calls: []
   interactor: {fileID: 1051085776067604418}
   holdDistance: 1.5
+  reorient: 1
 --- !u!54 &104456026
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1565,6 +1566,7 @@ MonoBehaviour:
       m_Calls: []
   interactor: {fileID: 1051085776067604418}
   holdDistance: 1.5
+  reorient: 1
 --- !u!54 &573913936
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2146,6 +2148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 4976014876707756309}
+  Label: 
 --- !u!1001 &870056969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2747,6 +2750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 3048108312339218558}
+  Label: 
 --- !u!1 &1348981671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2853,6 +2857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 4976014876583184987}
+  Label: 
 --- !u!1001 &1490797042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3308,7 +3313,7 @@ PrefabInstance:
     - target: {fileID: 1183368972136438113, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 1183368972136438113, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
@@ -4273,6 +4278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 4976014878267177306}
+  Label: 
 --- !u!1001 &1958261890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6172,6 +6178,7 @@ MonoBehaviour:
   selectThisItem: {fileID: 3048108311603780055}
   item: {fileID: 0}
   PathParent: {fileID: 3048108311619391714}
+  LabelText: {fileID: 0}
   cam: {fileID: 0}
   selectedObject: -1
   lookedAtObject: -1
