@@ -207,6 +207,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d38e11a0eea7d37458f58edd4b7bd50f, type: 3}
   - {fileID: 8300000, guid: e33dc869d80e25342975fbde334ccf2d, type: 3}
   - {fileID: 8300000, guid: 0cbe7f0c2e13c594081cb2553a759b6d, type: 3}
+  soundsMixerGroup: {fileID: -4281375102379570552, guid: 57c49e2d9985e4d4da13654fb31f97f6,
+    type: 2}
   cachedLastSpeaker: 
   _next: 0
   chapterProgress: 0
@@ -870,6 +872,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.021484375
       objectReference: {fileID: 0}
+    - target: {fileID: 6746517553337702349, guid: bfc547d4aaa1f5e428e333894ac08109,
+        type: 3}
+      propertyPath: m_PointerDownSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 26432be402b13f44e9110ed73f17d8d5, type: 3}
     - target: {fileID: 7845840205611636074, guid: bfc547d4aaa1f5e428e333894ac08109,
         type: 3}
       propertyPath: m_AnchoredPosition.x

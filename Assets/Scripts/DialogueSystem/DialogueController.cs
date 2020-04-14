@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Audio;
 
 public class DialogueController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class DialogueController : MonoBehaviour
     public Dialogueable currentDialogueable;
 	public AudioClip[] sounds;
 	private AudioSource sound;
+	public AudioMixerGroup soundsMixerGroup;
 
     //This is used to keep all of are IHandleLine classes
     private Dictionary<LineType, IHandleLine> LineHandlers;
@@ -119,7 +121,8 @@ public class DialogueController : MonoBehaviour
                 //Debug.Log(lineType.ToString());
                 HandlingLineCoroutine = StartCoroutine(LineHandlers[lineType].HandleLine(line));
 				sound.clip = sounds[UnityEngine.Random.Range(0, sounds.Length - 1)];
-				sound.Play();
+				if (lineType != LineType.Choice)
+					sound.Play();
 				while (isHandlingLine)
                 {				
                     yield return new WaitForEndOfFrame();

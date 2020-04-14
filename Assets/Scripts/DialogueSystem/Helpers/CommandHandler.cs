@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Video;
 
 public static class CommandHandler
@@ -75,13 +76,23 @@ public static class CommandHandler
 
     private static void Command_PlaySound(string[] parameters)
     {
-        //string soundEffectName = parameters[0].Trim();
-        //AudioClip clip = soundEffectName == "null" ? null : Resources.Load(NovelController.SFXFilePath + soundEffectName) as AudioClip;
+		string soundEffectName = parameters[0].Trim();
+		AudioClip clip = soundEffectName == "null" ? null : Resources.Load("Audio/" + soundEffectName) as AudioClip;
+		AudioMixerGroup amg = Resources.Load("Audio/Game Sound") as AudioMixerGroup;
+		float volume = parameters.Length > 2 ? float.Parse(parameters[2].Trim()) : 1f;
+		float pitch = parameters.Length > 3 ? float.Parse(parameters[3].Trim()) : 1f;
+		bool loop = parameters.Length > 4 ? bool.Parse(parameters[4].Trim()) : false;
 
-        //float volume = parameters.Length > 2 ? float.Parse(parameters[2].Trim()) : 1f;
-        //float pitch = parameters.Length > 3 ? float.Parse(parameters[3].Trim()) : 1f;
-        //bool loop = parameters.Length > 4 ? bool.Parse(parameters[4].Trim()) : false;
+		Debug.Log("play sound choice");
+		AudioSource g = new GameObject("sound").AddComponent<AudioSource>();
+		g.volume = volume;
+		g.pitch = pitch;
+		g.loop = loop;
+		g.spatialBlend = 0f;
+		g.PlayOneShot(clip);
+		g.outputAudioMixerGroup = amg;
+		GameObject.Destroy(g, clip.length);
 
-        //AudioManager.instance.PlaySFX(clip, volume, pitch, loop);
-    }
+		//AudioManager.instance.PlaySFX(clip, volume, pitch, loop);
+	}
 }

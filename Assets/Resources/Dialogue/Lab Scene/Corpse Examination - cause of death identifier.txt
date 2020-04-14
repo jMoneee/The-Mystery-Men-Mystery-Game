@@ -3,15 +3,15 @@ choice "What's the cause of death?"
 {
   "Head Wound"
   [
-	Load(Dialogue/Lab Scene/Cause of Death Selection - Incorrect)
+	playSound(BadAction) Load(Dialogue/Lab Scene/Cause of Death Selection - Incorrect)
   ]
   "Knife Wound (Arm)"
   [
-	Load(Dialogue/Lab Scene/Cause of Death Selection - Incorrect)
+	playSound(BadAction) Load(Dialogue/Lab Scene/Cause of Death Selection - Incorrect)
   ]	
   "Gun Wound (Chest)"
   [
-	Load(Dialogue/Lab Scene/Cause of Death Selection - Correct)
+	playSound(GoodAction) Load(Dialogue/Lab Scene/Cause of Death Selection - Correct)
   ]
 }
 "Hmm let me think about that" 
