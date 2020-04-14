@@ -5333,7 +5333,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 7a36d7763a635b44bab0ceb7ef827f6e,
         type: 3}
       propertyPath: m_Name
-      value: SodaCan (1)
+      value: Soda Can
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 7a36d7763a635b44bab0ceb7ef827f6e,
         type: 3}
@@ -6538,7 +6538,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 1cd75b3d7f2ede14bb4d7db570f279b6,
         type: 3}
       propertyPath: m_Name
-      value: LunchBox
+      value: Lunch Box
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 1cd75b3d7f2ede14bb4d7db570f279b6,
         type: 3}
@@ -8424,7 +8424,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: d51e7ec8237cc4e498c216253c36cf3e,
         type: 3}
       propertyPath: m_Name
-      value: WaterGun
+      value: Water Gun
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: d51e7ec8237cc4e498c216253c36cf3e,
         type: 3}
@@ -13329,7 +13329,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 7a36d7763a635b44bab0ceb7ef827f6e,
         type: 3}
       propertyPath: m_Name
-      value: SodaCan
+      value: Soda Can
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 7a36d7763a635b44bab0ceb7ef827f6e,
         type: 3}
