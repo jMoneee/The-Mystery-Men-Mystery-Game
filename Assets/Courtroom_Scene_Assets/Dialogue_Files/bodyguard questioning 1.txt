@@ -1,18 +1,18 @@
-Mr. Gruff "Mr. Hrim did not come to the scene alone.  He had a bodyguard with him."
-Dan "I see.  Tell me about this bodyguard."
+Det. Gruff "Det. Hrim did not come to the scene alone. He had a bodyguard with him."
+Dan "I see. Tell me about this bodyguard."
 choice "What was the bodyguard's name?"
 {
 	"James Brown"
 	[
-		Mr. Gruff "<i>No, that's not the bodyguard...</i>"
+		Det. Gruff "<i>No, that's not the bodyguard...</i>"
 	]
 	"Lukas Hrim"
 	[
-		Mr. Gruff "<i>No, that's not the bodyguard...</i>"
+		Det. Gruff "<i>No, that's not the bodyguard...</i>"
 	]
 	"Mister Gruff"
 	[
-		Mr. Gruff "<i>No, that's not the bodyguard...</i>"
+		Det. Gruff "<i>No, that's not the bodyguard...</i>"
 	]
 	"Viy Petrov"
 	[

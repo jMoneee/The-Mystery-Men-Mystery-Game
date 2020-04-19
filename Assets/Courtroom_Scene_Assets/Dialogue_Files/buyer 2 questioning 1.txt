@@ -1,13 +1,13 @@
-Mr. Gruff "There were two buyers. Let's talk about Terry Horn first."
+Det. Gruff "There were two buyers. Let's talk about Terry Horn first."
 choice "What ties Terry Horn to the crime scene?"
 {
 	"1911 R1 pistol"
 	[
-		Mr. Gruff "<i>No, he didn't use a gun...</i>"
+		Det. Gruff "<i>No, he didn't use a gun...</i>"
 	]
 	"M&P9 Shield pistol"
 	[
-		Mr. Gruff "<i>No, he didn't use a gun...</i>"
+		Det. Gruff "<i>No, he didn't use a gun...</i>"
 	]
 	"Knife"
 	[
@@ -15,6 +15,6 @@ choice "What ties Terry Horn to the crime scene?"
 	]
 	"Crowbar"
 	[
-		Mr. Gruff "<i>No, he didn't use a crowbar...</i>"
+		Det. Gruff "<i>No, he didn't use a crowbar...</i>"
 	]
 }

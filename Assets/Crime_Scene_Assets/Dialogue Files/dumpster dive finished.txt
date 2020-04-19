@@ -3,4 +3,4 @@ Det. Gruff "It seems my legendary CSI intuition prevails again."
 "It's been a while since I've seen this model though, only hired guns or professionals can get their hands on something like this."
 "It's also missing a shot, and the odds of a professional forgetting to fully load their weapon are extremely low."
 "This will be coming back with me to the lab."
-"<i>Dumpster gun inspection added to the journal.</i>"AddToJournal(A gun was found in the dumpster marked with a blood splatter.  The model is pretty uncommon, only used by bodyguards and professionals.  The gun is missing a bullet in its chamber.)
+"<i>Dumpster gun inspection added to the journal.</i>"AddToJournal(A gun was found in the dumpster marked with a blood splatter. The model is pretty uncommon, only used by bodyguards and professionals. The gun is missing a bullet in its chamber.)

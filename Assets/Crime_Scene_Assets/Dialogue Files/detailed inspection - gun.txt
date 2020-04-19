@@ -1,6 +1,6 @@
 Det. Gruff "This gun is definitely going to be important."
-"For one, it's lying right next to this blood trail.  That makes it likely that this gun's owner and the one who left this blood trail are the same person,"
+"For one, it's lying right next to this blood trail. That makes it likely that this gun's owner and the one who left this blood trail are the same person,"
 "but DNA matching and fingerprinting can get me that answer for sure."
-"There seems to be one bullet missing from the clip.  That should be important."
+"There seems to be one bullet missing from the clip. That should be important."
 "I'll get some more answers out of it at the lab."
-"<i>Gun inspection added to the journal.</i>"AddToJournal(Gun left at the scene near the trail of blood.  One round was missing from the gun's clip.)
+"<i>Gun inspection added to the journal.</i>"AddToJournal(Gun left at the scene near the trail of blood. One round was missing from the gun's clip.)

@@ -1,24 +1,24 @@
-Mr. Gruff "Mr. Hrim was a drug dealer.  He was there to sell drugs."
-Dan "I see.  On the topic of the victim, do you happen to have a concrete cause of death?"
+Det. Gruff "Det. Hrim was a drug dealer. He was there to sell drugs."
+Dan "I see. On the topic of the victim, do you happen to have a concrete cause of death?"
 choice "What is the cause of death?"
 {
 	"1911 R1 pistol shot to chest"
 	[
-		Mr. Gruff "<i>Mr. Hrim definitely died to a gunshot, but was this the right gun?</i>"
+		Det. Gruff "<i>Det. Hrim definitely died to a gunshot, but was this the right gun?</i>"
 	]
 	"M&P9 Shield pistol shot to chest"
 	[
-		Mr. Gruff "Cause of death is a single shot to the chest.  Based on ballistics analysis and the weapons present, the victim was killed by the M&P9 pistol found at the scene."
-		Dan "You're absolutely sure of this, Mr. Gruff?"
-		Mr. Gruff "Yes, absolutely sure.  The crime scene and lab analysis all point to it."
+		Det. Gruff "Cause of death is a single shot to the chest. Based on ballistics analysis and the weapons present, the victim was killed by the M&P9 pistol found at the scene."
+		Dan "You're absolutely sure of this, Det. Gruff?"
+		Det. Gruff "Yes, absolutely sure. The crime scene and lab analysis all point to it."
 		Dan "Alright, please continue."
 	]
 	"Knife wound to arm"
 	[
-		Mr. Gruff "<i>Mr. Hrim had a knife wound, but I don't think that was the CoD...</i>"
+		Det. Gruff "<i>Det. Hrim had a knife wound, but I don't think that was the CoD...</i>"
 	]
 	"Crowbar wound to head"
 	[
-		Mr. Gruff "<i>What? No, there wasn't even a crowbar wound on the victim.</i>"
+		Det. Gruff "<i>What? No, there wasn't even a crowbar wound on the victim.</i>"
 	]
 }

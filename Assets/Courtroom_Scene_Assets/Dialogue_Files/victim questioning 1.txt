@@ -1,9 +1,9 @@
-Mr. Gruff "Let's start with the easy one: the victim himself, Lukas Hrim."
+Det. Gruff "Let's start with the easy one: the victim himself, Lukas Hrim."
 choice "What was Lukas Hrim doing at the crime scene?"
 {
 	"He was buying drugs"
 	[
-		Mr. Gruff "<i>What, no that's not right...</i>"
+		Det. Gruff "<i>What, no that's not right...</i>"
 	]
 	"He was selling drugs"
 	[
@@ -11,10 +11,10 @@ choice "What was Lukas Hrim doing at the crime scene?"
 	]
 	"He was a hired bodyguard"
 	[
-		Mr. Gruff "<i>What, no that's not right...</i>"
+		Det. Gruff "<i>What, no that's not right...</i>"
 	]
 	"He was out for a stroll"
 	[
-		Mr. Gruff "<i>What, no that's not right...</i>"
+		Det. Gruff "<i>What, no that's not right...</i>"
 	]
 }
