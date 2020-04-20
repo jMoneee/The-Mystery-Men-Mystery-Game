@@ -3,12 +3,12 @@ choice "What ties Terry Horn to the crime scene?"
 	"1911 R1 pistol"
 	[
 		Det. Gruff "[playSound(BadAction)]<i>No, he didn't use a gun...</i>"
-		Load(Dialogue/Court Room/buyer 2 questioning 1 choice)
+		Load(Dialogue/Court Room/buyer 1 questioning 1 choice)
 	]
 	"M&P9 Shield pistol"
 	[
 		Det. Gruff "[playSound(BadAction)]<i>No, he didn't use a gun...</i>"
-		Load(Dialogue/Court Room/buyer 2 questioning 1 choice)
+		Load(Dialogue/Court Room/buyer 1 questioning 1 choice)
 	]
 	"Knife"
 	[
@@ -17,7 +17,8 @@ choice "What ties Terry Horn to the crime scene?"
 	"Crowbar"
 	[
 		Det. Gruff "[playSound(BadAction)]<i>No, he didn't use a crowbar...</i>"
-		Load(Dialogue/Court Room/buyer 2 questioning 1 choice)
+		Load(Dialogue/Court Room/buyer 1 questioning 1 choice)
 	]
 }
+
 "fill this in to prevent null reference"

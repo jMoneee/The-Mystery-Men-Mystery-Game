@@ -15,14 +15,14 @@ choice "Who was stabbed by the knife?"
 		Det. Gruff "[playSound(BadAction)]<i>No, his blood wasn't on the blade.</i>"
 		Load(Dialogue/Court Room/buyer 2 questioning 2 choice)
 	]
-	"Viy Petrov"
+	"Lukas Hrim"
 	[
 		Det. Gruff "[playSound(GoodAction)]Yes. DNA matching on the blood from the knife blade matches the blood of the victim, Lukas Hrim."
 		"The victim's arm also has a stab wound matching the knife's blade shape."
-		"I believe that Det. Horn thrust his weapon towards the victim while he was already next to him, likely claiming his drugs,"
+		"I believe that Mr. Horn thrust his weapon towards the victim while he was already next to him, likely claiming his drugs,"
 		"and the victim raised his arm in self-defense to absorb the blow."
 		Dan "I see. But this knife was not the cause of death, correct?"
-		Det. Gruff "No, Det. Horn didn't kill the victim. He simply injured him."
+		Det. Gruff "No, Mr. Horn didn't kill the victim. He simply injured him."
 		Load(Dialogue/Court Room/buyer 1 questioning 1)
 	]
 }

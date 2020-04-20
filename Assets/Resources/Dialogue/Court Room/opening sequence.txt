@@ -1,6 +1,6 @@
-Dan "Hello, my name is Det. Dan Devil, and I will be conducting the direct examination of Det. Mister Gruff."
+Dan "Hello, my name is Mr. Dan Devil, and I will be conducting the direct examination of Det. Mister Gruff."
 "Can you please state your name for the court?"
-Det. Gruff "Gregory Gruff."
+Det. Gruff "Detective Mister Gruff."
 Dan "And what is your profession, Det. Gruff?"
 Det. Gruff "I'm a CSI for the local police."
 Dan "I see you've brought police notes with you, are these your personal notes from the investigation?"

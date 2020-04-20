@@ -1,3 +1,3 @@
-Det. Gruff "Det. Hrim was a drug dealer. He was there to sell drugs."
+Det. Gruff "Mr. Hrim was a drug dealer. He was there to sell drugs."
 Dan "I see. On the topic of the victim, do you happen to have a concrete cause of death?"
 Load(Dialogue/Court Room/victim questioning 2 choice)
