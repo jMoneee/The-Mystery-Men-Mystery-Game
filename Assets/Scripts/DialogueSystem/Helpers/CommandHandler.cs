@@ -78,7 +78,7 @@ public static class CommandHandler
     {
 		string soundEffectName = parameters[0].Trim();
 		AudioClip clip = soundEffectName == "null" ? null : Resources.Load("Audio/" + soundEffectName) as AudioClip;
-		AudioMixerGroup amg = Resources.Load("Audio/Game Sound") as AudioMixerGroup;
+		
 		float volume = parameters.Length > 2 ? float.Parse(parameters[2].Trim()) : 1f;
 		float pitch = parameters.Length > 3 ? float.Parse(parameters[3].Trim()) : 1f;
 		bool loop = parameters.Length > 4 ? bool.Parse(parameters[4].Trim()) : false;
@@ -90,7 +90,7 @@ public static class CommandHandler
 		g.loop = loop;
 		g.spatialBlend = 0f;
 		g.PlayOneShot(clip);
-		g.outputAudioMixerGroup = amg;
+		g.outputAudioMixerGroup = DialogueController.instance.soundsMixerGroup;
 		GameObject.Destroy(g, clip.length);
 
 		//AudioManager.instance.PlaySFX(clip, volume, pitch, loop);

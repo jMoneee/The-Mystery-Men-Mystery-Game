@@ -7,6 +7,6 @@ public class MoveScenes : MonoBehaviour
 {
     public void MoveScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		LoadScreen.LoadNext();
     }
 }

@@ -4370,8 +4370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 1326006474}
-  Dialogue: {fileID: 0}
-  FPController: {fileID: 0}
+  Dialogue: {fileID: 1847685565}
+  FPController: {fileID: 705728047}
 --- !u!4 &491460233
 Transform:
   m_ObjectHideFlags: 0
@@ -9298,7 +9298,7 @@ PrefabInstance:
     - target: {fileID: 7065843742859062844, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.94989
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 7065843742859062844, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
@@ -19230,6 +19230,12 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1847685565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8626571688701192560, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+    type: 3}
+  m_PrefabInstance: {fileID: 894742281}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1858232071
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -104,7 +104,7 @@ public class CrimeSceneController : MonoBehaviour
 
 		yield return WaitForDialog(endOfSceneDialog);
 		//exit scene here
-		SceneManager.LoadScene(2);
+		LoadScreen.LoadNext();
 	}
 
 	private IEnumerator dumpsterWhatever(InspectDetailedOther item)

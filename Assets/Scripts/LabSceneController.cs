@@ -60,8 +60,8 @@ public class LabSceneController : MonoBehaviour
 
 		yield return WaitForDialog(labSceneComplete);
 
-        //transition to court scene here
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		//transition to court scene here
+		LoadScreen.LoadNext();
     }
 
     private IEnumerator WaitForDialog(TextAsset asset)
