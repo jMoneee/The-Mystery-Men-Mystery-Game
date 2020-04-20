@@ -52,19 +52,21 @@ public class DialogueController : MonoBehaviour
     public void Next() { _next = true; }
     public int chapterProgress = 0;
 
-    private void Update()
-    {
-        if (HandlingText)
-        {
-            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) 
-                || Input.GetMouseButtonDown(0))
-            {
-                Next();
-            }
-        }
-    }
+	public static bool lockDialogue = false;
+	private void Update()
+	{
+		if (HandlingText)
+		{
+			if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)
+				|| Input.GetMouseButtonDown(0))
+			{
+				if (lockDialogue == false)
+					Next();
+			}
+		}
+	}
 
-    public Dictionary<string, string> savedVariables = new Dictionary<string, string>();
+	public Dictionary<string, string> savedVariables = new Dictionary<string, string>();
 
     private Coroutine handlingText;
     public bool HandlingText { get { return handlingText != null; } }
@@ -78,6 +80,7 @@ public class DialogueController : MonoBehaviour
 
     public void StartNewText(TextAsset textAsset)
     {
+		lockDialogue = false;
         if (handlingText != null)
             StopCoroutine(handlingText);
         ResetDialogueVariables();

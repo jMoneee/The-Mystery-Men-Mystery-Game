@@ -33,12 +33,6 @@ public class MainMenu : MonoBehaviour
 
 	public void ContinueGame()
 	{
-		Menu.SetActive(false);
-		if (Dialogue != null)
-			Dialogue.GetComponentInChildren<Canvas>().enabled = true;
-		if (FPController != null)
-		{
-			//FPController.GetComponent<RigidbodyFirstPersonController>().enabled = true;
-		}
+		FindObjectOfType<ActivateMenu>().Resume();
 	}
 }
