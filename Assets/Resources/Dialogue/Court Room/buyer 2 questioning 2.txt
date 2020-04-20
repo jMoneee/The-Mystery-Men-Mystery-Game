@@ -1,4 +1,4 @@
-Det. Gruff "Det. Horn was kind enough to leave his knife behind at the scene."
+Det. Gruff "Mr. Horn was kind enough to leave his knife behind at the scene."
 "DNA matching shows his fingerprints on the knife's handle."
 Dan "Interesting. If I recall correctly, the knife was bloody, right?"
 Load(Dialogue/Court Room/buyer 2 questioning 2 choice)
