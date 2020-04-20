@@ -1,0 +1,27 @@
+Det. Gruff "The bodyguard's name is Viy Petrov. Just your standard run-of-the-mill hired gun to protect Mr. Hrim should something go wrong."
+"Some good that did him..."
+Dan "How did you confirm Mr. Petrov was there?"
+choice "What ties Viy Petrov to the crime scene?"
+{
+	"1911 R1 pistol"
+	[
+		Det. Gruff "There was a bloodied dumpster at the crime scene that contained a gun. DNA matching confirmed it had Mr. Petrov's fingerprints on it. He was definitely there."
+		Dan "So Mr. Petrov was there with a gun. Did he shoot Mr. Hrim?"
+		Det. Gruff "No, the ballistics from the shot that killed Mr. Hrim do not match this type of gun. However, there was a shot missing."
+		"As a professional bodyguard, Mr. Petrov would have ensured he arrived at his job with a full set of ammunition, so it is highly likely Mr. Petrov shot someone. Just not the victim."
+		Dan "I see, then who did he shoot?"
+		Det. Gruff "Alright, let's talk about the buyers then."
+	]
+	"M&P9 Shield pistol"
+	[
+		Det. Gruff "<i>Wrong gun...</i>"
+	]
+	"Knife"
+	[
+		Det. Gruff "<i>No, he didn't use a knife...</i>"
+	]
+	"Crowbar"
+	[
+		Det. Gruff "<i>No, he didn't use a crowbar...</i>"
+	]
+}
