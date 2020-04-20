@@ -1,2 +1,2 @@
-Detective Gruff "That makes sense. None of the other wounds are serious enough or in the right spots to kill a person. It was definitely the gunshot that killed him"
+Det. Gruff "That makes sense. None of the other wounds are serious enough or in the right spots to kill a person. It was definitely the gunshot that killed him"
 "<i>Cause of death of the victim added to the journal.</i>"AddToJournal(The victim was killed by a gunshot to the chest.)

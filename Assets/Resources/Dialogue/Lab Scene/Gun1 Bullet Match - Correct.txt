@@ -1,2 +1,2 @@
-Detective Gruff "The bullet found in the victim is certainly a 9mm. That’s the same type as the bullet the M&P9 fires. Looks like we have our murder weapon."
+Det. Gruff "The bullet found in the victim is certainly a 9mm. That’s the same type as the bullet the M&P9 fires. Looks like we have our murder weapon."
 "<i>Bullet analysis added to the journal.</i>"AddToJournal(The bullet found in the victim is a 9mm round which is fired by the M&P9 Shield.)

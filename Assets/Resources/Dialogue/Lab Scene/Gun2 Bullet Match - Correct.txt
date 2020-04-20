@@ -1,2 +1,2 @@
-Detective Gruff "That sure looks like a .45 ACP round. The same kind of round that's fired by the 1911 R1."
-"<i>Bullet analysis added to the journal.</i>"AddToJournal(The bullet found in [Buyer 1] is .45 ACP, the same kind of bullet fired by the 1911 R1.)
+Det. Gruff "That sure looks like a .45 ACP round. The same kind of round that's fired by the 1911 R1."
+"<i>Bullet analysis added to the journal.</i>"AddToJournal(The bullet found in James Brown is .45 ACP, the same kind of bullet fired by the 1911 R1.)

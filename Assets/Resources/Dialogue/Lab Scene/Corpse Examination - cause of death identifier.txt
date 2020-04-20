@@ -1,4 +1,4 @@
-Detective Gruff "Alright, I need to be careful here. What wound actually killed this man?"
+Det. Gruff "Alright, I need to be careful here. What wound actually killed this man?"
 choice "What's the cause of death?"
 {
   "Head Wound"

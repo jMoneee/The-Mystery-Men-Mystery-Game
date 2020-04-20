@@ -1,2 +1,2 @@
-Detective Gruff "Looks like this is a classic 1911 model made by Remington, the Model 1911 R1."
+Det. Gruff "Looks like this is a classic 1911 model made by Remington, the Model 1911 R1."
 "<i>Gun analysis added to the journal.</i>"AddToJournal(One of the guns found at the scene is a Remington 1911 R1. It fires .45 ACP rounds.)
