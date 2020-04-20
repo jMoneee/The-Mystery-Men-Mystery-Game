@@ -11489,6 +11489,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9216384028936794537, guid: 537559fb91cbb694a8b8b31454bb4838,
+        type: 3}
+      propertyPath: Label
+      value: ' Viy Petrov'
+      objectReference: {fileID: 0}
     - target: {fileID: 9216384028936794541, guid: 537559fb91cbb694a8b8b31454bb4838,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11509,6 +11514,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a1089049e685b040ba44320139393df, type: 2}
+    - target: {fileID: 9216384030017771451, guid: 537559fb91cbb694a8b8b31454bb4838,
+        type: 3}
+      propertyPath: Label
+      value: Terry Horn
+      objectReference: {fileID: 0}
     - target: {fileID: 9216384030017771455, guid: 537559fb91cbb694a8b8b31454bb4838,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -11534,6 +11544,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f9856213060856d4487853423a8c27f2, type: 2}
+    - target: {fileID: 9216384030534221950, guid: 537559fb91cbb694a8b8b31454bb4838,
+        type: 3}
+      propertyPath: Label
+      value: James Brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216384030539460105, guid: 537559fb91cbb694a8b8b31454bb4838,
+        type: 3}
+      propertyPath: Label
+      value: ' Lukas Hrim'
+      objectReference: {fileID: 0}
     - target: {fileID: 9216384030539460109, guid: 537559fb91cbb694a8b8b31454bb4838,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -22722,6 +22742,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9216384028936794537, guid: 537559fb91cbb694a8b8b31454bb4838,
+        type: 3}
+      propertyPath: Label
+      value: Viy Petrov
+      objectReference: {fileID: 0}
     - target: {fileID: 9216384028936794543, guid: 537559fb91cbb694a8b8b31454bb4838,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -22732,11 +22757,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7084ec5f0f930844091f4475d0cc129b, type: 2}
+    - target: {fileID: 9216384030017771451, guid: 537559fb91cbb694a8b8b31454bb4838,
+        type: 3}
+      propertyPath: Label
+      value: Terry Horn
+      objectReference: {fileID: 0}
     - target: {fileID: 9216384030534221948, guid: 537559fb91cbb694a8b8b31454bb4838,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 42f4c83f65e5d854e88b05f3e805fcab, type: 2}
+    - target: {fileID: 9216384030534221950, guid: 537559fb91cbb694a8b8b31454bb4838,
+        type: 3}
+      propertyPath: Label
+      value: James Brown
+      objectReference: {fileID: 0}
+    - target: {fileID: 9216384030539460105, guid: 537559fb91cbb694a8b8b31454bb4838,
+        type: 3}
+      propertyPath: Label
+      value: Lukas Hrim
+      objectReference: {fileID: 0}
     - target: {fileID: 9216384030539460111, guid: 537559fb91cbb694a8b8b31454bb4838,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
