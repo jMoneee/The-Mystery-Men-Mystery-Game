@@ -26,8 +26,12 @@ public class CourtroomController : MonoBehaviour
 
     private IEnumerator WaitForDialog(TextAsset asset)
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         DialogueController.HandleDialogueText(asset);
         yield return new WaitForSeconds(0.1f);
         yield return new WaitUntil(() => fpsplayer.enabled);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = false;
     }
 }

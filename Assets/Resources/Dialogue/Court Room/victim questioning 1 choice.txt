@@ -1,0 +1,23 @@
+choice "What was Lukas Hrim doing at the crime scene?"
+{
+	"He was buying drugs"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>What, no that's not right...</i>"
+		Load(Dialogue/Court Room/victim questioning 1 choice)	
+	]
+	"He was selling drugs"
+	[
+		playSound(GoodAction) Load(Dialogue/Court Room/victim questioning 2)
+	]
+	"He was a hired bodyguard"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>What, no that's not right...</i>"
+		Load(Dialogue/Court Room/victim questioning 1 choice)	
+	]
+	"He was out for a stroll"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>What, no that's not right...</i>"
+		Load(Dialogue/Court Room/victim questioning 1 choice)
+	]
+}
+"fill this in to prevent null reference"

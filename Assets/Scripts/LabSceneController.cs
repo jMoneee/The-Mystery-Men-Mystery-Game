@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class LabSceneController : MonoBehaviour
@@ -59,10 +60,11 @@ public class LabSceneController : MonoBehaviour
 
 		yield return WaitForDialog(labSceneComplete);
 
-		//transition to court scene here
-	}
+        //transition to court scene here
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
-	private IEnumerator WaitForDialog(TextAsset asset)
+    private IEnumerator WaitForDialog(TextAsset asset)
 	{
 		DialogueController.HandleDialogueText(asset);
 		yield return new WaitForSeconds(0.1f);

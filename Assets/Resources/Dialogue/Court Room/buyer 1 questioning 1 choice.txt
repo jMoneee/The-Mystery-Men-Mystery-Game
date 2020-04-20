@@ -1,0 +1,23 @@
+choice "What ties James Brown to the crime scene?"
+{
+	"1911 R1 pistol"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>Wrong gun...</i>"
+		Load(Dialogue/Court Room/buyer 1 questioning 1 choice)
+	]
+	"M&P9 Shield pistol"
+	[
+		playSound(GoodAction) Load(Dialogue/Court Room/buyer 1 questioning 2)
+	]
+	"Knife"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, he didn't use a knife...</i>"
+		Load(Dialogue/Court Room/buyer 1 questioning 1 choice)
+	]
+	"Crowbar"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, he didn't use a crowbar...</i>"
+		Load(Dialogue/Court Room/buyer 1 questioning 1 choice)
+	]
+}
+"fill this in to prevent null reference"

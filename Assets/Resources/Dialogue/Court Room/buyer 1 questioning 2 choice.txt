@@ -1,0 +1,18 @@
+choice "Who killed Det. Hrim?"
+{
+	"James Brown"
+	[
+		playSound(GoodAction) Load(Dialogue/Court Room/final walkthrough)
+	]
+	"Viy Petrov"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, the evidence doesn't match that...</i>"
+		Load(Dialogue/Court Room/buyer 1 questioning 2 choice)
+	]
+	"Terry Horn"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, the evidence doesn't match that...</i>"
+		Load(Dialogue/Court Room/buyer 1 questioning 2 choice)
+	]
+}
+"fill this in to prevent null reference"

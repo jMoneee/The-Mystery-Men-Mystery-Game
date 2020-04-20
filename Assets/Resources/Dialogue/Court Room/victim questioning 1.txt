@@ -1,0 +1,2 @@
+Det. Gruff "Let's start with the easy one: the victim himself, Lukas Hrim."
+Load(Dialogue/Court Room/victim questioning 1 choice)

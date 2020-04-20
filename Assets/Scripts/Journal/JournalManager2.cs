@@ -9,8 +9,7 @@ public class JournalManager2 : MonoBehaviour
     public GameObject Content;
     public Image BackgroundImage;
     public GameObject textPrefabNoImage;
-    public GameObject textPrefabLeftImage;
-    public GameObject textPrefabRightImage;
+    public GameObject imagePrefab;
     private bool nextImageLeft = true;
     public GameObject textHolder;
     private float beginningHeight;
@@ -76,22 +75,28 @@ public class JournalManager2 : MonoBehaviour
         textHolder.GetComponentInParent<ScrollRect>().verticalNormalizedPosition = vec.y;
     }
 
-    public static void AddTextToJournal(string text, Sprite image, PhotoPlacementOptions photoPlacement = PhotoPlacementOptions.DifferentThanLast)
+    public static void AddTextToJournal(string text, Texture2D image, Vector2? size = null)
     {
-        if (photoPlacement == PhotoPlacementOptions.Left || (photoPlacement == PhotoPlacementOptions.DifferentThanLast && instance.nextImageLeft))
+        AddTextToJournal(text, Sprite.Create(image, new Rect(0, 0, image.width, image.height), Vector2.one * 0.5f), size);
+    }
+
+    public static void AddTextToJournal(string text, Sprite image, Vector2? size = null)
+    {
+        if (string.IsNullOrEmpty(text) == false)
         {
             GameObject insText = GameObject.Instantiate(instance.textPrefabNoImage, instance.textHolder.transform);
             insText.GetComponent<TextMeshProUGUI>().text = text;
-
-            instance.nextImageLeft = false;
         }
-        else if (photoPlacement == PhotoPlacementOptions.Right || (photoPlacement == PhotoPlacementOptions.DifferentThanLast && !instance.nextImageLeft))
+            
+        GameObject insPicture = GameObject.Instantiate(instance.imagePrefab, instance.textHolder.transform);
+        insPicture.GetComponentInChildren<Image>().sprite = image;
+        if (size.HasValue)
         {
-            GameObject insText = GameObject.Instantiate(instance.textPrefabNoImage, instance.textHolder.transform);
-            insText.GetComponent<TextMeshProUGUI>().text = text;
-
-            instance.nextImageLeft = false;
+            insPicture.transform.GetChild(0).GetComponent<LayoutElement>().preferredWidth = size.Value.x;
+            insPicture.transform.GetChild(0).GetComponent<LayoutElement>().preferredHeight = size.Value.y;
         }
+
+        instance.StartCoroutine(instance.setSize());
     }
 }
 

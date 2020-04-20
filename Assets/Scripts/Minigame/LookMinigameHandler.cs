@@ -242,8 +242,12 @@ public class LookMinigameHandler : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        cachedDetails = details;
+
         StartCoroutine(StartGame(details));
     }
+
+    MinigameListing cachedDetails;
 
     protected IEnumerator StartGame(MinigameListing details)
     {
@@ -313,6 +317,7 @@ public class LookMinigameHandler : MonoBehaviour
         action = null;
 
         gameObject.SetActive(false);
+        cachedDetails.success = true;
     }
 
     protected IEnumerator IncorrectAnswer()

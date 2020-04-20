@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CrimeLab.unity
     guid: c7b2c718126ac5840a3d9af46b028c30
+  - enabled: 1
+    path: Assets/Scenes/CourtRoom.unity
+    guid: 3a0254d08c6ff4f40b7bfb206582835f
   m_configObjects: {}

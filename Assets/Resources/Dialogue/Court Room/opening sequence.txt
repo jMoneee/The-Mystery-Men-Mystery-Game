@@ -10,3 +10,4 @@ Det. Gruff "No, they're still the same..."
 Dan "Judge, may Det. Gruff use his notes during the direct examination?"
 Judge "Yes, that is allowed."
 Dan "Thank you."
+Load(Dialogue/Court Room/crime scene questioning)

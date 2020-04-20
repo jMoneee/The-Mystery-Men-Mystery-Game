@@ -1,0 +1,2 @@
+Det. Gruff "There were two buyers. Let's talk about Terry Horn first."
+Load(Dialogue/Court Room/buyer 2 questioning 1 choice)

@@ -1244,8 +1244,9 @@ MonoBehaviour:
   BackgroundImage: {fileID: 1183368971025156554}
   textPrefabNoImage: {fileID: 3413639913540797410, guid: aeb4d8fe3f995974580ce9ea4f85798a,
     type: 3}
-  textPrefabLeftImage: {fileID: 0}
-  textPrefabRightImage: {fileID: 0}
+  imagePrefab: {fileID: 7625420155220054551, guid: 68c2690b91c8fae42b4c5cbaebe346fa,
+    type: 3}
+  rawImagePrefab: {fileID: 0}
   textHolder: {fileID: 1183368972136438112}
 --- !u!82 &1564214199
 AudioSource:
@@ -1768,7 +1769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -15.950125, y: 0}
   m_SizeDelta: {x: -31.9, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1183368972136438114

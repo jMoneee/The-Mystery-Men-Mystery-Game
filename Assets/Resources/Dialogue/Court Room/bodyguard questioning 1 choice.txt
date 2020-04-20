@@ -1,0 +1,23 @@
+choice "What was the bodyguard's name?"
+{
+	"James Brown"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, that's not the bodyguard...</i>"
+		Load(Dialogue/Court Room/bodyguard questioning 1 choice)
+	]
+	"Lukas Hrim"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, that's not the bodyguard...</i>"
+		Load(Dialogue/Court Room/bodyguard questioning 1 choice)
+	]
+	"Mister Gruff"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, that's not the bodyguard...</i>"
+		Load(Dialogue/Court Room/bodyguard questioning 1 choice)
+	]
+	"Viy Petrov"
+	[
+		playSound(GoodAction) Load(Dialogue/Court Room/bodyguard questioning 2)
+	]
+}
+"fill this in to prevent null reference"

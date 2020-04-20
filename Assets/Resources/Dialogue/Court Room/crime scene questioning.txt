@@ -7,25 +7,4 @@ Det. Gruff "When I got there, the only things that were there was the victim's d
 Dan "Can you confirm the body's identity for us?"
 Det. Gruff "Yeah, it was one Lukas Hrim. I found his ID in his pocket, and lab tests confirmed he was indeed Det. Hrim."
 Dan "And was Det. Hrim the only person there during the crime?"
-choice "How many people were present during the crime?"
-{
-	"2"
-	[
-		Det. Gruff "<i>No, that doesn't sound right, there were more than that.</i>"
-	]
-	"3"
-	[
-		Det. Gruff "<i>No, that doesn't sound right, there were more than that.</i>"
-	]
-	"4"
-	[
-		Det. Gruff "No, there were a total of 4 people at the crime scene."
-		Dan "I see, then can you describe everyone present and their"
-		"relationship to the crime?"
-		Det. Gruff "Of course, let's see..."
-	]
-	"5"
-	[
-		Det. Gruff "<i>No, that doesn't sound right, there were less than that.</i>"
-	]
-}
+Load(Dialogue/Court Room/crime scene questioning choice)

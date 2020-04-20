@@ -1,0 +1,27 @@
+choice "How many people were present during the crime?"
+{
+	"2"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, that doesn't sound right, there were more than that.</i>"
+		Load(Dialogue/Court Room/crime scene questioning choice)
+	]
+	"3"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, that doesn't sound right, there were more than that.</i>" playSound(BadAction)
+		Load(Dialogue/Court Room/crime scene questioning choice)
+	]
+	"4"
+	[
+		Det. Gruff "[playSound(GoodAction)]No, there were a total of 4 people at the crime scene."
+		Dan "I see, then can you describe everyone present and their"
+		"relationship to the crime?"
+		Det. Gruff "Of course, let's see..."
+		Load(Dialogue/Court Room/victim questioning 1)
+	]
+	"5"
+	[
+		Det. Gruff "[playSound(BadAction)]<i>No, that doesn't sound right, there were less than that.</i>"
+		Load(Dialogue/Court Room/crime scene questioning choice)
+	]
+}
+"fill this in to prevent null reference"

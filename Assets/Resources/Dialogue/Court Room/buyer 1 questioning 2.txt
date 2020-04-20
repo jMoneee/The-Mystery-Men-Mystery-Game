@@ -7,18 +7,4 @@ Det. Gruff "Yup. Only his. There's a little more closure here, too. The amount o
 "And given this is the only other significant loss of blood at the crime scene unrelated to the victim,"
 I believe the shot from Det. Petrov's gun was aimed for Det. Brown after he pulled the trigger on Det. Hrim."
 Dan "I see.. it seems you're pretty certain on your murderer identity then."
-choice "Who killed Det. Hrim?"
-{
-	"James Brown"
-	[
-
-	]
-	"Viy Petrov"
-	[
-		Det. Gruff "<i>No, the evidence doesn't match that...</i>"
-	]
-	"Terry Horn"
-	[
-		Det. Gruff "<i>No, the evidence doesn't match that...</i>"
-	]
-}
+Load(Dialogue/Court Room/buyer 1 questioning 2 choice)
