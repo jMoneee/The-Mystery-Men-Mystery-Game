@@ -1,4 +1,4 @@
-choice "Who killed Lukas Hrim?"
+choice "Who killed Det. Hrim?"
 {
 	"James Brown"
 	[

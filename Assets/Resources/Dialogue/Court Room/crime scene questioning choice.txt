@@ -13,7 +13,8 @@ choice "How many people were present during the crime?"
 	"4"
 	[
 		Det. Gruff "[playSound(GoodAction)]No, there were a total of 4 people at the crime scene."
-		Dan "I see, then can you describe everyone present and their relationship to the crime?"
+		Dan "I see, then can you describe everyone present and their"
+		"relationship to the crime?"
 		Det. Gruff "Of course, let's see..."
 		Load(Dialogue/Court Room/victim questioning 1)
 	]

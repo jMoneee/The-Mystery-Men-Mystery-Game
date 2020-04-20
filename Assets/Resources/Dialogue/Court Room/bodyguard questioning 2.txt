@@ -1,4 +1,4 @@
-Det. Gruff "The bodyguard's name is Viy Petrov. Just your standard run-of-the-mill hired gun to protect Mr. Hrim should something go wrong."
+Det. Gruff "The bodyguard's name is Viy Petrov. Just your standard run-of-the-mill hired gun to protect Det. Hrim should something go wrong."
 "Some good that did him..."
-Dan "How did you confirm Mr. Petrov was there?"
+Dan "How did you confirm Det. Petrov was there?"
 Load(Dialogue/Court Room/bodyguard questioning 2 choice)
