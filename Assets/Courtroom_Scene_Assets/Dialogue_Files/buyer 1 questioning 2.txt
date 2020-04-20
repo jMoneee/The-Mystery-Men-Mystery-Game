@@ -1,0 +1,24 @@
+Det. Gruff "A few things put Mr. Brown here. For one, there's a trail of blood running from the center of the alleyway to the southern entrance."
+DNA matching shows this is Mr. Brown's blood. Furthermore, next to that trail of blood was a 1911 R1 pistol,"
+"the same model that matches the ballistics on the shot that killed poor Mr. Hrim."
+"And Mr. Brown's fingerprints were all over it."
+Dan "And no one else had fingerprints on this weapon?"
+Det. Gruff "Yup. Only his. There's a little more closure here, too. The amount of blood leaked by Mr. Brown indicates he was heavily wounded."
+"And given this is the only other significant loss of blood at the crime scene unrelated to the victim,"
+I believe the shot from Mr. Petrov's gun was aimed for Mr. Brown after he pulled the trigger on Mr. Hrim."
+Dan "I see.. it seems you're pretty certain on your murderer identity then."
+choice "Who killed Mr. Hrim?"
+{
+	"James Brown"
+	[
+
+	]
+	"Viy Petrov"
+	[
+		Det. Gruff "<i>No, the evidence doesn't match that...</i>"
+	]
+	"Terry Horn"
+	[
+		Det. Gruff "<i>No, the evidence doesn't match that...</i>"
+	]
+}

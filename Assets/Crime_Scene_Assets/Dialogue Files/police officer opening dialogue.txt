@@ -1,4 +1,4 @@
-Police Officer "Hello Mr. Gruff, hope you're ready to work."
+Police Officer "Hello Det. Gruff , hope you're ready to work."
 Det. Gruff "As ready as always. Fill me in on the situation."
 Police Officer "Victim has yet to be ID'd. Unsure what he was doing here, but the body seems cold. Could've been here for a long time."
 "No one around here seemed to even notice him, and we couldn't find any witnesses."

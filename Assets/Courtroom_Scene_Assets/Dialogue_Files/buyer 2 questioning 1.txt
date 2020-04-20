@@ -1,0 +1,20 @@
+Det. Gruff "There were two buyers. Let's talk about Terry Horn first."
+choice "What ties Terry Horn to the crime scene?"
+{
+	"1911 R1 pistol"
+	[
+		Det. Gruff "<i>No, he didn't use a gun...</i>"
+	]
+	"M&P9 Shield pistol"
+	[
+		Det. Gruff "<i>No, he didn't use a gun...</i>"
+	]
+	"Knife"
+	[
+		
+	]
+	"Crowbar"
+	[
+		Det. Gruff "<i>No, he didn't use a crowbar...</i>"
+	]
+}

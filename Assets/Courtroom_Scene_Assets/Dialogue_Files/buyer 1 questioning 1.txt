@@ -1,0 +1,21 @@
+Det. Gruff "However, the same can't be said about our last participant, Mr. James Brown."
+Dan "I see. Tell me about him."
+choice "What ties James Brown to the crime scene?"
+{
+	"1911 R1 pistol"
+	[
+		Det. Gruff "<i>Wrong gun...</i>"
+	]
+	"M&P9 Shield pistol"
+	[
+		
+	]
+	"Knife"
+	[
+		Det. Gruff "<i>No, he didn't use a knife...</i>"
+	]
+	"Crowbar"
+	[
+		Det. Gruff "<i>No, he didn't use a crowbar...</i>"
+	]
+}
