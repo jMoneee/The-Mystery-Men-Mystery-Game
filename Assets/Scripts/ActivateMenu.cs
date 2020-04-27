@@ -11,31 +11,43 @@ public class ActivateMenu : MonoBehaviour
 	public CanvasGroup journalCanvasGroup;
 	private float journalAlpha = 1;
 	private float dialogueAlpha = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    private void Start()
+    {
+        Menu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update() //pause game and activate menu
     {
-		if (Input.GetKey(KeyCode.Escape) && isPaused == false)
+		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			Menu.SetActive(true);
-			isPaused = true;
-			DetachCamera.Detach();
-			Cursor.visible = true;
-			Cursor.lockState = CursorLockMode.None;
-			journalAlpha = journalCanvasGroup.alpha;
-			dialogueAlpha = dialogueCanvasGroup.alpha;
-			dialogueCanvasGroup.alpha = 0;
-			journalCanvasGroup.alpha = 0;
-			DialogueController.lockDialogue = true;
-		}
+            if (isPaused == false)
+            {
+                Pause();
+            }
+            else
+            {
+                Resume();
+            }
+        }
     }
 
-	public void Resume() //resume game and hide menu
+    public void Pause()
+    {
+        Menu.SetActive(true);
+        isPaused = true;
+        DetachCamera.Detach();
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        journalAlpha = journalCanvasGroup.alpha;
+        dialogueAlpha = dialogueCanvasGroup.alpha;
+        dialogueCanvasGroup.alpha = 0;
+        journalCanvasGroup.alpha = 0;
+        DialogueController.lockDialogue = true;
+    }
+
+    public void Resume() //resume game and hide menu
 	{
 		isPaused = false;
 		Menu.SetActive(false);

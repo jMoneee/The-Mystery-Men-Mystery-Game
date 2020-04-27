@@ -7,12 +7,13 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class MainMenu : MonoBehaviour
 {
 	public GameObject Menu;
-	public GameObject Dialogue;
+    public GameObject Options;
+    public GameObject Dialogue;
 	public GameObject FPController;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Options.SetActive(false);
     }
 
     // Update is called once per frame
