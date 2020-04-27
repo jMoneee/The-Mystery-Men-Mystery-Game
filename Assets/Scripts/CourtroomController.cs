@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class CourtroomController : MonoBehaviour
@@ -22,6 +23,8 @@ public class CourtroomController : MonoBehaviour
 
         DialogueController = FindObjectOfType<DialogueController>();
         yield return WaitForDialog(courtText);
+
+        SceneManager.LoadScene(0);
     }
 
     private IEnumerator WaitForDialog(TextAsset asset)

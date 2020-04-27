@@ -30,6 +30,7 @@ public class DialogueController : MonoBehaviour
         //LineHandlers.Add(LineType.Input, new HandleInputLine());
         GetComponent<CanvasGroup>().ChangeCanvasGroupVisibility(false);
 		sound = GetComponent<AudioSource>();
+        lockDialogue = false;
     }
 
     //Variables For Handling The Reading Of Different Lines

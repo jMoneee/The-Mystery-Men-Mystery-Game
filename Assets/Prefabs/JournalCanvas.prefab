@@ -383,7 +383,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1183368971186302203}
   m_HandleRect: {fileID: 1183368971186302202}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -571,7 +571,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_TargetDisplay: 0
 --- !u!114 &1183368970581550874
 MonoBehaviour:
@@ -1213,7 +1213,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183368971202234963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1183368970898095634}
@@ -1246,7 +1246,6 @@ MonoBehaviour:
     type: 3}
   imagePrefab: {fileID: 7625420155220054551, guid: 68c2690b91c8fae42b4c5cbaebe346fa,
     type: 3}
-  rawImagePrefab: {fileID: 0}
   textHolder: {fileID: 1183368972136438112}
 --- !u!82 &1564214199
 AudioSource:
@@ -1769,7 +1768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15.950125, y: 0}
+  m_AnchoredPosition: {x: 15.949954, y: 0.00024414062}
   m_SizeDelta: {x: -31.9, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1183368972136438114

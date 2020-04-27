@@ -21,8 +21,19 @@ public class JournalManager2 : MonoBehaviour
     public static JournalManager2 instance;
     private void Awake()
     {
-        instance = this;
-        scrollRect = GetComponentInChildren<ScrollRect>();
+        if (instance == null)
+        {
+            Debug.Log("TEST");
+            instance = this;
+            DontDestroyOnLoad(this.transform.parent.gameObject);
+            DontDestroyOnLoad(this.transform.gameObject);
+            scrollRect = GetComponentInChildren<ScrollRect>();
+            AddTextToJournal("This case is tough, so I need to document my steps here should I need to return to them.");
+        }
+        else
+        {
+            GameObject.Destroy(this.transform.parent.gameObject);
+        }
     }
 
     // Start is called before the first frame update
@@ -32,12 +43,12 @@ public class JournalManager2 : MonoBehaviour
         //BackgroundImage.material.EnableKeyword("_MainTex");
         beginningHeight = Content.GetComponent<RectTransform>().rect.height;
         beginningSizeDeltaY = Content.GetComponent<RectTransform>().sizeDelta.y;
-        AddTextToJournal("This case is tough, so I need to document my steps here should I need to return to them.");
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(instance == null);
         //BackgroundImage.GetComponent<RectTransform>().sizeDelta = Content.GetComponent<RectTransform>().sizeDelta;
         //Debug.Log((Content.GetComponent<RectTransform>().rect.height));
         BackgroundImage.materialForRendering.SetTextureScale("_MainTex", new Vector2(1,  Content.GetComponent<RectTransform>().rect.height / beginningHeight));

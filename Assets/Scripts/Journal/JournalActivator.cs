@@ -11,7 +11,7 @@ public class JournalActivator : MonoBehaviour
     }
     public static bool IsPaused { get { return instance.journalActive == true; } }
 
-    public CanvasGroup JournalCanvas;
+    private CanvasGroup JournalCanvas { get { return JournalManager2.instance.GetComponentInParent<CanvasGroup>(); } }
 	public AudioClip showSound;
 	public AudioClip hideSound;
     private bool journalActive = false;
@@ -28,6 +28,8 @@ public class JournalActivator : MonoBehaviour
         {
             if (journalActive)
             {
+                DialogueController.lockDialogue = false;
+
                 DetachCamera.Reattach();
                 JournalCanvas.ChangeCanvasGroupVisibility(false);
                 journalActive = false;
@@ -39,6 +41,8 @@ public class JournalActivator : MonoBehaviour
             }
             else
             {
+                DialogueController.lockDialogue = true;
+
                 DetachCamera.Detach();
                 JournalCanvas.ChangeCanvasGroupVisibility(true);
 				journalActive = true;
