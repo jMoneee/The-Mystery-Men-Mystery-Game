@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 4699922708164083254}
   - component: {fileID: 8396764598563520945}
   - component: {fileID: 526441544}
+  - component: {fileID: 8094906204844572982}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -333,6 +334,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   - {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
   - {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
+  m_ZeroFriction: {fileID: 0}
+  m_MaxFriction: {fileID: 0}
 --- !u!114 &5741894071997639031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36275b744ea11a94ea352d453182110a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JournalCanvas: {fileID: 0}
   showSound: {fileID: 8300000, guid: 2eaba51b469ae5a4d8e8302e22dd033b, type: 3}
   hideSound: {fileID: 8300000, guid: 88c7b15a27ddbd54aa572dfdc41ad6d7, type: 3}
   sound: {fileID: 832317407}
@@ -485,3 +487,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8094906204844572982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7145038970974821882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c414c8efdda984888ebae3d6669ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
