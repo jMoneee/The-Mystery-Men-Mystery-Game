@@ -24,7 +24,7 @@ public class VolumeSlider : MonoBehaviour
     private void ChangeVolumeOffAllAudioSources(float value)
     {
         Debug.Log("TEST with value: " + value);
-        AudioSource[] audioSources = GameObject.FindObjectsOfType<AudioSource>();
+        AudioSource[] audioSources = Resources.FindObjectsOfTypeAll(typeof(AudioSource)) as AudioSource[];
         foreach (AudioSource audioSource in audioSources)
         {
             audioSource.volume = value;
