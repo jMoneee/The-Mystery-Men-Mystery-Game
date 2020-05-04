@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1105,6 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 858867794}
+  Label: 
 --- !u!65 &183909924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1211,6 +1212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 1998478788}
+  Label: 
 --- !u!65 &186898824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2981,6 +2983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 1861600493}
+  Label: 
 --- !u!65 &496743664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3235,6 +3238,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   thisStationMinigame: {fileID: 868883000}
+  placementPosition: {fileID: 0}
   minigames:
   - triggerObject: {fileID: 1396660021}
     correct: {fileID: 4900000, guid: 06296539296a879478378bf2182d7934, type: 3}
@@ -3660,6 +3664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 249693379}
+  Label: 
 --- !u!65 &556723677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4322,6 +4327,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   thisStationMinigame: {fileID: 6765910163637510184}
+  placementPosition: {fileID: 0}
   minigames:
   - triggerObject: {fileID: 1396660021}
     correct: {fileID: 4900000, guid: eeeedc4b77e85b949ba0c4a500802b8d, type: 3}
@@ -5071,6 +5077,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   thisStationMinigame: {fileID: 1178113581}
+  placementPosition: {fileID: 0}
   minigames:
   - triggerObject: {fileID: 1494980695}
     correct: {fileID: 4900000, guid: 879fde9af683df54a8d679f619039344, type: 3}
@@ -5332,6 +5339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 460128623}
+  Label: 
 --- !u!65 &717150595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6610,6 +6618,7 @@ MonoBehaviour:
   selectThisItem: {fileID: 1102425811}
   item: {fileID: 588354391}
   PathParent: {fileID: 1281082047}
+  LabelText: {fileID: 0}
   cam: {fileID: 1751214602}
   selectedObject: 0
   lookedAtObject: 0
@@ -6815,6 +6824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 1496215349}
+  Label: 
 --- !u!65 &872799458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7184,6 +7194,36 @@ PrefabInstance:
     - target: {fileID: 8626571688865039398, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972035346261718011, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.5000076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972035346530867510, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972035346530867510, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972035346530867510, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972035347187102158, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972035347187102158, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8963,6 +9003,7 @@ MonoBehaviour:
   selectThisItem: {fileID: 408769842}
   item: {fileID: 364063704}
   PathParent: {fileID: 959123003}
+  LabelText: {fileID: 0}
   cam: {fileID: 689836567}
   selectedObject: 0
   lookedAtObject: 0
@@ -10045,6 +10086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 59466092}
+  Label: 
 --- !u!65 &1343210621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10346,6 +10388,8 @@ MonoBehaviour:
       m_Calls: []
   interactor: {fileID: 1526895540}
   holdDistance: 1.5
+  reorient: 1
+  soundOnPickup: {fileID: 0}
 --- !u!82 &1373491537
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10912,6 +10956,8 @@ MonoBehaviour:
       m_Calls: []
   interactor: {fileID: 1526895540}
   holdDistance: 1.5
+  reorient: 1
+  soundOnPickup: {fileID: 0}
 --- !u!114 &1396660024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11078,6 +11124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 1407571007}
+  Label: 
 --- !u!65 &1405106238
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11809,6 +11856,8 @@ MonoBehaviour:
       m_Calls: []
   interactor: {fileID: 1526895540}
   holdDistance: 1.5
+  reorient: 1
+  soundOnPickup: {fileID: 0}
 --- !u!54 &1494980697
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12034,6 +12083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 1779285509}
+  Label: 
 --- !u!65 &1495286494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12887,6 +12937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 475784775}
+  Label: 
 --- !u!65 &1646032327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13170,6 +13221,7 @@ MonoBehaviour:
   selectThisItem: {fileID: 1027557724}
   item: {fileID: 1255125379}
   PathParent: {fileID: 2073694597}
+  LabelText: {fileID: 0}
   cam: {fileID: 1015843622}
   selectedObject: 0
   lookedAtObject: 0
@@ -13375,6 +13427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 905732037}
+  Label: 
 --- !u!65 &1702889659
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14214,6 +14267,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   thisStationMinigame: {fileID: 1698789376}
+  placementPosition: {fileID: 0}
   minigames:
   - triggerObject: {fileID: 1494980695}
     correct: {fileID: 4900000, guid: 005777060b122de4293256396b1ccb1b, type: 3}
@@ -15700,6 +15754,8 @@ MonoBehaviour:
       m_Calls: []
   interactor: {fileID: 1526895540}
   holdDistance: 1.5
+  reorient: 1
+  soundOnPickup: {fileID: 0}
 --- !u!114 &1999848491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16136,6 +16192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 2001616134}
+  Label: 
 --- !u!65 &2076781611
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17866,6 +17923,7 @@ MonoBehaviour:
   selectThisItem: {fileID: 6158912613148770100}
   item: {fileID: 6158912612284430328}
   PathParent: {fileID: 6158912613433871046}
+  LabelText: {fileID: 0}
   cam: {fileID: 9166465986836845423}
   selectedObject: 0
   lookedAtObject: 0
@@ -17983,6 +18041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 4196104798463271806}
+  Label: 
 --- !u!1 &9166465986110779453
 GameObject:
   m_ObjectHideFlags: 0
@@ -18136,6 +18195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 6158912612009400922}
+  Label: 
 --- !u!1 &9166465986599881091
 GameObject:
   m_ObjectHideFlags: 0
@@ -18169,6 +18229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 4196104799983734911}
+  Label: 
 --- !u!4 &9166465986599881100
 Transform:
   m_ObjectHideFlags: 0
@@ -18358,6 +18419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 4196104800122880817}
+  Label: 
 --- !u!4 &9166465987174979116
 Transform:
   m_ObjectHideFlags: 0

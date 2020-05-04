@@ -6,3 +6,4 @@ Police Officer "Victim has yet to be ID'd. Unsure what he was doing here, but th
 Det. Gruff "Sounds good, I'll get right to work then."
 "<i>The police officer's initial report has been added to the journal. Press TAB to open/close the journal view.</i>"AddToJournal(First responder officer found dead body in alleyway with no witnesses. Body was cold upon arrival implying the victim has been dead for a while.)
 Det. Gruff "Alright, first thing's first. Let's walk around and take a look with what I'm working with."
+"Movement can be controlled with the WASD keys, and the mouse can be used to look around."
