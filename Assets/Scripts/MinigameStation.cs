@@ -7,6 +7,7 @@ using System;
 public class MinigameStation : Interactable
 {
 	public LookMinigameHandler thisStationMinigame;
+    public Transform placementPosition;
 	public MinigameListing[] minigames;
     Dictionary<MinigameListing, bool> minigamesCompleted = new Dictionary<MinigameListing, bool>();
     public bool completelyDoneWithMinigames { get { return minigamesCompleted.Values.Where(s => s == false).Count() == 0; } }
@@ -52,6 +53,7 @@ public class MinigameStation : Interactable
         yield return new WaitForSeconds(0.1f);
         thisStationMinigame.StartMatchingGame(item);
         instructions.RemovePrompt(KeyCode.Numlock);
+        item.triggerObject.transform.position = placementPosition.position;
         item.triggerObject.GetComponent<Pickupable>().endVerb = endVerbs[item.triggerObject.name];
     }
 

@@ -89,7 +89,7 @@ public class Pickupable : Interactable
 			grabbedrb.velocity = (grabPoint.position - grabbedCenter) * Time.fixedDeltaTime * 1000;
 			//grabbedItem.position = Vector3.MoveTowards(grabbedItem.position, grabPoint.position, Time.fixedDeltaTime * 10);
 			if (reorient)
-				transform.rotation = Quaternion.Lerp(ogRotation, Quaternion.identity, time * 2);
+				transform.rotation = Quaternion.Lerp(ogRotation, interactor.transform.rotation, time * 2);
 			yield return new WaitForFixedUpdate();
 		}
 		transform.parent = ogParent;

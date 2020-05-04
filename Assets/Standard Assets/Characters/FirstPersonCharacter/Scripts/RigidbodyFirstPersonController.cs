@@ -83,7 +83,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public AdvancedSettings advancedSettings = new AdvancedSettings();
 		[SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
 		private AudioSource m_AudioSource;
-
+        public PhysicMaterial m_ZeroFriction;
+        public PhysicMaterial m_MaxFriction;
 		private Rigidbody m_RigidBody;
         private CapsuleCollider m_Capsule;
         private float m_YRotation;
@@ -149,7 +150,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 // always move along the camera forward as it is the direction that it being aimed at
                 Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
-
+                m_Capsule.sharedMaterial = m_ZeroFriction;
                 desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;
                 desiredMove.z = desiredMove.z*movementSettings.CurrentTargetSpeed;
                 desiredMove.y = desiredMove.y*movementSettings.CurrentTargetSpeed;
@@ -158,6 +159,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
                 }
+            }
+            else
+            {
+                m_Capsule.sharedMaterial = m_MaxFriction;
             }
 
             if (m_IsGrounded)
