@@ -16,7 +16,10 @@ public class ShowObjectAfterTimer : MonoBehaviour
 	private IEnumerator Timer()
 	{
 		yield return new WaitForSeconds(timer);
-		GetComponent<MeshRenderer>().enabled = true;
+        foreach (MeshRenderer mr in GetComponentsInChildren<MeshRenderer>())
+        {
+            mr.enabled = true;
+        }
 	}
 
 	private void OnDisable()
