@@ -1,8 +1,8 @@
-Police Officer "Hello Det. Gruff , hope you're ready to work."
+Police Officer "Hello Detective Gruff , hope you're ready to work."
 Det. Gruff "As ready as always. Fill me in on the situation."
 Police Officer "Victim has yet to be ID'd. Unsure what he was doing here, but the body seems cold. Could've been here for a long time."
 "No one around here seemed to even notice him, and we couldn't find any witnesses."
 "I've got the scene taped off, you're free to do your work. Definitely some stuff around that's worth noting."
 Det. Gruff "Sounds good, I'll get right to work then."
-"<i>The police officer's initial report has been added to the journal. Press TAB to view.</i>"AddToJournal(First responder officer found dead body in alleyway with no witnesses. Body was cold upon arrival implying the victim has been dead for a while.)
+"<i>The police officer's initial report has been added to the journal. Press TAB to open/close the journal view.</i>"AddToJournal(First responder officer found dead body in alleyway with no witnesses. Body was cold upon arrival implying the victim has been dead for a while.)
 Det. Gruff "Alright, first thing's first. Let's walk around and take a look with what I'm working with."

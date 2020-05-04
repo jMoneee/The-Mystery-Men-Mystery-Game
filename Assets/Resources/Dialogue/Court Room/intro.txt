@@ -1,2 +1,2 @@
-Judge "The court calls Det. Gregory Gruff to the stand to testify in front of jury." 
+Judge "The court calls Detective Mister Gruff to the stand to testify in front of jury." 
 Load(Dialogue/Court Room/opening sequence)
