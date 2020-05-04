@@ -85,7 +85,7 @@ public static class CommandHandler
 
 		Debug.Log("play sound choice");
 		AudioSource g = new GameObject("sound").AddComponent<AudioSource>();
-		g.volume = volume;
+		g.volume = volume * PlayerPrefs.GetFloat("Volume");
 		g.pitch = pitch;
 		g.loop = loop;
 		g.spatialBlend = 0f;
