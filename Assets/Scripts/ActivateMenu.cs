@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class ActivateMenu : MonoBehaviour
 {
 	public GameObject Menu;
-	private bool isPaused = false;
+	public bool isPaused = false;
 	public CanvasGroup dialogueCanvasGroup;
 	public CanvasGroup journalCanvasGroup;
 	private float journalAlpha = 1;
@@ -51,11 +51,17 @@ public class ActivateMenu : MonoBehaviour
 	{
 		isPaused = false;
 		Menu.SetActive(false);
-		Cursor.visible = false;
-		DetachCamera.Reattach();
-		Cursor.lockState = CursorLockMode.Locked;
-		dialogueCanvasGroup.alpha = dialogueAlpha;
-		journalCanvasGroup.alpha = journalAlpha;
-		DialogueController.lockDialogue = false;
+
+        if (DialogueController.instance.HandlingText == false && JournalActivator.IsPaused == false)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        DetachCamera.Reattach();
+        dialogueCanvasGroup.alpha = dialogueAlpha;
+        journalCanvasGroup.alpha = journalAlpha;
+
+        DialogueController.lockDialogue = false;
 	}
 }

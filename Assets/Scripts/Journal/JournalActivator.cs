@@ -24,34 +24,40 @@ public class JournalActivator : MonoBehaviour
 
 	void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (FindObjectOfType<ActivateMenu>().isPaused == false)
         {
-            if (journalActive)
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                DialogueController.lockDialogue = false;
+                if (journalActive)
+                {
+                    DialogueController.lockDialogue = false;
 
-                DetachCamera.Reattach();
-                JournalCanvas.ChangeCanvasGroupVisibility(false);
-                journalActive = false;
+                    DetachCamera.Reattach();
+                    JournalCanvas.ChangeCanvasGroupVisibility(false);
+                    journalActive = false;
 
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                    if (DialogueController.instance.HandlingText == false)
+                    {
+                        Cursor.lockState = CursorLockMode.Locked;
+                        Cursor.visible = false;
+                    }
 
-				sound.PlayOneShot(hideSound);
+                    sound.PlayOneShot(hideSound);
+                }
+                else
+                {
+                    DialogueController.lockDialogue = true;
+
+                    DetachCamera.Detach();
+                    JournalCanvas.ChangeCanvasGroupVisibility(true);
+                    journalActive = true;
+
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    sound.PlayOneShot(showSound);
+                }
             }
-            else
-            {
-                DialogueController.lockDialogue = true;
-
-                DetachCamera.Detach();
-                JournalCanvas.ChangeCanvasGroupVisibility(true);
-				journalActive = true;
-
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-				sound.PlayOneShot(showSound);
-			}
-		}
+        }
 
         //if (journalActive)
         //{
