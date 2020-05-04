@@ -16,6 +16,8 @@ public class JournalActivator : MonoBehaviour
 	public AudioClip hideSound;
     private bool journalActive = false;
 	public AudioSource sound;
+    private CursorLockMode prevLock;
+    private bool prevCursorVisible;
 
     void Start()
     {
@@ -38,8 +40,8 @@ public class JournalActivator : MonoBehaviour
 
                     if (DialogueController.instance.HandlingText == false)
                     {
-                        Cursor.lockState = CursorLockMode.Locked;
-                        Cursor.visible = false;
+                        Cursor.lockState = prevLock;
+                        Cursor.visible = prevCursorVisible;
                     }
 
                     sound.PlayOneShot(hideSound);
@@ -51,7 +53,8 @@ public class JournalActivator : MonoBehaviour
                     DetachCamera.Detach();
                     JournalCanvas.ChangeCanvasGroupVisibility(true);
                     journalActive = true;
-
+                    prevLock = Cursor.lockState;
+                    prevCursorVisible = Cursor.visible;
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     sound.PlayOneShot(showSound);

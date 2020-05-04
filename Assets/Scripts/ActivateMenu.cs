@@ -11,6 +11,8 @@ public class ActivateMenu : MonoBehaviour
 	public CanvasGroup journalCanvasGroup;
 	private float journalAlpha = 1;
 	private float dialogueAlpha = 1;
+    private CursorLockMode prevLock;
+    private bool prevCursorVisible;
 
     private void Start()
     {
@@ -38,6 +40,8 @@ public class ActivateMenu : MonoBehaviour
         Menu.SetActive(true);
         isPaused = true;
         DetachCamera.Detach();
+        prevCursorVisible = Cursor.visible;
+        prevLock = Cursor.lockState;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         journalAlpha = journalCanvasGroup.alpha;
@@ -54,8 +58,8 @@ public class ActivateMenu : MonoBehaviour
 
         if (DialogueController.instance.HandlingText == false && JournalActivator.IsPaused == false)
         {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = prevCursorVisible;
+            Cursor.lockState = prevLock;
         }
 
         DetachCamera.Reattach();
