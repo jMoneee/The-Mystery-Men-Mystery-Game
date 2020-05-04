@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1182184290330656349}
   - component: {fileID: 1182184290330656348}
   m_Layer: 0
-  m_Name: Instructional Text
+  m_Name: Instructional Text old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   origin: {fileID: 1182184291217573565}
   font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  fontSize: 50
+  fontSize: 40
   fontColor: {r: 1, g: 1, b: 1, a: 1}
   fontStyle: 0
   horizontalWrapMode: 1
