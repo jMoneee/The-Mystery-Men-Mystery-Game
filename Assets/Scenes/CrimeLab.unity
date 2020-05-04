@@ -8586,10 +8586,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllGameplayCanvases
       objectReference: {fileID: 0}
+    - target: {fileID: 3416557963545457785, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 865.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416557963545457785, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 493.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416557963545457785, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416557963545457785, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.9
+      objectReference: {fileID: 0}
     - target: {fileID: 4051250595961366248, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.021484375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5216386674265325578, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
+        type: 3}
+      propertyPath: m_Name
+      value: Background Gray
       objectReference: {fileID: 0}
     - target: {fileID: 5686071533615087263, guid: 5f2f57f4bcc6e814a968eca5a82ecfd0,
         type: 3}
@@ -9542,7 +9567,7 @@ PrefabInstance:
     - target: {fileID: 1183368972136438113, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 15.949907
       objectReference: {fileID: 0}
     - target: {fileID: 1183368972136438113, guid: 864d363f92fcd5d4d9b113c9f6f6540f,
         type: 3}
