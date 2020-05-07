@@ -35,8 +35,6 @@ public class LookMinigameHandler : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
-        Debug.Log("FUCK YOU");
-
         fpsplayer = FindObjectOfType<RigidbodyFirstPersonController>();
 
         lookObjects = GetComponentsInChildren<LookObject>().ToList();
@@ -313,6 +311,9 @@ public class LookMinigameHandler : MonoBehaviour
         //GetComponent<Playable>()._interacting = false;
 
         GetComponent<CameraLerper>().EndGame();
+        
+        if (!cachedDetails.postMatchName.Equals(""))
+            cachedDetails.triggerObject.name = cachedDetails.postMatchName;
 
         action = null;
 

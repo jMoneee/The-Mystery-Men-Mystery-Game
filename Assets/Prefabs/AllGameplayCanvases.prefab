@@ -821,6 +821,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5686071533615087263}
     m_Modifications:
+    - target: {fileID: 482531991, guid: 1689874d01a02f740b26c3022777648e, type: 3}
+      propertyPath: m_Volume
+      value: 0.23293005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1584750397, guid: 1689874d01a02f740b26c3022777648e, type: 3}
+      propertyPath: m_Volume
+      value: 0.23293005
+      objectReference: {fileID: 0}
     - target: {fileID: 277187415641373088, guid: 1689874d01a02f740b26c3022777648e,
         type: 3}
       propertyPath: m_textInfo.characterCount

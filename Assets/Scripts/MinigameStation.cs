@@ -112,4 +112,5 @@ public class MinigameListing
 	public Sprite objectMatch;
 	public int correctIndex;
 	public bool success = false;
+    public string postMatchName = "";
 }

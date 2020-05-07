@@ -1259,7 +1259,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.23293005
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1762,7 +1762,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1183368971562415107}
-  - {fileID: 1183368971583185479}
+  - {fileID: 4554129492689199227}
   m_Father: {fileID: 1183368971174038211}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2136,7 +2136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb4d8fe3f995974580ce9ea4f85798a, type: 3}
---- !u!224 &1183368971583185479 stripped
+--- !u!224 &4554129492689199227 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3413639913540797411, guid: aeb4d8fe3f995974580ce9ea4f85798a,
     type: 3}
