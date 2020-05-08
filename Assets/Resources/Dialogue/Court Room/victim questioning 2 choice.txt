@@ -2,7 +2,7 @@ choice "What is the cause of death?"
 {
 	"1911 R1 pistol shot to chest"
 	[
-		Det. Gruff "[playSound(BadAction)]<i>Det. Hrim definitely died to a gunshot, but was this the right gun?</i>"
+		Det. Gruff "[playSound(BadAction)]<i>Mr. Hrim definitely died to a gunshot, but was this the right gun?</i>"
 		Load(Dialogue/Court Room/victim questioning 2 choice)
 	]
 	"M&P9 Shield pistol shot to chest"
@@ -15,12 +15,12 @@ choice "What is the cause of death?"
 	]
 	"Knife wound to arm"
 	[
-		Det. Gruff "[playSound(BadAction)]<i>Det. Hrim had a knife wound, but I don't think that was the CoD...</i>"
+		Det. Gruff "[playSound(BadAction)]<i>Mr. Hrim had a knife wound, but I don't think that was the CoD...</i>"
 		Load(Dialogue/Court Room/victim questioning 2 choice)
 	]
 	"Crowbar wound to head"
 	[
-		Det. Gruff "[playSound(BadAction)]<i>What? No, there wasn't even a crowbar wound on the victim.</i>"
+		Det. Gruff "[playSound(BadAction)]<i>What? No, this definitely isn't right.</i>"
 		Load(Dialogue/Court Room/victim questioning 2 choice)
 	]
 }
